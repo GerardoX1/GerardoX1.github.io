@@ -1,0 +1,19 @@
+
+var escena = new THREE.Scena();
+var camara =new THREE.PerspectiveCamara();
+
+camara.position.z = 5;
+var renderizador= new THREE.WebGLRenderer();
+
+renderizador.setSize(windows.innerHeight*.95,windows.innerHeight*.95)
+document.body.appendChild( renderizador.domElement );
+var forma = new THREE.BoxGeometry( 1, 1, 1);
+var forma = new THREE.MeshNormalMaterial();
+var cubo =new THREE.Mesh( forma, material );
+
+cubo.rotateX(-Math.PI/4);
+cubo.rotateY(Math.PI/4);
+
+escena.add( cubo );
+
+renderizador.render( escena, camara );
