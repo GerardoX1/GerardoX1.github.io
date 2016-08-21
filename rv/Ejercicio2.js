@@ -9,7 +9,7 @@ renderizador.setSize( window.innerHeight*.95,
 document.body.appendChild( renderizador.domElement );
 var forma = new THREE.SphereGeometry( 5, 32, 32);
 var material = new THREE.MeshBasicMaterial( {color: 0x808000} );
-var sphere = new THREE.Mesh( forma, material );
+var sphere = new THREE.Mesh( sphere, material );
 
 escena.add( sphere );
 
