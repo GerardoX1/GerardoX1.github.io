@@ -2,6 +2,7 @@ var forma = new THREE.Geometry();
 
 //Estructura de datos buscar colas y pilas
 //el metodo push empuja elementos al arreglo "los pone al principio"
+//ctr + shift + j para ver los posibles errores
 
 forma.vertices.push( new THREE.Vector3( 1, 0, 1 ) );
 forma.vertices.push( new THREE.Vector3( 1, 0, -1 ) );
