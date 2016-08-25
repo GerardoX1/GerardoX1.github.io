@@ -6,7 +6,7 @@ var  figure = new THREE.Shape();
 //figura
 //forma
 
-figura.moveTo(10, 10); // muevete a 10 10
+figure.moveTo(10, 10); // muevete a 10 10
 figure.lineTo(10, 40); // genera una linea 40 40 desde esa localidad
 figure.lineTo(40, 40); // lo mismo pa este
 figure.lineTo(10, 10); // 
