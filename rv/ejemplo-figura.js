@@ -14,7 +14,7 @@ figura.lineTo(10, 10); //
 //comvertimos a una figura
 
 var forma = new THREE.ShapeGeometry(figura);
-var malla = new THREE.mesh(forma);
+var malla = new THREE.Mesh(forma);
 
 //agregamos la escena la malla la camara 
 // el renderizador el camvas 
