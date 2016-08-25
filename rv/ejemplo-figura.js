@@ -1,15 +1,15 @@
 
 //conoceremos un constructor nuevo1
-var  figure = new THREE.Shape();
+var  figura = new THREE.Shape();
 //tenemos el nuevo objeto que genera la figura
 
 //figura
 //forma
 
-figure.moveTo(10, 10); // muevete a 10 10
-figure.lineTo(10, 40); // genera una linea 40 40 desde esa localidad
-figure.lineTo(40, 40); // lo mismo pa este
-figure.lineTo(10, 10); // 
+figura.moveTo(10, 10); // muevete a 10 10
+figura.lineTo(10, 40); // genera una linea 40 40 desde esa localidad
+figura.lineTo(40, 40); // lo mismo pa este
+figura.lineTo(10, 10); // 
 
 //comvertimos a una figura
 
