@@ -5,9 +5,14 @@ for ( var i = 0; i < 30; i ++ ) {
 			Math.sin(i*0.2 )*15 +100 ,
 				(i - 5)*2) );
 }
-for ( i = 31; i < 600; i ++ ) {
+for ( i = 31; i < 40; i ++ ) {
 	puntos.push(new THREE.Vector2(
 			60 ,
+				(i - 5)*2) );
+}
+for ( i = 41; i < 88; i ++ ) {
+	puntos.push(new THREE.Vector2(
+			50 ,
 				(i - 5)*2) );
 }
 
