@@ -10,7 +10,7 @@ for ( i = 31; i < 40; i ++ ) {
 			60 ,
 				(i - 5)*2) );
 }
-for ( i = 41; i < 88; i ++ ) {
+for ( i = 41; i < 100; i ++ ) {
 	puntos.push(new THREE.Vector2(
 			50 ,
 				(i - 5)*2) );
@@ -27,7 +27,7 @@ var escena = new THREE.Scene();
 escena.add( malla );
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 500;
+camara.position.z = 1000;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95,
