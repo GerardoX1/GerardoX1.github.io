@@ -4,6 +4,10 @@ for ( var i = 0; i < 20; i ++ ) {
 	puntos.push(new THREE.Vector2(Math.sin( i*0.2 )*15 +50 ,i/2 );
 }
 
+for (i = 21; i < 40; i ++ ) {
+	puntos.push(new THREE.Vector2(Math.sin( i*0.2 )*15 +30 ,i/2 );
+}
+
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 
