@@ -2,7 +2,7 @@ var puntos = [];
 
 for ( var i = 0; i < 50; i ++ ) {
 	puntos.push(new THREE.Vector2(
-			Math.sin(i*0.2 )*15 +50 ,
+			Math.sin(i*0.2 )*15 +70 ,
 				(i - 5)*2) );
 }
 
