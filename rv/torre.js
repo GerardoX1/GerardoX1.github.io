@@ -17,8 +17,8 @@ for ( i = 41; i < 150; i ++ ) {
 }
 for ( i = 151; i < 170; i ++ ) {
 	puntos.push(new THREE.Vector2(
-		50,
-				(i - 5)*2*(i+1)) );
+		i/150 +3,
+				(i - 5)*2 );
 }
 
 
