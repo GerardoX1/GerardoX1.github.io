@@ -35,7 +35,7 @@ var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
-escena.add( malla );
+//escena.add( malla );
 
 var pointss = [];
 for ( var j = 0; j < 10; j ++ ) {
