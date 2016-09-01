@@ -39,7 +39,7 @@ escena.add( malla );
 
 var pointss = [];
 for ( var j = 0; j < 10; j ++ ) {
-	pointss.push( new THREE.Vector2( Math.sin( j * 0.2 ) * 10 + 5, ( j - 5 ) * 2 ) );
+	pointss.push( new THREE.Vector2( Math.sin( j * 0.2 ) * 10 + 75, ( j - 5 ) * 2 ) );
 }
 var geometry = new THREE.LatheGeometry( pointss );
 var materiala = new THREE.MeshNormalMaterial();
