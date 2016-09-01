@@ -12,7 +12,7 @@ for ( i = 31; i < 40; i ++ ) {
 }
 for ( i = 41; i < 150; i ++ ) {
 	puntos.push(new THREE.Vector2(
-			i^2-5*i,
+			Math.sin(i*0.2 )*15 +40,
 				(i - 5)*2) );
 }
 
