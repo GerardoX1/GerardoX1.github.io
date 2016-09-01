@@ -16,7 +16,7 @@ for ( i = 41; i < 150; i ++ ) {
 				(i - 5)*2) );
 }
 
-var geometry = new THREE.CylinderGeometry( 5, 5, 20);
+var geometry = new THREE.CylinderGeometry( 60, 60, 20);
 var material2 = new THREE.MeshNormalMaterial();
 var cylinder = new THREE.Mesh( geometry, material2 );
 
