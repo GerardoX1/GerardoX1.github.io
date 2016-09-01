@@ -45,6 +45,6 @@ escena.add( cylinder );
 var geometry2 = new THREE.ConeBufferGeometry( 5, 20, 32 );
 var material2 = new THREE.MeshNormalMaterial();
 var cone1 = new THREE.Mesh( geometry2, material2 );
-scene.add( cone1 );
+escena.add( cone1 );
 
 renderizador.render( escena,camara );    
