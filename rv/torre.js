@@ -37,4 +37,9 @@ var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
 escena.add( malla );
 
+var geometry = new THREE.CylinderGeometry( 25, 25, 30);
+var material1 = new THREE.MeshNormalMaterial();
+var cylinder = new THREE.Mesh( geometry, material1 );
+escena.add( cylinder );
+
 renderizador.render( escena,camara );    
