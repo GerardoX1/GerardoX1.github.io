@@ -16,7 +16,6 @@ for ( i = 41; i < 150; i ++ ) {
 				(i - 5)*2) );
 }
 
-
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
@@ -24,6 +23,12 @@ malla.rotateX( Math.PI/6 );
 
 var escena = new THREE.Scene();
 escena.add( malla );
+
+var Cilind = new THREE.CylinderGeometry( 20, 20, 20);
+var material1 = new THREE.MeshNormalMaterial();
+var cylinder = new THREE.Mesh( Cilind, material1 );
+scene.add( cylinder );
+
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 1000;
