@@ -19,6 +19,8 @@ for ( i = 41; i < 150; i ++ ) {
 var geometry = new THREE.CylinderGeometry( 60, 60, 20);
 var material2 = new THREE.MeshNormalMaterial();
 var cylinder = new THREE.Mesh( geometry, material2 );
+scene.add( cylinder );
+
 
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
