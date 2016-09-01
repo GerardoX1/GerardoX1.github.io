@@ -16,10 +16,12 @@ for ( i = 41; i < 150; i ++ ) {
 				(i - 5)*2) );
 }
 
+var geometry = new THREE.CylinderGeometry( 5, 5, 20);
+var material2 = new THREE.MeshNormalMaterial();
+var cylinder = new THREE.Mesh( geometry, material2 );
 
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
-
 var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
 
