@@ -44,6 +44,11 @@ for ( var j = 0; j < 10; j ++ ) {
 var geometry = new THREE.LatheGeometry( pointss );
 var materiala = new THREE.MeshNormalMaterial();
 var lathe = new THREE.Mesh( geometry, materiala );
+lathe.rotateX( Math.PI/6)
+lathe.rotateY( Math.PI/6)
+lathe.rotateZ( Math.PI/6)
+
+
 escena.add( lathe );
 
 renderizador.render( escena,camara );    
