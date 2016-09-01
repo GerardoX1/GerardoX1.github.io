@@ -12,7 +12,7 @@ for ( i = 31; i < 40; i ++ ) {
 }
 for ( i = 41; i < 150; i ++ ) {
 	puntos.push(new THREE.Vector2(
-			Math.cos(i*0.15)*30,
+			Math.cos(i*0.5)*30,
 				(i - 5)*2) );
 }
 
