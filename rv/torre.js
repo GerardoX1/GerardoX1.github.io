@@ -27,7 +27,7 @@ escena.add( malla );
 var Cilind = new THREE.CylinderGeometry( 20, 20, 20);
 var material1 = new THREE.MeshNormalMaterial();
 var cylinder = new THREE.Mesh( Cilind, material1 );
-scene.add( cylinder );
+escena.add( cylinder );
 
 
 var camara = new THREE.PerspectiveCamera();
