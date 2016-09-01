@@ -42,8 +42,9 @@ var material1 = new THREE.MeshNormalMaterial();
 var cylinder = new THREE.Mesh( geometry, material1 );
 escena.add( cylinder );
 
-
-
-escena.add( lathe );
+var geometry2 = new THREE.ConeBufferGeometry( 5, 20, 32 );
+var material2 = new THREE.MeshNormalMaterial();
+var cone1 = new THREE.Mesh( geometry2, material2 );
+scene.add( cone1 );
 
 renderizador.render( escena,camara );    
