@@ -15,6 +15,14 @@ for ( i = 41; i < 150; i ++ ) {
 		40,
 				(i - 5)*2) );
 }
+for ( i = 151; i < 200; i ++ ) {
+	puntos.push(new THREE.Vector2(
+		50,
+				(i - 5)*2) );
+}
+
+
+
 
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
