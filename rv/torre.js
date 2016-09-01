@@ -29,14 +29,8 @@ var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
 
-
-var cilind = new THREE.CylinderGeometry( 30, 30, 50);
-var material1 = new THREE.MeshNormalMaterial();
-var cylinder = new THREE.Mesh( cilind, material1 );
-
 var escena = new THREE.Scene();
 
-escena.add( cylinder );
 escena.add( malla );
 
 var camara = new THREE.PerspectiveCamera();
