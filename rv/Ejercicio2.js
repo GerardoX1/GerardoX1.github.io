@@ -19,7 +19,6 @@ escena.add( sphere );
 var forma2 = new THREE.CubeGeometry( 2, 7, 3);
 var material2 = new THREE.MeshBasicMaterial( {color: 0x6e2c00} );
 var tronco = new THREE.Mesh( forma2, material2 );
-
 tronco.position.y =-5;
 
 escena.add( tronco );
