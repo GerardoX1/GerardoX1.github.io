@@ -1,5 +1,18 @@
-var puntos = [];
+var escena = new THREE.Scene();
 
+var camara = new THREE.PerspectiveCamera();
+camara.position.z = 1000;
+
+var renderizador = new THREE.WebGLRenderer();
+
+renderizador.setSize( window.innerHeight*.95,
+                      window.innerHeight*.95);
+document.body.appendChild( renderizador.domElement );
+
+renderizador.render( escena,camara );    
+
+
+var puntos = [];
 for ( var i = 0; i < 30; i ++ ) {
 	puntos.push(new THREE.Vector2(
 			Math.sin(i*0.2 )*15 +100 ,
@@ -21,23 +34,8 @@ for ( i = 151; i < 170; i ++ ) {
 				(i - 5)*2 );
 }
 
-
-
-
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
-
-var escena = new THREE.Scene();
-
 escena.add( malla );
-
-var camara = new THREE.PerspectiveCamera();
-camara.position.z = 1000;
-
-var renderizador = new THREE.WebGLRenderer();
-renderizador.setSize( window.innerHeight*.95,
-                      window.innerHeight*.95);
-document.body.appendChild( renderizador.domElement );
-renderizador.render( escena,camara );    
