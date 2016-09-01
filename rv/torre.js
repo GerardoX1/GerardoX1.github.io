@@ -22,7 +22,7 @@ var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
 
 var escena = new THREE.Scene();
-escena.add( malla );
+
 
 var cilind = new THREE.CylinderGeometry( 30, 30, 50);
 var material1 = new THREE.MeshNormalMaterial();
