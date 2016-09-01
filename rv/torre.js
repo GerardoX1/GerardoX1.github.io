@@ -9,9 +9,6 @@ renderizador.setSize( window.innerHeight*.95,
                       window.innerHeight*.95);
 document.body.appendChild( renderizador.domElement );
 
-renderizador.render( escena,camara );    
-
-
 var puntos = [];
 for ( var i = 0; i < 30; i ++ ) {
 	puntos.push(new THREE.Vector2(
@@ -39,3 +36,5 @@ var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
 escena.add( malla );
+
+renderizador.render( escena,camara );    
