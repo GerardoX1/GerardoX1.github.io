@@ -40,13 +40,53 @@ var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 escena.add( malla );
 
-var geometry2 = new THREE.CylinderGeometry( 16, 16, 30, 32 );
+var geometry2 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
 var material2 = new THREE.MeshNormalMaterial();
 var cylinder2 = new THREE.Mesh( geometry2, material2 );
-cylinder2.position.x=72;
-cylinder2.position.y=332;
+cylinder2.position.x=35;
+cylinder2.position.y=331;
+cylinder2.position.z=60.62;
 
 escena.add( cylinder2 );
 
+var geometry3 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
+var material3 = new THREE.MeshNormalMaterial();
+var cylinder3 = new THREE.Mesh( geometry3, material3 );
+cylinder3.position.x=70;
+cylinder3.position.y=331;
+cylinder3.position.z=0;
+escena.add( cylinder3 );
+
+var geometry4 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
+var material4 = new THREE.MeshNormalMaterial();
+var cylinder4 = new THREE.Mesh( geometry4, material4 );
+cylinder4.position.x=35;
+cylinder4.position.y=331;
+cylinder4.position.z=-60.62;
+escena.add( cylinder4 );
+
+var geometry5 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
+var material5 = new THREE.MeshNormalMaterial();
+var cylinder5 = new THREE.Mesh( geometry5, material5 );
+cylinder5.position.x=-35;
+cylinder5.position.y=331;
+cylinder5.position.z=-60.62;
+escena.add( cylinder5 );
+
+var geometry6 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
+var material6 = new THREE.MeshNormalMaterial();
+var cylinder6 = new THREE.Mesh( geometry6, material6 );
+cylinder6.position.x=-70;
+cylinder6.position.y=331;
+cylinder6.position.z=0;
+escena.add( cylinder6 );
+
+var geometry7 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
+var material7 = new THREE.MeshNormalMaterial();
+var cylinder7 = new THREE.Mesh( geometry7, material7 );
+cylinder7.position.x=-35;
+cylinder7.position.y=331;
+cylinder7.position.z=60.62;
+escena.add( cylinder7 );
 
 renderizador.render( escena,camara );    
