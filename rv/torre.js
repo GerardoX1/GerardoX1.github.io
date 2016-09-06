@@ -40,11 +40,13 @@ var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 escena.add( malla );
 
-var geometry2 = new THREE.ConeBufferGeometry( 15, 40, 32 );
-var material2 = new THREE.MeshNormalMaterial();
-var cone1 = new THREE.Mesh( geometry2, material2 );
-cone1.position.x=80;
-cone1.position.y=330;
-escena.add( cone1 );
+var geometry2 = new THREE.CylinderGeometry( 16, 16, 30, 32 );
+var material2 = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+var cylinder2 = new THREE.Mesh( geometry2, material2 );
+cone1.position.x=72;
+cone1.position.y=332;
+
+scene.add( cylinder2 );
+
 
 renderizador.render( escena,camara );    
