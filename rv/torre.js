@@ -22,14 +22,16 @@ for ( i = 31; i < 40; i ++ ) {
 }
 for ( i = 41; i < 150; i ++ ) {
 	puntos.push(new THREE.Vector2(
-		40,
+		50,
 				(i - 5)*2) );
 }
 for ( i = 151; i < 170; i ++ ) {
 	puntos.push(new THREE.Vector2(
-		50,
+		80,
 				(i - 5)*2) );
 }
+
+puntos.push(new THREE.Vector2(0,332 );
 
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
@@ -37,16 +39,11 @@ var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
 escena.add( malla );
 
-var geometry = new THREE.CylinderGeometry( 60, 60, 100, 32 );
-var material1 = new THREE.MeshNormalMaterial();
-var cylinder = new THREE.Mesh( geometry, material1 );
-//cylinder.position.x =50;
-//escena.add( cylinder );
-
 var geometry2 = new THREE.ConeBufferGeometry( 15, 40, 32 );
 var material2 = new THREE.MeshNormalMaterial();
 var cone1 = new THREE.Mesh( geometry2, material2 );
-//malla.rotateX( Math.PI/6 );
-//escena.add( cone1 );
+cone1.position.x=330;
+cone1.position.y=80;
+escena.add( cone1 );
 
 renderizador.render( escena,camara );    
