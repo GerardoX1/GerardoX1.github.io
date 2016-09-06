@@ -82,12 +82,12 @@ cylinder7.position.z=60.62;
 var Torre = new THREE.Geometry();
 
 Torre.merge(basse.geometry, basse.matrix);
-Torre.merge(cylinder2.geometry, cylinder2.matrix);
-Torre.merge(cylinder3.geometry, cylinder3.matrix);
-Torre.merge(cylinder4.geometry, cylinder4.matrix);
-Torre.merge(cylinder5.geometry, cylinder5.matrix);
-Torre.merge(cylinder6.geometry, cylinder6.matrix);
-Torre.merge(cylinder7.geometry, cylinder7.matrix);
+Torre.merge(cylinder2.geometry2, cylinder2.matrix);
+Torre.merge(cylinder3.geometry3, cylinder3.matrix);
+Torre.merge(cylinder4.geometry4, cylinder4.matrix);
+Torre.merge(cylinder5.geometry5, cylinder5.matrix);
+Torre.merge(cylinder6.geometry6, cylinder6.matrix);
+Torre.merge(cylinder7.geometry7, cylinder7.matrix);
 
 var materialFinal = new THREE.MeshNormalMaterial();
 var TorreMalla = new THREE.Mesh(Torre, materialFinal);
