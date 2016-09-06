@@ -10,7 +10,7 @@ figura.lineTo(-80.9, -58.7); // genera una linea 40 40 desde esa localidad
 figura.lineTo(30.9, 95.1); // lo mismo pa este
 figura.lineTo(30.9, -95.1); // 
 figura.lineTo(-80.9, 58.7);
-figura.lineTo(100, 0);
+//figura.lineTo(100, 0);
 
 //comvertimos a una figura
 
