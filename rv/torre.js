@@ -2,7 +2,7 @@ var escena = new THREE.Scene();
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 1000;
-camara.position.y = -300;
+camara.position.y = -100;
 
 
 var renderizador = new THREE.WebGLRenderer();
@@ -33,7 +33,7 @@ for ( i = 151; i < 170; i ++ ) {
 				(i - 5)*2) );
 }
 
-puntos.push(new THREE.Vector2(0,332 );
+puntos.push(new THREE.Vector2( 1 , 332 );
 
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
