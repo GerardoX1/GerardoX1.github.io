@@ -33,7 +33,7 @@ for ( i = 151; i < 170; i ++ ) {
 				(i - 5)*2) );
 }
 
-puntos.push(new THREE.Vector2( 1 , 332 );
+puntos.push(new THREE.Vector2( 1 , 332 ));
 
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
@@ -44,8 +44,8 @@ escena.add( malla );
 var geometry2 = new THREE.ConeBufferGeometry( 15, 40, 32 );
 var material2 = new THREE.MeshNormalMaterial();
 var cone1 = new THREE.Mesh( geometry2, material2 );
-//cone1.position.x=330;
-//cone1.position.y=80;
-//escena.add( cone1 );
+cone1.position.x=330;
+cone1.position.y=80;
+escena.add( cone1 );
 
 renderizador.render( escena,camara );    
