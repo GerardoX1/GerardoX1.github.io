@@ -2,7 +2,7 @@ var escena = new THREE.Scene();
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = 1000;
-camara.position.y = 600;
+camara.position.y = 300;
 
 
 var renderizador = new THREE.WebGLRenderer();
@@ -43,8 +43,8 @@ escena.add( malla );
 var geometry2 = new THREE.ConeBufferGeometry( 15, 40, 32 );
 var material2 = new THREE.MeshNormalMaterial();
 var cone1 = new THREE.Mesh( geometry2, material2 );
-cone1.position.x=330;
-//cone1.position.y=80;
+cone1.position.x=80;
+cone1.position.y=330;
 escena.add( cone1 );
 
 renderizador.render( escena,camara );    
