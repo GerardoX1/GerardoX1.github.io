@@ -36,7 +36,6 @@ puntos.push(new THREE.Vector2( 0 , 332 ));
 var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
-malla.rotateX( Math.PI/6 );
 escena.add( malla );
 
 var geometry2 = new THREE.ConeBufferGeometry( 15, 40, 32 );
