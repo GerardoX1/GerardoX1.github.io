@@ -1,24 +1,21 @@
-//conoceremos un constructor nuevo1
+//Estrella
 var  figura = new THREE.Shape();
-//tenemos el nuevo objeto que genera la figura
 
-//figura
-//forma
+figura.moveTo(-37, 92); 
+figura.lineTo(15.45, 47.55); 
+figura.lineTo(76.91, 63.91); 
+figura.lineTo(50, 0); // 
+figura.lineTo(84.55, -53.4);
+figura.lineTo(15.45, -47.55);
+figura.lineTo(-24.65, -96.91); // 
+figura.lineTo(-40.45, -29.39);
+figura.lineTo(-99.79, -6.5);
+figura.lineTo(-40.45, 29.39); // 
+figura.lineTo(-37, 92);
 
-figura.moveTo(100, 0); 
-figura.lineTo(-80.9, -58.7); // genera una linea 40 40 desde esa localidad
-figura.lineTo(30.9, 95.1); // lo mismo pa este
-figura.lineTo(30.9, -95.1); // 
-//figura.lineTo(-80.9, 58.7);
-//figura.lineTo(100, 0);
-
-//comvertimos a una figura
 
 var forma = new THREE.ShapeGeometry(figura);
 var malla = new THREE.Mesh(forma);
-
-//agregamos la escena la malla la camara 
-// el renderizador el camvas 
 
 var escena = new THREE.Scene();
 escena.add(malla);
