@@ -35,11 +35,12 @@ var forma = new THREE.LatheGeometry(puntos);
 var material = new THREE.MeshNormalMaterial();
 var malla = new THREE.Mesh( forma, material );
 malla.rotateX( Math.PI/6 );
-//escena.add( malla );
+escena.add( malla );
 
 var geometry = new THREE.CylinderGeometry( 60, 60, 100, 32 );
 var material1 = new THREE.MeshNormalMaterial();
 var cylinder = new THREE.Mesh( geometry, material1 );
+cylinder.position.x =50;
 escena.add( cylinder );
 
 var geometry2 = new THREE.ConeBufferGeometry( 15, 40, 32 );
