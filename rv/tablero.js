@@ -11,16 +11,16 @@ renderizador.setSize( window.innerHeight*.95,
                       window.innerHeight*.95);
 document.body.appendChild( renderizador.domElement );
 
-      var geometry[][];
-      var material[][];
-      var cube[][];
+      var geometry = new Array(),new Array();
+      var material= new Array(),new Array();;
+      var cube= new Array(),new Array();
       
       var PosX = 0;
       var PosY = 0;
 
 
-for ( var i = 0; i < 8; i ++ ) {
-  for ( var j = 0; j < 8; j ++ ) {
+for ( var i = 0; i < 7; i ++ ) {
+  for ( var j = 0; j < 7; j ++ ) {
       
       geometry[i][j] = new THREE.BoxGeometry( 10, 10, 3 );
       
