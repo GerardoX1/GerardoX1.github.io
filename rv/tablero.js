@@ -19,8 +19,8 @@ document.body.appendChild( renderizador.domElement );
       var PosY = 0;
 
 
-for ( var i = 0; i < 7; i ++ ) {
-  for ( var j = 0; j < 7; j ++ ) {
+for ( var i = 1; i < 8; i ++ ) {
+  for ( var j = 1; j < 8; j ++ ) {
       
       geometry[i][j] = new THREE.BoxGeometry( 10, 10, 3 );
       
