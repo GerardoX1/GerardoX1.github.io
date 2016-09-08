@@ -36,61 +36,58 @@ for ( i = 151; i < 170; i ++ ) {
 puntos.push(new THREE.Vector2( 0 , 332 ));
 
 var forma = new THREE.LatheGeometry(puntos);
-var basse = new THREE.Mesh( forma );
-
+var material = new THREE.MeshNormalMaterial();
+var basse = new THREE.Mesh( forma,material );
+escena.add( basse );
 
 var geometry2 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
-var cylinder2 = new THREE.Mesh( geometry2 );
+var material2 = new THREE.MeshNormalMaterial();
+var cylinder2 = new THREE.Mesh( geometry2,material2);
+
 cylinder2.position.x=35;
 cylinder2.position.y=332;
 cylinder2.position.z=60.62;
+escena.add( cylinder2 )
+
 
 var geometry3 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
-var cylinder3 = new THREE.Mesh( geometry3 );
+var material3 = new THREE.MeshNormalMaterial();
+var cylinder3 = new THREE.Mesh( geometry3,material3 );
 cylinder3.position.x=70;
 cylinder3.position.y=332;
 cylinder3.position.z=0;
+escena.add( cylinder3 )
 
 var geometry4 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
-var cylinder4 = new THREE.Mesh( geometry4 );
+var material4 = new THREE.MeshNormalMaterial();
+var cylinder4 = new THREE.Mesh( geometry4, material4 );
 cylinder4.position.x=35;
 cylinder4.position.y=332;
 cylinder4.position.z=-60.62;
-
+escena.add( cylinder4 )
 
 var geometry5 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
-var cylinder5 = new THREE.Mesh( geometry5 );
+var material5 = new THREE.MeshNormalMaterial();
+var cylinder5 = new THREE.Mesh( geometry5,material5 );
 cylinder5.position.x=-35;
 cylinder5.position.y=332;
 cylinder5.position.z=-60.62;
-
+escena.add( cylinder5 )
 
 var geometry6 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
-var cylinder6 = new THREE.Mesh( geometry6 );
+var material6 = new THREE.MeshNormalMaterial();
+var cylinder6 = new THREE.Mesh( geometry6,material6 );
 cylinder6.position.x=-70;
 cylinder6.position.y=332;
 cylinder6.position.z=0;
+escena.add( cylinder6 )
 
 var geometry7 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
-var cylinder7 = new THREE.Mesh( geometry7);
+var material7 = new THREE.MeshNormalMaterial();
+var cylinder7 = new THREE.Mesh( geometry7,material7);
 cylinder7.position.x=-35;
 cylinder7.position.y=332;
 cylinder7.position.z=60.62;
-
-////////////////////////////////////////////////////////////////////////Union de mallas
-
-var Torre = new THREE.Geometry();
-
-Torre.merge(basse.geometry, basse.matrix);
-Torre.merge(cylinder2.geometry, cylinder2.matrix);
-Torre.merge(cylinder3.geometry, cylinder3.matrix);
-Torre.merge(cylinder4.geometry, cylinder4.matrix);
-Torre.merge(cylinder5.geometry, cylinder5.matrix);
-Torre.merge(cylinder6.geometry, cylinder6.matrix);
-Torre.merge(cylinder7.geometry, cylinder7.matrix);
-
-var materialFinal = new THREE.MeshNormalMaterial();
-var TorreMalla = new THREE.Mesh(Torre, materialFinal);
-escena.add(TorreMalla);
+escena.add( cylinder7 )
 
 renderizador.render( escena,camara );    
