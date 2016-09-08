@@ -11,9 +11,9 @@ renderizador.setSize( window.innerHeight*.95,
                       window.innerHeight*.95);
 document.body.appendChild( renderizador.domElement );
 
-      var geometry[][];
-      var material[][];
-      var cube[][];
+      var geometry[8][8];
+      var material[8][8];
+      var cube[8][8];
       
       var PosX = 0;
       var PosY = 0;
