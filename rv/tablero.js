@@ -37,7 +37,7 @@ for ( var i = 0; i < 7; i ++ ) {
       PosX=PosX+10;
       PosY=PosY+10;
       
-      scene.add( cube[i][j] );
+      escena.add( cube[i][j] );
       
 }
 }
