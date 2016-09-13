@@ -23,7 +23,7 @@ var renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
 renderizador.setSize(600,600);
 
 renderizador.shadowMapEnabled = true;
-malla.castShadow =truw;
+malla.castShadow =true;
 base.receiveShadow = true;
 iluminacion.casrShadow =true;
 
