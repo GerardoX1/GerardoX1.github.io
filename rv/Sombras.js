@@ -18,7 +18,11 @@ camara.position.z =15;
 camara.position.y =5;
 
 var lienzo = document.getElementById("luzSinSombras");
-var renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
+
+var renderizador = new THREE.WebGLRenderer();
+renderizador.setSize( window.innerHeight*.95,
+                      window.innerHeight*.95);
+document.body.appendChild( renderizador.domElement );
 
 renderizador.setSize(600,600);
 
