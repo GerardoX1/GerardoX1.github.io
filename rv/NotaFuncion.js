@@ -22,7 +22,7 @@ function init(P){
  camara = new THREE.PerspectiveCamera();
  renderizador = new THREE.WebGLRenderer();
 
-renderizador.setSize(900,700);
+renderizador.setSize(900,900);
 document.body.appendChild( renderizador.domElement );
 camara.position.z=5*P;
 step=0.01;
@@ -34,10 +34,10 @@ var loop = function(){
   renderizador.render(escena,camara);
   
   malla.rotateY( 0.01 );
-  //malla.rotateZ( 0.01 );
-  //malla.rotateX( 0.01 );
+  malla.rotateZ( 0.01 );
+  malla.rotateX( 0.01 );
   
-  if (Math.abs(malla.position.x)>=5) 
+  if (Math.abs(malla.position.x)>=4) 
     step=-step;
     malla.position.x+=step;
 
