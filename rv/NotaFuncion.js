@@ -14,7 +14,7 @@
 //Primera forma de expresar una funcion "la clasica"
 
 function init(P){
-  var malla =new THREE.Mesh(new THREE.BoxGeometry(P,P,P), new THREE.MeshNormalMaterial());
+ malla =new THREE.Mesh(new THREE.BoxGeometry(P,P,P), new THREE.MeshNormalMaterial());
 
  escena= new THREE.Scene();
  escena.add(malla);
@@ -25,19 +25,16 @@ function init(P){
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
 camara.position.z=5*P;
-malla.rotateX( Math.PI/6 );
-malla.rotateZ( Math.PI/6 );
-
 }
 
+var loop = function(){
+  requestAnimationFrame(loop);
+  renderizador.render(escena,camara);
+  malla.rotateY( 0.01 );
 
-//Siguiente forma "Tomamos como un valor la funcion antes generada"
-
-var main = function(P){
-  P(1);
-renderizador.render(escena,camara);
 }
 //Como estas variables son glovales no le colo VAR pero tenemos que hacerlo para poder utuilizarlas en todo el programa
-var escena,camara,renderizador;
+var escena,camara,renderizador,malla;
 //con esto ejecutamos
-main(init);
+init(1);
+loop();
