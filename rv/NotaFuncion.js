@@ -25,7 +25,7 @@ function init(P){
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
 camara.position.z=5*P;
-cont=0.01;
+step=0.01;
 }
 
 var loop = function(){
@@ -37,9 +37,9 @@ var loop = function(){
   //malla.rotateZ( 0.01 );
   //malla.rotateX( 0.01 );
   
-  if (Math.abs(malla.position.x)>=10) {
-    cont=-cont;
-    malla.position.x+=cont;
+  if (Math.abs(malla.position.x)>=5) {
+    step=-step;
+    malla.position.x+=step;
 } 
 
 }
