@@ -36,4 +36,4 @@ renderizador.render(escena,camara);
 var escena,camara,renderizador;
 //con esto ejecutamos
 init(1);
-main(2);
+main(20);
