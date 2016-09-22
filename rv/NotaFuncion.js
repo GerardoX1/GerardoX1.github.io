@@ -34,10 +34,10 @@ var loop = function(){
   renderizador.render(escena,camara);
   
   malla.rotateY( 0.01 );
-  malla.rotateZ( 0.01 );
-  malla.rotateX( 0.01 );
+  //malla.rotateZ( 0.01 );
+  //malla.rotateX( 0.01 );
   
-  malla.position.x = cont;
+  malla.position.x =cont;
   
   if (Math.abs(malla.position.x)>=10) {
     cont=-cont;
