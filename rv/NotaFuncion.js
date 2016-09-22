@@ -14,7 +14,7 @@
 //Primera forma de expresar una funcion "la clasica"
 
 function init(P){
-  var malla (new THREE.BoxGeometry(P,P,P), new THREE.MeshNormalMaterial());
+  var malla =new THREE.Mesh(new THREE.BoxGeometry(P,P,P), new THREE.MeshNormalMaterial());
 
  escena= new THREE.Scene();
  escena.add(malla);
