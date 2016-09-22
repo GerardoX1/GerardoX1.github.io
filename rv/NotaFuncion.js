@@ -41,6 +41,7 @@ var loop = function(){
   
   if (Math.abs(malla.position.x)>=10) {
     cont=-cont;
+    malla.position.x+=cont;
 } 
 
 }
