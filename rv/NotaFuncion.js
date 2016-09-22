@@ -24,6 +24,7 @@ function init(P){
 
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
+camara.position.z=5*P;
 }
 
 
