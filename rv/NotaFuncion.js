@@ -20,7 +20,7 @@ function init(P){
  escena.add(malla);
 
  camara = new THREE.PerspectiveCamera();
- renderizador = new THREE.WedGLRenderer();
+ renderizador = new THREE.WebGLRenderer();
 
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
