@@ -25,7 +25,7 @@ function init(P){
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
 camara.position.z=5*P;
-cont=0;
+cont=0.01;
 }
 
 var loop = function(){
@@ -38,14 +38,11 @@ var loop = function(){
   malla.rotateX( 0.01 );
   
   malla.position.x = cont;
-  malla.position.y = cont;
   
-  cont=cont+1;
-  if (cont < 30) {
-    cont=cont-1;
-} else if(cont<-30){
-    cont=cont+1;
-}
+  if (Math.abs(malla.position.x)>=10) {
+    cont=-cont;
+} 
+
 }
 //Como estas variables son glovales no le colo VAR pero tenemos que hacerlo para poder utuilizarlas en todo el programa
 var escena,camara,renderizador,malla;
