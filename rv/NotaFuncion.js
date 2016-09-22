@@ -25,16 +25,20 @@ function init(P){
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
 camara.position.z=5*P;
+malla.rotate.x=PI/4;
+malla.rotate.y=PI/4;
+malla.rotate.z=PI/4;
+  
 }
 
 
 //Siguiente forma "Tomamos como un valor la funcion antes generada"
 
 var main = function(P){
+  P(1);
 renderizador.render(escena,camara);
 }
 //Como estas variables son glovales no le colo VAR pero tenemos que hacerlo para poder utuilizarlas en todo el programa
 var escena,camara,renderizador;
 //con esto ejecutamos
-init(1);
-main(3);
+main(init);
