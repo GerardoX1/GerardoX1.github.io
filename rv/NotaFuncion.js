@@ -25,9 +25,9 @@ function init(P){
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
 camara.position.z=5*P;
-malla.rotate.x=PI/4;
-malla.rotate.y=PI/4;
-malla.rotate.z=PI/4;
+malla.rotateX( Math.PI/6 );
+malla.rotateY( Math.PI/6 );
+malla.rotateZ( Math.PI/6 );
   
 }
 
