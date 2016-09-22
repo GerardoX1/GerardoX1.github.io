@@ -31,6 +31,8 @@ var loop = function(){
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
   malla.rotateY( 0.01 );
+  malla.rotateZ( 0.01 );
+  malla.rotateX( 0.01 );
 
 }
 //Como estas variables son glovales no le colo VAR pero tenemos que hacerlo para poder utuilizarlas en todo el programa
