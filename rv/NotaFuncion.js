@@ -37,10 +37,10 @@ var loop = function(){
   //malla.rotateZ( 0.01 );
   //malla.rotateX( 0.01 );
   
-  if (Math.abs(malla.position.x)>=5) {
+  if (Math.abs(malla.position.x)>=5) 
     step=-step;
     malla.position.x+=step;
-} 
+
 
 }
 //Como estas variables son glovales no le colo VAR pero tenemos que hacerlo para poder utuilizarlas en todo el programa
