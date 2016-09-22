@@ -20,7 +20,7 @@ function init(P){
  escena.add(malla);
 
  camara = new THREE.PerspectiveCamera();
- renderizador = new THREE.WedGLRender();
+ renderizador = new THREE.WedGLRenderer();
 
 renderizador.setSize(900,700);
 document.body.appendChild( renderizador.domElement );
@@ -32,3 +32,8 @@ document.body.appendChild( renderizador.domElement );
 var main = function(P){
 renderizador.render(escena,camara);
 }
+//Como estas variables son glovales no le colo VAR pero tenemos que hacerlo para poder utuilizarlas en todo el programa
+var escena,camara,renderizador;
+//con esto ejecutamos
+init(1);
+main();
