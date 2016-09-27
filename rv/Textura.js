@@ -6,7 +6,7 @@ TEXTURA.retrollamada = function( textura ){
     TEXTURA.escena.add(TEXTURA.malla);
     }
     
-TEXTURA.setup = funcion(){
+TEXTURA.setup = function(){
 
     TEXTURA.escena = new THREE.Scene();
     var cargador = new THREE.TextureLoader();
