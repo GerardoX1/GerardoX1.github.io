@@ -20,7 +20,7 @@ TEXTURA.setup = function(){
     TEXTURA.renderizador.setSize(600,600);
     }
  
-TEXTURE.loop = function (){
+TEXTURA.loop = function (){
   requestAnimationFrame(TEXTURA.loop);
   
   if (TEXTURA.malla !== undedined ) {
