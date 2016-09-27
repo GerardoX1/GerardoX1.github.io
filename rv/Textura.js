@@ -31,5 +31,5 @@ TEXTURE.loop = function (){
   
   TEXTURA.setup();
   TEXTURA.loop();
-  
+}
   
