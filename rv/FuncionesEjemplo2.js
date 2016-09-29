@@ -25,7 +25,7 @@ VENTANA.setup = function() {
     VENTANA.renderizador = new THREE.WebGLRenderer();
     
     VENTANA.renderizador.setSize( window.innerWidth,Window.innerHeight );
-    VENTANA.document.body.appendChild( VENTANA.renderizador.domElement );
+    document.body.appendChild( VENTANA.renderizador.domElement );
   
     }
     
