@@ -26,7 +26,7 @@ VENTANA.setup = function() {
     
     VENTANA.renderizador.setSize( window.innerWidth,Window.innerHeight );
     VENTANA.document.body.appendChild( VENTANA.renderizador.domElement );
-    VENTANA.renderizador.render(VENTANA.escena,VENTANA.camara);
+  
     }
     
     VENTANA.loop = function () {
