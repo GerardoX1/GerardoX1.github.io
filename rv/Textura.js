@@ -10,7 +10,7 @@ TEXTURA.setup = function(){
 
     TEXTURA.escena = new THREE.Scene();
     var cargador = new THREE.TextureLoader();
-    cargador.load("earth_atmos_2048.jpg",TEXTURE.retrollamada);
+    cargador.load("earth_atmos_2048.jpg",TEXTURA.retrollamada);
     
     TEXTURA.camara = new THREE.PesrpectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
     TEXTURA.camara,position.z = 5;
