@@ -18,14 +18,15 @@ VENTANA.setup = function() {
     
     VENTANA.camara.position.z = 5;
     
+    VENTANA.malla = new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
+    VENTANA.escena.add(VENTANA.malla);
+    
     var lienzo = document.getElementById("ejemplo-ventana");
     VENTANA.renderizador = new THREE.WebGLRenderer();
     
     VENTANA.renderizador.setSize( window.innerWidth,Window.innerHeight );
     VENTANA.document.body.appendChild( VENTANA.renderizador.domElement );
-    
-    VENTANA.malla = new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
-    VENTANA.escena.add(VENTANA.malla);
+    VENTANA.renderizador.render(VENTANA.escena,VENTANA.camara);
     }
     
     VENTANA.loop = function () {
