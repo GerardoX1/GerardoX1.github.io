@@ -37,8 +37,4 @@ VENTANA.setup = function() {
    
    VENTANA.setup();
    VENTANA.loop();
-       
-     
-
-    }
     
