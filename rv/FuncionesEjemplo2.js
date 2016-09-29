@@ -24,7 +24,7 @@ VENTANA.setup = function() {
     VENTANA.renderizador.setSize( window.innerWidth,Window.innerHeight );
     document.body.appendChild( VENTANA.renderizador.domElement );
     
-    VENTANA.malla = new THREE.mesh(new THREE.BoxGeometry(1,1,1)),new THREE.MeshNormalMaterial());
+    VENTANA.malla = new THREE.mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshNormalMaterial());
     VENTANA.escena.add(VENTANA.malla);
     }
     
