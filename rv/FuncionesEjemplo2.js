@@ -18,8 +18,10 @@ VENTANA.setup = function {
     VENTANA.camara.position.z = 5;
     
     var lienzo = document.getElementById("ejemplo-ventana");
-    VENTANA.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
+    VENTANA.renderizador = new THREE.WebGLRenderer();
+    
     VENTANA.renderizador.setSize( window.innerWidth,Window.innerHeight );
+    document.body.appendChild( VENTANA.renderizador.domElement );
     
     VENTANA.malla = new THREE.mesh(new THREE.BoxGeometry(1,1,1)),new THREE.MeshNormalMaterial());
     VENTANA.escena.add(VENTANA.malla);
