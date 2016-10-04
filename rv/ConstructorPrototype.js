@@ -23,25 +23,25 @@ PROTOTIPO.ArbolGeometry = function(){
     arbol1.malla.position.x = -5;
     arbol2.malla.position.x =  5;
     
-    CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
-    CONSTRUCTOR.camara.position.z = 20;
+    PROTOTIPO.camara = new THREE.PerspectiveCamera();
+    PROTOTIPO.camara.position.z = 20;
     
     var lienzo = document.getElementById("Prorotype");
-    CONSTRUCTOR.renderizador = new THREE.WebGLRenderer();
+    PROTOTIPO.renderizador = new THREE.WebGLRenderer();
     
-    CONSTRUCTOR.renderizador.setSize( 600,600 );
-    document.body.appendChild( CONSTRUCTOR.renderizador.domElement );
+    PROTOTIPO.renderizador.setSize( 600,600 );
+    document.body.appendChild( PROTOTIPO.renderizador.domElement );
     
-   CONSTRUCTOR.escena = new THREE.Scene();
-   CONSTRUCTOR.escena.add(arbol1.malla);
-   CONSTRUCTOR.escena.add(arbol2.malla);
+   PROTOTIPO.escena = new THREE.Scene();
+   PROTOTIPO.escena.add(arbol1.malla);
+   PROTOTIPO.escena.add(arbol2.malla);
    
    }
   
-    CONSTRUCTOR.loop = function(){
-    requestAnimationFrame( CONSTRUCTOR.loop );
-    CONSTRUCTOR.renderizador.render( CONSTRUCTOR.escena,CONSTRUCTOR.camara);
+    PROTOTIPO.loop = function(){
+    requestAnimationFrame( PROTOTIPO.loop );
+    PROTOTIPO.renderizador.render( PROTOTIPO.escena,PROTOTIPO.camara);
     }
     
-    CONSTRUCTOR.setup();
-    CONSTRUCTOR.loop();
+    PROTOTIPO.setup();
+    PROTOTIPO.loop();
