@@ -39,7 +39,7 @@ function Arbol(){
   
   }
   
-  CONSTRUCTOR.loop = funcion(){
+  CONSTRUCTOR.loop = function(){
     requestAnimationFrame( CONSTRUCTOR.loop );
     CONSTRUCTOR.renderizador.render( CONSTRUCTOR.escena,CONSTRUCTOR.camara);
     }
