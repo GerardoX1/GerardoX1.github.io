@@ -18,30 +18,18 @@ document.body.appendChild( renderizador.domElement );
       var material= new Array();
       var cube= new Array();
 
-      for (i=0;i<iMax;i++) {
-      geometry[i]=new Array();
-      for (j=0;j<jMax;j++) {
-      geometry[i][j]=0;
-      }
+      for (i=0;i<iMax;i++) { geometry[i]=new Array();
+          for (j=0;j<jMax;j++) { geometry[i][j]=0;}
       }
 
-      for (i=0;i<iMax;i++) {
-      material[i]=new Array();
-      for (j=0;j<jMax;j++) {
-      material[i][j]=0;
-      }
+      for (i=0;i<iMax;i++) { material[i]=new Array();
+          for (j=0;j<jMax;j++) { material[i][j]=0;}
       }
 
-      for (i=0;i<iMax;i++) {
-      cube[i]=new Array();
-      for (j=0;j<jMax;j++) {
-      cube[i][j]=0;
-      }
+      for (i=0;i<iMax;i++) { cube[i]=new Array();
+          for (j=0;j<jMax;j++) { cube[i][j]=0;}
       }
 
-      var PosX = 0;
-      var PosY = 0;
-      
 for ( var i = 0; i <= 7; i ++ ) {
   for ( var j = 0; j <= 7; j ++ ) {
       
@@ -54,15 +42,10 @@ for ( var i = 0; i <= 7; i ++ ) {
   
       cube[i][j] = new THREE.Mesh( geometry[i][j], material[i][j] );
       
-      cube[i][j].position.x=PosX + 10;
-      cube[i][j].position.y=PosY + 10;
-      
-      PosX=PosX+10;
-      PosY=PosY+10;
-      
+      cube[i][j].position.x=(j+1)*10;
+      cube[i][j].position.y=(i+1)*10;
+    
       escena.add( cube[i][j] );
-      
 }
 }
-
 renderizador.render( escena,camara );    
