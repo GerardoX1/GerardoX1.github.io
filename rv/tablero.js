@@ -17,6 +17,7 @@ document.body.appendChild( renderizador.domElement );
       var geometry =new Array();
       var material= new Array();
       var cube= new Array();
+      var Tablero = new THREE.Geometry();
 
       for (i=0;i<iMax;i++) { geometry[i]=new Array();
           for (j=0;j<jMax;j++) { geometry[i][j]=0;}
@@ -44,8 +45,10 @@ for ( var i = 0; i <= 7; i ++ ) {
       
       cube[i][j].position.x=(j+1)*10;
       cube[i][j].position.y=(i+1)*10;
-    
-      escena.add( cube[i][j] );
+      
+      Tablero.merge(cube[i][j].geometry,cube[i][j].matrix);
 }
 }
+var tableroF=new THREE.Mesh(Tablero);
+escena.add( tableroF );
 renderizador.render( escena,camara );    
