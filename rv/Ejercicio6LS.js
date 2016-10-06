@@ -8,7 +8,7 @@ var torreBlancaMalla2=new THREE.Mesh(TorreFB,materialBlanca2);
 var materialNegra1=new THREE.MeshLambertMaterial({color: 0x000000, transparent: true, opacity: 0.5});
 var materialNegra2=new THREE.MeshLambertMaterial({color: 0x000000, transparent: true, opacity: 0.25});
 
-var torreNegraMalla2=new THREE.Mesh(TorreFN,materialNegra1);
+var torreNegraMalla1=new THREE.Mesh(TorreFN,materialNegra1);
 var torreNegraMalla2=new THREE.Mesh(TorreFN,materialNegra2);
 
 torreBlancaMalla1.rotateX(Math.PI/2);
