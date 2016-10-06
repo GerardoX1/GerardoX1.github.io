@@ -61,8 +61,8 @@ for ( var i = 0; i <= 7; i ++ ) {
      var BordeMalla3=new THREE.Mesh(geometria3,materialA);
      var BordeMalla4=new THREE.Mesh(geometria4,materialB);
      
-     BordeMalla1.position.x=10;
-     BordeMalla1.position.y=10;
+     BordeMalla1.position.x=0;
+     BordeMalla1.position.y=50;
 
      BordeMalla3.position.x=80;
      BordeMalla3.position.y=10;
