@@ -61,8 +61,25 @@ for ( var i = 0; i <= 7; i ++ ) {
      var BordeMalla3=new THREE.Mesh(geometria3,materialA);
      var BordeMalla4=new THREE.Mesh(geometria4,materialB);
      
-     BordeMalla1.
+     BordeMalla1.position.x=-10;
+     BordeMalla1.position.y=-10;
 
+     BordeMalla3.position.x=80;
+     BordeMalla3.position.y=10;
+
+     BordeMalla2.rotateZ(Math.PI/2);
+     BordeMalla4.rotateZ(Math.PI/2);
+     
+     BordeMalla2.position.x=-10;
+     BordeMalla2.position.y=-10;
+
+     BordeMalla4.position.x=80;
+     BordeMalla4.position.y=10;
+
+     tablero.add(BordeMalla1);
+     tablero.add(BordeMalla2);
+     tablero.add(BordeMalla3);
+     tablero.add(BordeMalla4);
 
 
 escena.add( tablero );
