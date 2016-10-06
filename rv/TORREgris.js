@@ -62,22 +62,22 @@ var cono6Malla = new THREE.Mesh(conotorre6);
 
 //Creamos la geometria final
 
-var TorreF = new THREE.Geometry();
+var TorreFN = new THREE.Geometry();
 
 //uniremos todas las mallas
 
-TorreF.merge(talloMalla.geometry,talloMalla.matrix);
-TorreF.merge(cono1Malla.geometry,cono1Malla.matrix);
-TorreF.merge(cono2Malla.geometry,cono2Malla.matrix);
-TorreF.merge(cono3Malla.geometry,cono3Malla.matrix);
-TorreF.merge(cono4Malla.geometry,cono4Malla.matrix);
-TorreF.merge(cono5Malla.geometry,cono5Malla.matrix);
-TorreF.merge(cono6Malla.geometry,cono6Malla.matrix);
+TorreFN.merge(talloMalla.geometry,talloMalla.matrix);
+TorreFN.merge(cono1Malla.geometry,cono1Malla.matrix);
+TorreFN.merge(cono2Malla.geometry,cono2Malla.matrix);
+TorreFN.merge(cono3Malla.geometry,cono3Malla.matrix);
+TorreFN.merge(cono4Malla.geometry,cono4Malla.matrix);
+TorreFN.merge(cono5Malla.geometry,cono5Malla.matrix);
+TorreFN.merge(cono6Malla.geometry,cono6Malla.matrix);
 
 //Generaremos el objeto dandole material
 
 var material=new THREE.MeshBasicMaterial({color: 0x3854A6});
-var torreMallaN=new THREE.Mesh(TorreF,material);
+var torreMallaN=new THREE.Mesh(TorreFN,material);
 torreMallaN.rotateX(Math.PI/2);
 
 //Escalamos la pieza para que entre en el tablero
