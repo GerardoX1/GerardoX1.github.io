@@ -78,4 +78,4 @@ var material=new THREE.MeshBasicMaterial({color: 0x97E4EC});
 var torreMallaB=new THREE.Mesh(TorreF,material);
 
 //Escalamos la pieza para que entre en el tablero
-torreMallaB.scale.set(0.5,0.5,0.5)
+torreMallaB.scale.set(0.05,0.05,0.05)
