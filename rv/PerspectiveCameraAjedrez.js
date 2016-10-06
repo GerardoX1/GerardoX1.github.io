@@ -1,17 +1,6 @@
 //Camara perspective
 
 //Clonaremos las torres y las colocaremos conde deben de ir
-var materialBlanca1=new THREE.MeshLambertMaterial({color: 0xEEEED8, transparent: true, opacity: 1});
-var materialBlanca2=new THREE.MeshLambertMaterial({color: 0xEEEED8, transparent: true, opacity: 0.75});
-
-var torreBlancaMalla1=new THREE.Mesh(TorreFB,materialBlanca1);
-var torreBlancaMalla2=new THREE.Mesh(TorreFB,materialBlanca2);
-
-var materialNegra1=new THREE.MeshLambertMaterial({color: 0x000000, transparent: true, opacity: 0.5});
-var materialNegra2=new THREE.MeshLambertMaterial({color: 0x000000, transparent: true, opacity: 0.25});
-
-var torreNegraMalla2=new THREE.Mesh(TorreFN,materialNegra1);
-var torreNegraMalla2=new THREE.Mesh(TorreFN,materialNegra2);
 
 var torre1B= torreBlancaMalla1.clone();
 torre1B.position.x=10;
