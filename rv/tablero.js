@@ -65,7 +65,7 @@ for ( var i = 0; i <= 7; i ++ ) {
      BordeMalla1.position.y=40;
 
      BordeMalla3.position.x=80;
-     BordeMalla3.position.y=10;
+     BordeMalla3.position.y=30;
 
      BordeMalla2.rotateZ(Math.PI/2);
      BordeMalla4.rotateZ(Math.PI/2);
@@ -78,7 +78,7 @@ for ( var i = 0; i <= 7; i ++ ) {
 
      tablero.add(BordeMalla1);
      //tablero.add(BordeMalla2);
-     //tablero.add(BordeMalla3);
+     tablero.add(BordeMalla3);
      //tablero.add(BordeMalla4);
 
 
