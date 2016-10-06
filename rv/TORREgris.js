@@ -76,6 +76,7 @@ TorreF.merge(cono6Malla.geometry,cono6Malla.matrix);
 
 var material=new THREE.MeshBasicMaterial({color: 0x3854A6});
 var torreMallaN=new THREE.Mesh(TorreF,material);
+torreMallaN.rotateX(Math.PI/2);
 
 //Escalamos la pieza para que entre en el tablero
 torreMallaN.scale.set(0.05,0.05,0.05)
