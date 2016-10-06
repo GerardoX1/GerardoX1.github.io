@@ -25,6 +25,8 @@ for ( i = 151; i < 170; i ++ ) {
 				(i - 5)*2) );
 }
 
+tallo.push(new THREE.Vector2(81,0.1 );
+
 //conos superiores
 
 var conotorre1 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
