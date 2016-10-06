@@ -3,16 +3,24 @@
 //Clonaremos las torres y las colocaremos conde deben de ir
 
 var torre1B= torreMallaB.clone();
-torre1B.translate(10,10,3);
+torre1B.position.x=10;
+torre1B.position.y=10;
+torre1B.position.z=3;
 
 var torre2B= torreMallaB.clone();
-torre2B.translate(80,10,3);
+torre2B.position.x=80;
+torre2B.position.y=10;
+torre2B.position.z=3;
 
 var torre3N= torreMallaN.clone();
-torre3N.translate(10,80,3);
+torre3N.position.x=10;
+torre3N.position.y=80;
+torre3N.position.z=3;
 
 var torre4N= torreMallaN.clone();
-torre4N.translate(80,80,3);
+torre4N.position.x=80;
+torre4N.position.y=80;
+torre4N.position.z=3;
 
 //agregamos todo a la escena
 
