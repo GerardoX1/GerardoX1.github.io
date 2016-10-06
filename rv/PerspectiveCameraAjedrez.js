@@ -1,6 +1,6 @@
 //Camara perspective
 
-//Clonaremos las torres by las colocaremos conde deben de ir
+//Clonaremos las torres y las colocaremos conde deben de ir
 
 var torre1B= torreMallaB.clone();
 torre1B.translate(10,10,3);
