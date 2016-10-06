@@ -64,8 +64,8 @@ for ( var i = 0; i <= 7; i ++ ) {
      BordeMalla1.position.x=0;
      BordeMalla1.position.y=40;
 
-     BordeMalla3.position.x=80;
-     BordeMalla3.position.y=30;
+     BordeMalla3.position.x=90;
+     BordeMalla3.position.y=50;
 
      BordeMalla2.rotateZ(Math.PI/2);
      BordeMalla4.rotateZ(Math.PI/2);
