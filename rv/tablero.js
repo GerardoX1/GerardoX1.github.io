@@ -71,15 +71,15 @@ for ( var i = 0; i <= 7; i ++ ) {
      BordeMalla4.rotateZ(Math.PI/2);
      
      BordeMalla2.position.x=50;
-     BordeMalla2.position.y=-10;
+     BordeMalla2.position.y=0;
 
-     BordeMalla4.position.x=80;
-     BordeMalla4.position.y=10;
+     BordeMalla4.position.x=40;
+     BordeMalla4.position.y=90;
 
      tablero.add(BordeMalla1);
      tablero.add(BordeMalla2);
      tablero.add(BordeMalla3);
-     //tablero.add(BordeMalla4);
+     tablero.add(BordeMalla4);
 
 
 escena.add( tablero );
