@@ -1,7 +1,7 @@
 var escena = new THREE.Scene();
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 100;
+camara.position.z = 500;
 
 var renderizador = new THREE.WebGLRenderer();
 
@@ -77,9 +77,9 @@ for ( var i = 0; i <= 7; i ++ ) {
      BordeMalla4.position.y=10;
 
      tablero.add(BordeMalla1);
-     tablero.add(BordeMalla2);
-     tablero.add(BordeMalla3);
-     tablero.add(BordeMalla4);
+     //tablero.add(BordeMalla2);
+     //tablero.add(BordeMalla3);
+     //tablero.add(BordeMalla4);
 
 
 escena.add( tablero );
