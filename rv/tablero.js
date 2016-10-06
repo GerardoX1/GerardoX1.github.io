@@ -77,7 +77,7 @@ for ( var i = 0; i <= 7; i ++ ) {
      BordeMalla4.position.y=10;
 
      tablero.add(BordeMalla1);
-     //tablero.add(BordeMalla2);
+     tablero.add(BordeMalla2);
      tablero.add(BordeMalla3);
      //tablero.add(BordeMalla4);
 
