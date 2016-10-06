@@ -9,10 +9,10 @@ var torre2B= torreMallaB.clone();
 torre2B.translate(80,10,3);
 
 var torre3N= torreMallaN.clone();
-torre2N.translate(10,80,3);
+torre3N.translate(10,80,3);
 
 var torre4N= torreMallaN.clone();
-torre2N.translate(80,80,3);
+torre4N.translate(80,80,3);
 
 //agregamos todo a la escena
 
