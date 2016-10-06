@@ -25,7 +25,7 @@ for ( i = 151; i < 170; i ++ ) {
 				(i - 5)*2) );
 }
 
-tallo.push(new THREE.Vector2(81,0.1 ));
+tallo.push(new THREE.Vector2(0,171 ));
 
 //conos superiores
 
