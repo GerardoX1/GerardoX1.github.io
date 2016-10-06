@@ -11,6 +11,19 @@ var materialNegra2=new THREE.MeshLambertMaterial({color: 0x000000, transparent: 
 var torreNegraMalla2=new THREE.Mesh(TorreFN,materialNegra1);
 var torreNegraMalla2=new THREE.Mesh(TorreFN,materialNegra2);
 
+torreBlancaMalla1.rotateX(Math.PI/2);
+torreBlancaMalla1.scale.set(0.05,0.05,0.05)
+
+torreBlancaMalla2.rotateX(Math.PI/2);
+torreBlancaMalla2.scale.set(0.05,0.05,0.05)
+
+torreNegraMalla1.rotateX(Math.PI/2);
+torreNegraMalla1.scale.set(0.05,0.05,0.05)
+
+torreNegraMalla2.rotateX(Math.PI/2);
+torreNegraMalla2.scale.set(0.05,0.05,0.05)
+
+
 var torre1B= torreBlancaMalla1.clone();
 torre1B.position.x=10;
 torre1B.position.y=10;
@@ -40,9 +53,11 @@ var luzPuntual2=new THREE.PointLight(0x00FFFF);//CYAN
 luzPuntual.position.x=10;
 luzPuntual.position.y=90;
 luzPuntual.position.z=60;
+
 luzPuntual1.position.x=80;
 luzPuntual1.position.y=90;
 luzPuntual1.position.z=60;
+
 luzPuntual2.position.x=100;
 luzPuntual2.position.y=10;
 luzPuntual2.position.z=60;
