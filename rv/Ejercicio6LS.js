@@ -18,15 +18,6 @@ torre4N.position.x=80;
 torre4N.position.y=80;
 torre4N.position.z=3;
 
-//agregamos todo a la escena
-
-var escena=new THREE.Scene();
-escena.add(tablero);
-escena.add(torre1B);
-escena.add(torre2B);
-escena.add(torre3N);
-escena.add(torre4N);
-
 //Creamos luces
 //Creación de luces en la escena
 
@@ -46,6 +37,17 @@ luzPuntual2.position.x=100;
 luzPuntual2.position.y=10;
 luzPuntual2.position.z=60;
 
+//agregamos todo a la escena
+
+var escena=new THREE.Scene();
+escena.add(tablero);
+escena.add(torre1B);
+escena.add(torre2B);
+escena.add(torre3N);
+escena.add(torre4N);
+escena.add(luzPuntual);
+escena.add(luzPuntual1);
+escena.add(luzPuntual2);
 //colocamos la camara y mostramos
 
 var camara=new THREE.PerspectiveCamera();
