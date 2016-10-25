@@ -115,4 +115,4 @@ function Pelota(r, x=0 ,y=0){
    
    renderer.render(entorno,camara);
     
-    
+    ///
