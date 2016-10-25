@@ -6,9 +6,9 @@ function Agent(x=0,y=0){
   
   Agent.Protopype = new THREE.Object3D();
   
-  Agent.portotype.sense = function(environment) {};
-  Agent.portotype.plan = function(environment) {};
-  Agent.portotype.act = function(environment) {};
+  Agent.prototype.sense = function(environment) {};
+  Agent.prototype.plan = function(environment) {};
+  Agent.prototype.act = function(environment) {};
   
   Environment()
   
