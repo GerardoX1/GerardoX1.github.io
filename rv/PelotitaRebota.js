@@ -10,13 +10,11 @@ function Agent(x=0,y=0){
   Agent.prototype.plan = function(environment) {};
   Agent.prototype.act = function(environment) {};
   
-  Environment()
-  
   function Environment(){
   THREE.Scene.call(this);
   }
 
-  Enviroment.protype= new THREE.Scene();
+  Enviroment.prototype= new THREE.Scene();
   
   
 //la interfaz entre el entorno y los agentes esta dada por estos metodos
