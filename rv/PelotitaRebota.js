@@ -14,25 +14,25 @@ function Agent(x=0,y=0){
   THREE.Scene.call(this);
   }
 
-  Enviroment.prototype= new THREE.Scene();
+  Environment.prototype= new THREE.Scene();
   
   
 //la interfaz entre el entorno y los agentes esta dada por estos metodos
-  Evironment.prototype.sense = function (){
+  Environment.prototype.sense = function (){
   for (var i = 0; i < this.children.length; i++){
    if (this.children[i].sense !== undefined)
  this.children[i].sense(this);
  }
  }
  
- Environment.protopype.plan = function (){
+ Environment.prototype.plan = function (){
  for (var i = 0; i < this.children.length; i++){
  if (this.children[i].plan !== undefined)
  this.children[i].plan(this);
  }
  }
  
- Environment.protopype.act = function (){
+ Environment.prototype.act = function (){
  for (var i = 0; i < this.children.length; i++){
  if (this.children[i].act !== undefined)
  this.children[i].act(this);
@@ -113,5 +113,6 @@ function Pelota(r, x=0 ,y=0){
    entorno.act();
    
    renderer.render(entorno,camara);
-    
+   }
+
     ///
