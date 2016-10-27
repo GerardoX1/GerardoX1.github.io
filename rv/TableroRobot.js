@@ -61,6 +61,61 @@ function Wall(size, x,y){
   this.add( new Robot(0.5, j -_offset,-(i-_offset)));
   }
   }
+  /////////////////////////////////////////////////////////////
+  function Sensor(position,direction){
+	THREE.Raycaster.call(this,position,direction);
+	this.colision = false;
+	}
+
+Sensor.prototype= new THREE.Raycaster();
+
+function Robot (size,x,y){
+   Agent.call(this,x,y);
+  
+  this.sensor = new Sensor();
+  this.actuador = new THREE.Mesh(
+    new THREE.BoxGeometry (size, size, size ),
+    new THREE.MeshBasicMaterial({color: '#aa0000'}));
+  
+  this.actuador.commands = [];
+  this.add(this.actuador);
+  
+}
+
+Robot.prototype = new Agent();
+
+Robot.prototype.sense = function (environment){
+  this.sensor.set( this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+  
+  var obstaculo = this.sensor.intersectObjects(environment).children,true);
+  
+  if ((obstaculo.length > && (obstaculo[0].distance <= 0.5)))
+    this.sensor.colision = true;
+  else
+    this.sensor.colision = false;
+};
+
+Robot.prototype.plan = function (environment){
+  this.actuador.commands=[];
+  
+  if (this.sensor.solision == true)
+    this.actuador.commands.push('rotateCCW');
+  else 
+    6this.actuador.commands.push('go straigh');
+};
+
+  robot.prototype.act = function (envirenment){
+     var command = this.actuador.commands.pop();
+    
+    if (command === undefined)
+      console.log ('Undedined command');
+    else if (command in this.operations)
+      this.operations[command](this);
+    else
+      console.log('Unknown command');
+  };
+
+  /////////////////////////////////////////////////////////////////
   
   function setup(){
     var mapa = new Array();
