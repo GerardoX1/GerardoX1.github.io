@@ -101,7 +101,7 @@ Robot.prototype.plan = function (environment){
   if (this.sensor.solision == true)
     this.actuador.commands.push('rotateCCW');
   else 
-    6this.actuador.commands.push('go straigh');
+    this.actuador.commands.push('go straigh');
 };
 
   robot.prototype.act = function (envirenment){
@@ -174,7 +174,7 @@ Robot.prototype.operations.rotateCCW = function (robot, angle){
    document.body.appendChild(renderer.domElement);
    
    environment.add(camera);
-   
+  }
    function loop(){
    requestAnimationFrame( loop );
    
@@ -182,7 +182,7 @@ Robot.prototype.operations.rotateCCW = function (robot, angle){
    environment.plan();
    environment.act();
    
-   renderer.render(environment,camara);
+   renderer.render(environment,camera);
    }
    
    var environment, camera, renderer;
