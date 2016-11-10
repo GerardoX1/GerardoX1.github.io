@@ -16,7 +16,7 @@ torre3N.position.x=10;
 torre3N.position.y=80;
 torre3N.position.z=3;
 
-var torre4n= torreMallaN.clone();
+var torre4N= torreMallaN.clone();
 torre4N.position.x=80;
 torre4N.position.y=80;
 torre4N.position.z=3;
