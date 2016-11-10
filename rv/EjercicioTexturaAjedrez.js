@@ -7,8 +7,8 @@ var textura4=false;
 var textura5=false;
 
 //CLONAMOS LAS PIEZAS
-var torre1= torreMallaB.clone();
-var torre2= torreMallaB.clone();
+var torre1= TorreFB.clone();
+var torre2=TorreFB.clone();
 
 
 var torre3N= torreMallaN.clone();
