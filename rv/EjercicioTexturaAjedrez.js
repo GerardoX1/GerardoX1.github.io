@@ -11,12 +11,12 @@ var torre1= torreMallaB.clone();
 var torre2= torreMallaB.clone();
 
 
-var torre3= torreMallaN.clone();
+var torre3N= torreMallaN.clone();
 torre3N.position.x=10;
 torre3N.position.y=80;
 torre3N.position.z=3;
 
-var torre4= torreMallaN.clone();
+var torre4n= torreMallaN.clone();
 torre4N.position.x=80;
 torre4N.position.y=80;
 torre4N.position.z=3;
