@@ -56,11 +56,34 @@ TEXTURA.setup=function(){
   
   //Configuración de las imagenes
   cargador.load("MB.jpg",TEXTURA.retrollamadamblanco);
+  
+  //Creación de la cámara
+  TEXTURA.camara=new THREE.PerspectiveCamera();
+  TEXTURA.camara.position.z=130;
+  TEXTURA.camara.position.x=45;
+  TEXTURA.camara.position.y=45;
+  TEXTURA.escena.rotateX(-Math.PI/4)
+  //Creación del lienzo y renderizador
+  var renderizador=new THREE.WebGLRenderer();
+  TEXTURA.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+  document.body.appendChild(renderizador.domElement);
 }
+ TEXTURA.loop=function(){
+ requestAnimationFrame(TEXTURA.loop);
+ if(textura1==true){
+    if(setupdone==false){
+     TEXTURA.setup();
+     setupdone=true;
+    }
+  TEXTURA.renderizador.render(TEXTURA.escena,TEXTURA.camara);
+  } 
+}
+TEXTURA.setup();
+TEXTURA.loop();
 
 //Creamos luces
 //Creación de luces en la escena
-
+/*
 var luzPuntual=new THREE.PointLight(0xFFFF00);//AMARILLO
 var luzPuntual1=new THREE.PointLight(0xFF00FF);//ROSA
 var luzPuntual2=new THREE.PointLight(0x00FFFF);//CYAN
@@ -110,3 +133,4 @@ luzPuntual.castShadow=true;
 luzPuntual1.castShadow=true;
 luzPuntual2.castShadow=true;
 renderizador.render(escena,camara);
+*/
