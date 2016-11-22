@@ -41,7 +41,6 @@ var conotorre6 = new THREE.CylinderGeometry( 16, 12, 30, 32 );
 var forma = new THREE.LatheGeometry(tallo);
 
 //realizamos el movimiento de las piezas para //generar la torre como la deseamos
-
 conotorre1.translate(35,332,60.62);
 conotorre2.translate(70,332,0);
 conotorre3.translate(35,332,-60.62);
