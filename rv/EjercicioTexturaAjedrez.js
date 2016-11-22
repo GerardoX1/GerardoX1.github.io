@@ -39,6 +39,12 @@ TEXTURA.retrollamadamblanco=function(textura){
   TEXTURA.torre2B.position.x=80;
   TEXTURA.torre2B.position.y=10;
   TEXTURA.torre2B.position.z=3;
+        
+  TEXTURA.torre1B.scale.set(0.05,0.05,0.05)
+  TEXTURA.torre1B.rotateX(Math.PI/2);
+        
+  TEXTURA.torre2B.scale.set(0.05,0.05,0.05)
+  TEXTURA.torre2B.rotateX(Math.PI/2);
   
 textura1=true;
 
@@ -48,8 +54,6 @@ TEXTURA.escena.add(TEXTURA.torre2B);
 TEXTURA.escena.add(torre3N);
 TEXTURA.escena.add(torre4N);        
 }
-
-
 
 TEXTURA.setup=function(){
   
