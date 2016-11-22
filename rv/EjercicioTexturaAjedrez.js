@@ -64,7 +64,7 @@ TEXTURA.setup=function(){
   var cargador=new THREE.TextureLoader();
   
   //Configuración de las imagenes
-  cargador.load("marmol blanco 2.jpg.jpg",TEXTURA.retrollamadamblanco);
+  cargador.load("marmol blanco 2.jpg",TEXTURA.retrollamadamblanco);
   
   //Creación de la cámara
   TEXTURA.camara=new THREE.PerspectiveCamera();
