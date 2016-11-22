@@ -69,9 +69,9 @@ TEXTURA.setup=function(){
   TEXTURA.camara.position.y=45;
   TEXTURA.escena.rotateX(-Math.PI/4)
   //Creación del lienzo y renderizador
-  var lienzo= document.getElementById("Tablero-ajedrez");
-  TEXTURA.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
-  TEXTURA.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95)
+var renderizador=new THREE.WebGLRenderer();
+TEXTURA.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+document.body.appendChild(renderizador.domElement);
 
 }
  TEXTURA.loop=function(){
