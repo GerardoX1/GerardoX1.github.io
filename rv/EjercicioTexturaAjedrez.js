@@ -41,15 +41,15 @@ TEXTURA.retrollamadamblanco=function(textura){
   TEXTURA.torre2B.position.z=3;
   
 textura1=true;
-TEXTURA.escena.add(TEXTURA.torre1B);
-TEXTURA.escena.add(TEXTURA.torre2B); 
-}
 
 TEXTURA.escena.add(tablero);
 TEXTURA.escena.add(torre1B);
 TEXTURA.escena.add(torre2B);
 TEXTURA.escena.add(torre3N);
-TEXTURA.escena.add(torre4N);
+TEXTURA.escena.add(torre4N);        
+}
+
+
 
 TEXTURA.setup=function(){
   
