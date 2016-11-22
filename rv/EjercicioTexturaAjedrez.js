@@ -43,8 +43,8 @@ TEXTURA.retrollamadamblanco=function(textura){
 textura1=true;
 
 TEXTURA.escena.add(tablero);
-TEXTURA.escena.add(torre1B);
-TEXTURA.escena.add(torre2B);
+TEXTURA.escena.add(TEXTURA.torre1B);
+TEXTURA.escena.add(TEXTURA.torre2B);
 TEXTURA.escena.add(torre3N);
 TEXTURA.escena.add(torre4N);        
 }
