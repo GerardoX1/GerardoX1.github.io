@@ -10,16 +10,8 @@ var textura5=false;
 var torre1= TorreFB.clone();
 var torre2=TorreFB.clone();
 
-
-var torre3N= torreMallaN.clone();
-torre3N.position.x=10;
-torre3N.position.y=80;
-torre3N.position.z=3;
-
-var torre4N= torreMallaN.clone();
-torre4N.position.x=80;
-torre4N.position.y=80;
-torre4N.position.z=3;
+var torre3= TorreFN.clone();
+var torre4=TorreFN.clone();
 
         //Declaración del objeto
 var TEXTURA=new Object();
@@ -48,11 +40,39 @@ TEXTURA.retrollamadamblanco=function(textura){
   
 textura1=true;
 
-TEXTURA.escena.add(tablero);
 TEXTURA.escena.add(TEXTURA.torre1B);
-TEXTURA.escena.add(TEXTURA.torre2B);
-TEXTURA.escena.add(torre3N);
-TEXTURA.escena.add(torre4N);        
+TEXTURA.escena.add(TEXTURA.torre2B);       
+}
+
+//Marmol Negro
+TEXTURA.retrollamadamNEGRO=function(textura){
+  var material=new THREE.MeshBasicMaterial({map:textura});
+  
+  TEXTURA.torre3N=new THREE.Mesh(torre3,material);
+  TEXTURA.torre4N=new THREE.Mesh(torre4,material);
+  
+  TEXTURA.torre3N.position.x=10;
+  TEXTURA.torre3N.position.y=80;
+  TEXTURA.torre3N.position.z=3;
+
+  TEXTURA.torre4N.position.x=80;
+  TEXTURA.torre4N.position.y=80;
+  TEXTURA.torre4N.position.z=3;
+        
+  TEXTURA.torre3N.scale.set(0.05,0.05,0.05)
+  TEXTURA.torre3N.rotateX(Math.PI/2);
+        
+  TEXTURA.torre4N.scale.set(0.05,0.05,0.05)
+  TEXTURA.torre4N.rotateX(Math.PI/2);
+  
+textura2=true;
+
+
+TEXTURA.escena.add(TEXTURA.torre3N);
+TEXTURA.escena.add(TEXTURA.torre4N);
+//TEXTURA.escena.add(tablero);
+//TEXTURA.escena.add(torre3N);
+//TEXTURA.escena.add(torre4N);        
 }
 
 TEXTURA.setup=function(){
@@ -61,10 +81,11 @@ TEXTURA.setup=function(){
   TEXTURA.escena=new THREE.Scene();
   
   //Cargadores de las texturas
-  var cargador=new THREE.TextureLoader();
+  var cargador1=new THREE.TextureLoader();
   
   //Configuración de las imagenes
-  cargador.load("marmol-beige-arena.jpg",TEXTURA.retrollamadamblanco);
+  cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadamblanco);
+  cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadamNEGRO);
   
   //Creación de la cámara
   TEXTURA.camara=new THREE.PerspectiveCamera();
@@ -77,11 +98,10 @@ TEXTURA.setup=function(){
   TEXTURA.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
   TEXTURA.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95)
 
-
 }
  TEXTURA.loop=function(){
  requestAnimationFrame(TEXTURA.loop);
- if(textura1==true){
+ if(textura1==true && textura2==true){
     if(setupdone==false){
      TEXTURA.setup();
      setupdone=true;
