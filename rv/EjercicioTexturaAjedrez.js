@@ -82,6 +82,7 @@ TEXTURA.setup=function(){
   
   //Cargadores de las texturas
   var cargador1=new THREE.TextureLoader();
+  var cargador2=new THREE.TextureLoader();
   
   //Configuración de las imagenes
   cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadamblanco);
