@@ -70,7 +70,7 @@ TEXTURA.setup=function(){
   TEXTURA.escena.rotateX(-Math.PI/4)
   //Creación del lienzo y renderizador
 var renderizador=new THREE.WebGLRenderer();
-TEXTURA.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
 }
