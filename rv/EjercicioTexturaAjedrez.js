@@ -54,8 +54,8 @@ TEXTURA.escena.add(TEXTURA.torre2B);
 TEXTURA.retrollamadaNegro=function(textura){
   var material=new THREE.MeshBasicMaterial({map:textura});
   
-  TEXTURA.torre1N=new THREE.Mesh(torre1,material);
-  TEXTURA.torre2N=new THREE.Mesh(torre2,material);
+  TEXTURA.torre1N=new THREE.Mesh(torre3,material);
+  TEXTURA.torre2N=new THREE.Mesh(torre4,material);
   TEXTURA.torre1N.position.z=3;
   
   TEXTURA.torre2N.position.x=80;
