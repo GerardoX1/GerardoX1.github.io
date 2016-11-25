@@ -54,24 +54,27 @@ TEXTURA.escena.add(TEXTURA.torre2B);
 TEXTURA.retrollamadaNegro=function(textura){
   var material=new THREE.MeshBasicMaterial({map:textura});
   
-  TEXTURA.torre1N=new THREE.Mesh(torre3,material);
-  TEXTURA.torre2N=new THREE.Mesh(torre4,material);
-  TEXTURA.torre1N.position.z=3;
+  TEXTURA.torre3N=new THREE.Mesh(torre3,material);
+  TEXTURA.torre4N=new THREE.Mesh(torre4,material);
   
-  TEXTURA.torre2N.position.x=80;
-  TEXTURA.torre2N.position.y=80;
-  TEXTURA.torre2N.position.z=3;
+  TEXTURA.torre3N.position.x=10;
+  TEXTURA.torre3N.position.y=80;
+  TEXTURA.torre3N.position.z=3;
+  
+  TEXTURA.torre4N.position.x=80;
+  TEXTURA.torre4N.position.y=80;
+  TEXTURA.torre4N.position.z=3;
         
-  TEXTURA.torre1N.scale.set(0.05,0.05,0.05)
-  TEXTURA.torre1N.rotateX(Math.PI/2);
+  TEXTURA.torre3N.scale.set(0.05,0.05,0.05)
+  TEXTURA.torre3N.rotateX(Math.PI/2);
         
-  TEXTURA.torre2N.scale.set(0.05,0.05,0.05)
-  TEXTURA.torre2N.rotateX(Math.PI/2);
+  TEXTURA.torre4N.scale.set(0.05,0.05,0.05)
+  TEXTURA.torre4N.rotateX(Math.PI/2);
   
 textura2=true;
 
-TEXTURA.escena.add(TEXTURA.torre1N);
-TEXTURA.escena.add(TEXTURA.torre2N);       
+TEXTURA.escena.add(TEXTURA.torre3N);
+TEXTURA.escena.add(TEXTURA.torre4N);       
 }
 
 //Madera
