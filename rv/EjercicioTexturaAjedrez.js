@@ -13,8 +13,6 @@ var torre2= TorreFB.clone();
 var torre3= TorreFN.clone();
 var torre4= TorreFN.clone();
 
-var tablero1=geometry[][].clone();
-
 //CLONAMOS LOS BORDES
 
 var borde1= new THREE.BoxGeometry( 10, 90, 3 );
