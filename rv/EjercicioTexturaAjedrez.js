@@ -112,7 +112,7 @@ TEXTURA.escena.add(TEXTURA.Borde4M);
 }
 
 //Definición de la geometría
-var cubo=new THREE.BoxGeometry(10,10,10);
+var cubo=new THREE.BoxGeometry(10,10,3);
 
 //Cuadrito blanca
 TEXTURA.retrollamadaCuadroBlanco=function(textura){
