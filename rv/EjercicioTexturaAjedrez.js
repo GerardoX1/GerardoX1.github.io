@@ -10,15 +10,16 @@ var textura5=false;
 var torre1= TorreFB.clone();
 var torre2= TorreFB.clone();
 
-var torre3= TorreFN.clone();
-var torre4= TorreFN.clone();
+//var torre3= TorreFN.clone();
+//var torre4= TorreFN.clone();
 
 //CLONAMOS LOS BORDES
+/*
 var borde1= new THREE.BoxGeometry( 10, 90, 3 );
 var borde2= new THREE.BoxGeometry( 10, 90, 3 );
 var borde3= new THREE.BoxGeometry( 10, 90, 3 );
 var borde4= new THREE.BoxGeometry( 10, 90, 3 );
-
+*/
         //Declaración del objeto
 var TEXTURA=new Object();
 //Declaración de las retrollamadas
@@ -49,7 +50,7 @@ textura1=true;
 TEXTURA.escena.add(TEXTURA.torre1B);
 TEXTURA.escena.add(TEXTURA.torre2B);       
 }
-
+/*
 //Marmol Negro
 TEXTURA.retrollamadaNegro=function(textura){
   var material=new THREE.MeshBasicMaterial({map:textura});
@@ -76,7 +77,7 @@ textura2=true;
 TEXTURA.escena.add(TEXTURA.torre3N);
 TEXTURA.escena.add(TEXTURA.torre4N);       
 }
-/*
+
 //Madera
 TEXTURA.retrollamadaMADERA=function(textura){
   var material=new THREE.MeshBasicMaterial({map:textura});
@@ -119,14 +120,14 @@ TEXTURA.setup=function(){
   
   //Cargadores de las texturas
   var cargador1=new THREE.TextureLoader();
-  var cargador2=new THREE.TextureLoader();
+  //var cargador2=new THREE.TextureLoader();
   //var cargador3=new THREE.TextureLoader();
   //var cargador4=new THREE.TextureLoader();
   //var cargador5=new THREE.TextureLoader();
        
   //Configuración de las imagenes
   cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadaBlanco);
-  cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadamNegro);
+  //cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadamNegro);
   //cargador3.load("356626-admin.jpg",TEXTURA.retrollamadaMADERA);
   //cargador4.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",TEXTURA.retrollamadaCuadroBlanco);
   //cargador5.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaCuadroNegro);
@@ -146,7 +147,7 @@ TEXTURA.setup=function(){
 }
  TEXTURA.loop=function(){
  requestAnimationFrame(TEXTURA.loop);
- if(textura1==true && textura2==true){
+ if(textura1==true){
     if(setupdone==false){
      TEXTURA.setup();
      setupdone=true;
