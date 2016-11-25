@@ -8,10 +8,16 @@ var textura5=false;
 
 //CLONAMOS LAS PIEZAS
 var torre1= TorreFB.clone();
-var torre2=TorreFB.clone();
+var torre2= TorreFB.clone();
 
 var torre3= TorreFN.clone();
-var torre4=TorreFN.clone();
+var torre4= TorreFN.clone();
+
+//CLONAMOS LOS BORDES
+var borde1= geometria1.clone();
+var borde2= geometria2.clone();
+var borde3= geometria3.clone();
+var borde4= geometria4.clone();
 
         //Declaración del objeto
 var TEXTURA=new Object();
@@ -44,36 +50,40 @@ TEXTURA.escena.add(TEXTURA.torre1B);
 TEXTURA.escena.add(TEXTURA.torre2B);       
 }
 
-//Marmol Negro
-TEXTURA.retrollamadamNEGRO=function(textura){
+//Madera
+TEXTURA.retrollamadaMADERA=function(textura){
   var material=new THREE.MeshBasicMaterial({map:textura});
   
-  TEXTURA.torre3N=new THREE.Mesh(torre3,material);
-  TEXTURA.torre4N=new THREE.Mesh(torre4,material);
+  TEXTURA.Borde1M=new THREE.Mesh(borde1,material);
+  TEXTURA.Borde2M=new THREE.Mesh(borde2,material);
+  TEXTURA.Borde3M=new THREE.Mesh(borde3,material);
+  TEXTURA.Borde4M=new THREE.Mesh(borde4,material);
   
-  TEXTURA.torre3N.position.x=10;
-  TEXTURA.torre3N.position.y=80;
-  TEXTURA.torre3N.position.z=3;
-
-  TEXTURA.torre4N.position.x=80;
-  TEXTURA.torre4N.position.y=80;
-  TEXTURA.torre4N.position.z=3;
+  //posiciones de los elementos
+  TEXTURA.Borde2M.rotateZ(Math.PI/2);
+  TEXTURA.Borde4M.rotateZ(Math.PI/2); 
         
-  TEXTURA.torre3N.scale.set(0.05,0.05,0.05)
-  TEXTURA.torre3N.rotateX(Math.PI/2);
+  TEXTURA.Borde1M.position.x=0;
+  TEXTURA.Borde1M.position.y=40;
+       
+  TEXTURA.Borde3M.position.x=90;
+  TEXTURA.Borde3M.position.y=50;
         
-  TEXTURA.torre4N.scale.set(0.05,0.05,0.05)
-  TEXTURA.torre4N.rotateX(Math.PI/2);
-  
-textura2=true;
+  TEXTURA.Borde2M.position.x=50;
+  TEXTURA.Borde2M.position.y=0;
+   
+  TEXTURA.Borde4M.position.x=40;
+  TEXTURA.Borde4M.position.y=90;
 
+textura3=true;
 
-TEXTURA.escena.add(TEXTURA.torre3N);
-TEXTURA.escena.add(TEXTURA.torre4N);
-//TEXTURA.escena.add(tablero);
-//TEXTURA.escena.add(torre3N);
-//TEXTURA.escena.add(torre4N);        
+TEXTURA.escena.add(TEXTURA.Borde1M);
+TEXTURA.escena.add(TEXTURA.Borde2M);
+TEXTURA.escena.add(TEXTURA.Borde3M);
+TEXTURA.escena.add(TEXTURA.Borde4M);
 }
+
+//TEXTURA.escena.add(tablero);   
 
 TEXTURA.setup=function(){
   
@@ -83,10 +93,18 @@ TEXTURA.setup=function(){
   //Cargadores de las texturas
   var cargador1=new THREE.TextureLoader();
   var cargador2=new THREE.TextureLoader();
+  var cargador3=new THREE.TextureLoader();
+  var cargador4=new THREE.TextureLoader();
+  var cargador5=new THREE.TextureLoader();
+       
   
   //Configuración de las imagenes
   cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadamblanco);
   cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadamNEGRO);
+  cargador3.load("356626-admin.jpg",TEXTURA.retrollamadaMADERA);
+  cargador4.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",TEXTURA.retrollamadaCuadroBlanco);
+  cargador5.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaCuadroNegro);
+        
   
   //Creación de la cámara
   TEXTURA.camara=new THREE.PerspectiveCamera();
@@ -102,7 +120,7 @@ TEXTURA.setup=function(){
 }
  TEXTURA.loop=function(){
  requestAnimationFrame(TEXTURA.loop);
- if(textura1==true && textura2==true){
+ if(textura1==true && textura2==true && textura3==true){
     if(setupdone==false){
      TEXTURA.setup();
      setupdone=true;
