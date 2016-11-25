@@ -128,7 +128,7 @@ TEXTURA.setup=function(){
   //Configuración de las imagenes
   cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadaBlanco);
   cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaNegro);
-  cargador3.load("356626-admin.jpg",TEXTURA.retrollamadaMADERA);
+  cargador3.load("356626-admin.jpg",TEXTURA.retrollamadaMadera);
   //cargador4.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",TEXTURA.retrollamadaCuadroBlanco);
   //cargador5.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaCuadroNegro);
         
@@ -147,7 +147,7 @@ TEXTURA.setup=function(){
 }
  TEXTURA.loop=function(){
  requestAnimationFrame(TEXTURA.loop);
- if(textura1==true && textura2==true){
+ if(textura1==true && textura2==true && textura3==true){
     if(setupdone==false){
      TEXTURA.setup();
      setupdone=true;
