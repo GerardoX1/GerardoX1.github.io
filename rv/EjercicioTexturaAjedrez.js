@@ -135,7 +135,7 @@ TEXTURA.setup=function(){
   //Creación de la cámara
   TEXTURA.camara=new THREE.PerspectiveCamera();
         
-  TEXTURA.camara.position.z=130;
+  TEXTURA.camara.position.z=230;
   TEXTURA.camara.position.x=45;
   TEXTURA.camara.position.y=45;
   TEXTURA.escena.rotateX(-Math.PI/4)
