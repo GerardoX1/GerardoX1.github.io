@@ -15,10 +15,10 @@ var torre4= TorreFN.clone();
 
 //CLONAMOS LOS BORDES
 
-var borde1= geometria1.clone();
-var borde2= geometria2.clone();
-var borde3= geometria3.clone();
-var borde4= geometria4.clone();
+var borde1= new THREE.BoxGeometry( 10, 90, 3 );
+var borde2= new THREE.BoxGeometry( 10, 90, 3 );
+var borde3= new THREE.BoxGeometry( 10, 90, 3 );
+var borde4= new THREE.BoxGeometry( 10, 90, 3 );
 
         //Declaración del objeto
 var TEXTURA=new Object();
