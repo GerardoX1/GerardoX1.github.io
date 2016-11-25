@@ -124,7 +124,6 @@ TEXTURA.setup=function(){
   //var cargador4=new THREE.TextureLoader();
   //var cargador5=new THREE.TextureLoader();
        
-  
   //Configuración de las imagenes
   cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadaBlanco);
   cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadamNegro);
