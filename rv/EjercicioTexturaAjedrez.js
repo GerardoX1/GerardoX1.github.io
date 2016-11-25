@@ -128,7 +128,7 @@ TEXTURA.setup=function(){
   //var cargador5=new THREE.TextureLoader();
        
   //Configuración de las imagenes
-  cargador1.load("marmol-beige-arena.jpg",TEXTURA.retrollamadaBlanco);
+  cargador1.load("sp-152a-vidrio-spectrum.jpg",TEXTURA.retrollamadaBlanco);
   cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaNegro);
   cargador3.load("textura-madera-roja.jpg",TEXTURA.retrollamadaMadera);
   //cargador4.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",TEXTURA.retrollamadaCuadroBlanco);
