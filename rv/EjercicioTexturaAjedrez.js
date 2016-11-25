@@ -111,6 +111,60 @@ TEXTURA.escena.add(TEXTURA.Borde3M);
 TEXTURA.escena.add(TEXTURA.Borde4M);
 }
 
+//Definición de la geometría
+var cubo=new THREE.BoxGeometry(10,10,10);
+
+//Cuadrito blanca
+TEXTURA.retrollamadaCuadroBlanco=function(textura){
+  var material=new THREE.MeshBasicMaterial({map:textura});
+
+        //Creación del grupo del tablero
+  var tablero1=new THREE.Group();
+  var k=0;
+  for (var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
+      if(k%2!==0){
+        TEXTURA.malla1=new THREE.Mesh(cubo,material);
+        TEXTURA.malla1.position.x=(j+1)*10;//Columnas
+        TEXTURA.malla1.position.y=(i+1)*10;//Filas
+        TEXTURA.malla1.matrixAutoUpdate=false;
+        TEXTURA.malla1.updateMatrix();
+        TEXTURA.malla1.receiveShadow=true;
+        tablero1.add(TEXTURA.malla1);
+      }
+      k++;
+    }
+  k++;
+  }
+  textura4=true;
+  TEXTURA.escena.add(tablero1);    
+}
+
+//cuadrito negra
+TEXTURA.retrollamadaCuadroNegro=function(textura){
+  var material=new THREE.MeshBasicMaterial({map:textura});
+//Creación del grupo del tablero
+  var tablero2=new THREE.Group();
+  var k=0;
+  for (var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
+      if(k%2==0){
+        TEXTURA.malla2=new THREE.Mesh(cubo,material);
+        TEXTURA.malla2.position.x=(j+1)*10;//Columnas
+        TEXTURA.malla2.position.y=(i+1)*10;//Filas
+        TEXTURA.malla2.matrixAutoUpdate=false;
+        TEXTURA.malla2.updateMatrix();
+        TEXTURA.malla2.receiveShadow=true;
+        tablero2.add(TEXTURA.malla2);
+      }
+      k++;
+    }
+  k++;
+  }
+  textura5=true;
+  TEXTURA.escena.add(tablero2);    
+}  
+
 //TEXTURA.escena.add(tablero);   
 
 TEXTURA.setup=function(){
@@ -122,20 +176,20 @@ TEXTURA.setup=function(){
   var cargador1=new THREE.TextureLoader();
   var cargador2=new THREE.TextureLoader();
   var cargador3=new THREE.TextureLoader();
-  //var cargador4=new THREE.TextureLoader();
-  //var cargador5=new THREE.TextureLoader();
+  var cargador4=new THREE.TextureLoader();
+  var cargador5=new THREE.TextureLoader();
        
   //Configuración de las imagenes
   cargador1.load("sp-152a-vidrio-spectrum.jpg",TEXTURA.retrollamadaBlanco);
   cargador2.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaNegro);
   cargador3.load("textura-madera-roja.jpg",TEXTURA.retrollamadaMadera);
-  //cargador4.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",TEXTURA.retrollamadaCuadroBlanco);
-  //cargador5.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaCuadroNegro);
+  cargador4.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",TEXTURA.retrollamadaCuadroBlanco);
+  cargador5.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",TEXTURA.retrollamadaCuadroNegro);
         
   //Creación de la cámara
   TEXTURA.camara=new THREE.PerspectiveCamera();
         
-  TEXTURA.camara.position.z=230;
+  TEXTURA.camara.position.z=120;
   TEXTURA.camara.position.x=45;
   TEXTURA.camara.position.y=45;
   TEXTURA.escena.rotateX(-Math.PI/4)
@@ -147,7 +201,7 @@ TEXTURA.setup=function(){
 }
  TEXTURA.loop=function(){
  requestAnimationFrame(TEXTURA.loop);
- if(textura1==true && textura2==true && textura3==true){
+ if(textura1==true && textura2==true && textura3==true && textura4==true && textura5==true){
     if(setupdone==false){
      TEXTURA.setup();
      setupdone=true;
