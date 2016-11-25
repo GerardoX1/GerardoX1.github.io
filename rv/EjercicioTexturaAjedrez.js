@@ -79,7 +79,7 @@ TEXTURA.escena.add(TEXTURA.torre4N);
 }
 
 //Madera
-TEXTURA.retrollamadaMADERA=function(textura){
+TEXTURA.retrollamadaMadera=function(textura){
   var material=new THREE.MeshBasicMaterial({map:textura});
   
   TEXTURA.Borde1M=new THREE.Mesh(borde1,material);
