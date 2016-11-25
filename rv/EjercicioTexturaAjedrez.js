@@ -87,24 +87,21 @@ TEXTURA.retrollamadaMADERA=function(textura){
   TEXTURA.Borde4M=new THREE.Mesh(borde4,material);
   
   //posiciones de los elementos
-  TEXTURA.Borde2M.rotateZ(Math.PI/2);
-  TEXTURA.Borde4M.rotateZ(Math.PI/2); 
-        
   TEXTURA.Borde1M.position.x=0;
   TEXTURA.Borde1M.position.y=40;
        
   TEXTURA.Borde3M.position.x=90;
   TEXTURA.Borde3M.position.y=50;
+  
+  TEXTURA.Borde2M.rotateZ(Math.PI/2);
+  TEXTURA.Borde4M.rotateZ(Math.PI/2); 
         
   TEXTURA.Borde2M.position.x=50;
   TEXTURA.Borde2M.position.y=0;
    
   TEXTURA.Borde4M.position.x=40;
-  
-  TEXTURA.torre1N.position.x=10;
-  TEXTURA.torre1N.position.y=80;
   TEXTURA.Borde4M.position.y=90;
-
+  
 textura3=true;
 
 TEXTURA.escena.add(TEXTURA.Borde1M);
@@ -137,6 +134,7 @@ TEXTURA.setup=function(){
         
   //Creación de la cámara
   TEXTURA.camara=new THREE.PerspectiveCamera();
+        
   TEXTURA.camara.position.z=130;
   TEXTURA.camara.position.x=45;
   TEXTURA.camara.position.y=45;
