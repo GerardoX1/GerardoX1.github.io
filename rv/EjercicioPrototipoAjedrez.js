@@ -20,7 +20,7 @@ CONSTRUCTOR.Torre.prototype = new THREE.Mesh();
 CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
   CONSTRUCTOR.camara.updateProjectionMatrix();
-  CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight );
+  CONSTRUCTOR.renderizador.setSize( window.innerWidth*.95, window.innerHeight*.95 );
 }
 
 
@@ -92,8 +92,6 @@ CONSTRUCTOR.loop = function(){
    CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
 }
 
-
-    
 
 CONSTRUCTOR.TexturaSetup();
 CONSTRUCTOR.loop();
