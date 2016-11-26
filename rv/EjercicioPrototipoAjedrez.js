@@ -55,10 +55,9 @@ CONSTRUCTOR.setup = function(){
 
   //Creación del lienzo y renderizador
         
-  var lienzo= document.getElementById("Ajedrez");
+    var lienzo= document.getElementById("Ajedrez");
   CONSTRUCTOR.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
-  CONSTRUCTOR.renderizador.setSize(window.innerHeight,window.innerHeight);
-  document.body.appendChild(CONSTRUCTOR.renderizador.domElement);
+  CONSTRUCTOR.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95)
         
   //creacion de la escena
   CONSTRUCTOR.escena = new THREE.Scene();
@@ -90,7 +89,7 @@ CONSTRUCTOR.loop = function(){
   if( CONSTRUCTOR.torreBlanca!==undefined && !setupDone){
       CONSTRUCTOR.setup();
   }
-   CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
+   CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena,CONSTRUCTOR.camara);
 }
 
 
