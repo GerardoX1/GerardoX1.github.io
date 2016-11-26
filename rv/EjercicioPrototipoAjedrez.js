@@ -58,6 +58,7 @@ CONSTRUCTOR.setup = function(){
   var lienzo= document.getElementById("Ajedrez");
   CONSTRUCTOR.renderizador=new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
   CONSTRUCTOR.renderizador.setSize(window.innerHeight,window.innerHeight);
+  document.body.appendChild(CONSTRUCTOR.renderizador.domElement);
         
   //creacion de la escena
   CONSTRUCTOR.escena = new THREE.Scene();
