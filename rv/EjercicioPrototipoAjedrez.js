@@ -76,7 +76,7 @@ CONSTRUCTOR.setup = function(){
 CONSTRUCTOR.TexturaSetup= function(){
         
     var cargador = new THREE.TextureLoader();
-        cargador.load("texturaMarmolBlanco.jpg",function(textura){ CONSTRUCTOR.torreBlanca = textura;});
+        cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ CONSTRUCTOR.torreBlanca = textura;});
     
 }
 
