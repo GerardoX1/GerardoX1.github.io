@@ -4,7 +4,7 @@ var CONSTRUCTOR = new Object();
 //metemos las piezas a un metodo del constructor
 
 //___________________________________________________TORRE
-CONSTRUCTOR.Torre = funcion (textura){
+CONSTRUCTOR.Torre = function (textura){
         
         var TorreForma = TorreFB.clone();
         THREE.Mesh.call(this, TorreForma, new THREE.MeshLAmbertMaterial({map:textura}));
