@@ -3,7 +3,7 @@ var CONSTRUCTOR = new Object();
 
 //metemos las piezas a un metodo del constructor
 
-//___________________________________________________TORRE
+//-___________________________________________________TORRE
 CONSTRUCTOR.Torre = function (textura){
         
         var TorreForma = TorreFB.clone();
@@ -16,7 +16,7 @@ CONSTRUCTOR.Torre = function (textura){
 CONSTRUCTOR.Torre.prototype = new THREE.Mesh();
 
 
-//__________________________________________________Ventana
+//-__________________________________________________Ventana
 CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
   CONSTRUCTOR.camara.updateProjectionMatrix();
@@ -24,7 +24,7 @@ CONSTRUCTOR.listener = function(){
 }
 
 
-//_________________________________________________SETUP
+//-_________________________________________________SETUP
 CONSTRUCTOR.setup = function(){
     var tipo_evento = 'resize';
     var cambioVentana = false;
@@ -72,7 +72,7 @@ CONSTRUCTOR.setup = function(){
 }
 
 
-//_____________________________________________________Texturas
+//-_____________________________________________________Texturas
 CONSTRUCTOR.TexturaSetup= function(){
         
     var cargador = new THREE.TextureLoader();
@@ -80,19 +80,16 @@ CONSTRUCTOR.TexturaSetup= function(){
     
 }
 
-//______________________________________________________Verificacion
+//-______________________________________________________Verificacion
 
-var setupdone=false;
+var setupDone=false;
 
- CONSTRUCTOR.loop=function(){
- requestAnimationFrame(CONSTRUCTOR.loop);
- if(CONSTRUCTOR.torreBlanca!==undefined){
-    if(setupdone==false){
-     CONSTRUCTOR.setup();
-     setupdone=true;
-    }
-  CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena,CONSTRUCTOR.camara);
-  } 
+CONSTRUCTOR.loop = function(){
+  requestAnimationFrame( CONSTRUCTOR.loop);
+  if( CONSTRUCTOR.torreBlanca!==undefined && !setupDone){
+      CONSTRUCTOR.setup();
+  }
+   CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
 }
 
 
