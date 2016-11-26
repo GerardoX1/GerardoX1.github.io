@@ -71,17 +71,6 @@ CONSTRUCTOR.setup = function(){
         
 }
 
-//______________________________________________________Verificacion
-var setupDone=false;
-
-CONSTRUCTOR.loop = function(){
-  requestAnimationFrame( CONSTRUCTOR.loop);
-        
-  if (CONSTRUCTOR.torreBlanca!==undefined && !setupDone){
-      CONSTRUCTOR.setup();
-  }
-   CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
-}
 
 //_____________________________________________________Texturas
 CONSTRUCTOR.TexturaSetup= function(){
@@ -90,6 +79,23 @@ CONSTRUCTOR.TexturaSetup= function(){
         cargador.load("texturaMarmolBlanco.jpg",function(textura){ CONSTRUCTOR.torreBlanca = textura;});
     
 }
+
+//______________________________________________________Verificacion
+
+var setupdone=false;
+
+ CONSTRUCTOR.loop=function(){
+ requestAnimationFrame(CONSTRUCTOR.loop);
+ if(CONSTRUCTOR.torreBlanca!==undefined){
+    if(setupdone==false){
+     CONSTRUCTOR.setup();
+     setupdone=true;
+    }
+  CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena,CONSTRUCTOR.camara);
+  } 
+}
+
+
     
 
 CONSTRUCTOR.TexturaSetup();
