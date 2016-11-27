@@ -2,7 +2,7 @@
 var CONSTRUCTOR = new Object();
 
 //metemos las piezas a un metodo del constructor
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //-___________________________________________________TORRE
 CONSTRUCTOR.Torre=function(textura){    
 
@@ -13,6 +13,7 @@ CONSTRUCTOR.Torre=function(textura){
 }
 CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-__________________________________________________Ventana
 CONSTRUCTOR.listener = function(){
@@ -30,17 +31,16 @@ CONSTRUCTOR.setup = function(){
     setupDone=true;
     
     var luz=new THREE.PointLight(0xCCCCCC);
-    luz.position.y=50;
-    luz.position.z=100;
+    luz.position.z=80;
     
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
     
     //En esta parte se generan las piezas   
     
     var torre1 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
-    torre1.position.x=-35;
-    torre1.position.y=2.5;
-    torre1.position.z=-35;
+    torre1.position.x=0;
+    torre1.position.y=0;
+    torre1.position.z=0;
     torre1.scale.set(0.05,0.05,0.05)
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,20 +90,15 @@ CONSTRUCTOR.loop = function(){
 
 //-_____________________________________________________Texturas
 CONSTRUCTOR.TexturaSetup= function(){
+    
     var cargador = new THREE.TextureLoader();
-    cargador.load("sp-152a-vidrio-spectrum.jpg",
-                  function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
-    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",
-                  function(textura){ CONSTRUCTOR.marmolNegro = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
-                  function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
-    cargador.load("textura-madera-roja.jpg",
-                  function(textura){ CONSTRUCTOR.Madera = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
-                  function(textura){ CONSTRUCTOR.marmolBlanco = textura;});
     
-    
-    
+    cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
+    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.marmolNegro = textura;});
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
+    cargador.load("textura-madera-roja.jpg",function(textura){ CONSTRUCTOR.Madera = textura;});
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ CONSTRUCTOR.marmolBlanco = textura;});
+ 
 }
     
 CONSTRUCTOR.TexturaSetup();
