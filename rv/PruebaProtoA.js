@@ -14,44 +14,13 @@ CONSTRUCTOR.Torre=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
-/*
-//------------ TABLERO------
-CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
-    var color=0;
-    for(var i=0;i<8;i++){
-      for(var j=0;j<8;j++){
-        var cuboForma=  new THREE.BoxGeometry(10,10,5);
-        cuboForma.translate(-35+i*10,35-j*10,0);
-        if(color%2===0){
-          var material = new THREE.MeshLambertMaterial({map:texturaNegro});
-        }else{
-          var material = new THREE.MeshLambertMaterial({map: texturaBlanco});
-        }
-        var cuboMalla = new THREE.Mesh(cuboForma,material);
-        color=color+1;
-        cuboMalla.rotateX(-Math.PI/2);
-        cuboMalla.rotateZ(-Math.PI/2);
-          cuboMalla.receiveShadow=true;
-        CONSTRUCTOR.escena.add(cuboMalla);
-      }
-      color=color+1;
-    }
 
-    var bordeForma = new THREE.BoxGeometry(100,100,5);
-    bordeForma.translate(0,0,-5);
-    var bordeMaterial = new THREE.MeshLambertMaterial({map:texturaMadera});
-    var bordeMalla = new THREE.Mesh(bordeForma,bordeMaterial);
-    bordeMalla.rotateX(-Math.PI/2);
-    bordeMalla.receiveShadow=true;
-    CONSTRUCTOR.escena.add(bordeMalla);
-}
-*/
 
-//------------ FUNCION CAMBIO VENTANA-----
+//-__________________________________________________Ventana
 CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
   CONSTRUCTOR.camara.updateProjectionMatrix();
-  CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight );
+  CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight);
 }
 
 //---------- SET UP--------
