@@ -23,7 +23,7 @@ CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight);
 }
 
-//---------- SET UP--------
+//-_________________________________________________SETUP
 CONSTRUCTOR.setup = function(){
     var tipo_evento = 'resize';
     var cambioVentana = false;
@@ -35,18 +35,27 @@ CONSTRUCTOR.setup = function(){
     luz.position.y=50;
     luz.position.z=100;
     
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
+    
+    //En esta parte se generan las piezas   
+    
     var torre1 = new CONSTRUCTOR.Torre(CONSTRUCTOR.torreBlanca);
     torre1.position.x=-35;
     torre1.position.y=2.5;
     torre1.position.z=-35;
     torre1.scale.set(0.05,0.05,0.05)
-
-    //--------------- CAMARA ---------------
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
-    CONSTRUCTOR.camara.position.y = 50;
-    CONSTRUCTOR.camara.position.x = 50;
-    CONSTRUCTOR.camara.position.z = 50;
+    
+    CONSTRUCTOR.camara.position.z=120;
+    CONSTRUCTOR.camara.position.x=45;
+    CONSTRUCTOR.camara.position.y=45;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(0,0,0));
+    
+    
+  //Creación del lienzo y renderizador
     
     var lienzo = document.getElementById("tablero");
     CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
@@ -55,11 +64,13 @@ CONSTRUCTOR.setup = function(){
     //------------ ESCENA
     CONSTRUCTOR.escena = new THREE.Scene();
     
-    //CONSTRUCTOR.Tablero(CONSTRUCTOR.marmolBlanco,CONSTRUCTOR.marmolNegro,CONSTRUCTOR.madera);
-    
     //agregamos los elementos
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
     CONSTRUCTOR.escena.add(torre1);
 
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
     
     CONSTRUCTOR.escena.add(luz);
     CONSTRUCTOR.renderizador.shadowMapEnabled = true;
@@ -67,6 +78,7 @@ CONSTRUCTOR.setup = function(){
   
 }
 
+//-______________________________________________________Verificacion
 var setupDone=false;
 
 CONSTRUCTOR.loop = function(){
@@ -77,6 +89,8 @@ CONSTRUCTOR.loop = function(){
    CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
 }
 
+
+//-_____________________________________________________Texturas
 CONSTRUCTOR.TexturaSetup= function(){
     var cargador = new THREE.TextureLoader();
     cargador.load("sp-152a-vidrio-spectrum.jpg",
