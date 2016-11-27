@@ -257,9 +257,9 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.Tablero(CONSTRUCTOR.marmolBlanco,CONSTRUCTOR.marmolNegro,CONSTRUCTOR.madera);
     CONSTRUCTOR.escena.add(torre1);
     CONSTRUCTOR.escena.add(torre2);
-    
     CONSTRUCTOR.escena.add(torre3);
     CONSTRUCTOR.escena.add(torre4);
+    /*
     for(var i=0;i<=1;i++){
         for(var j=0;j<=12;j++){
             CONSTRUCTOR.escena.add(peones[i][j]);
@@ -267,6 +267,7 @@ CONSTRUCTOR.setup = function(){
     }
     CONSTRUCTOR.escena.add(rey1);
     CONSTRUCTOR.escena.add(rey2);
+    */
     CONSTRUCTOR.escena.add(luz);
     CONSTRUCTOR.renderizador.shadowMapEnabled = true;
     luz.castShadow =true;
@@ -287,14 +288,16 @@ CONSTRUCTOR.TexturaSetup= function(){
     var cargador = new THREE.TextureLoader();
     cargador.load("sp-152a-vidrio-spectrum.jpg",
                   function(textura){ CONSTRUCTOR.torreNegra = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
-                  function(textura){ CONSTRUCTOR.torreBlanca = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
-                  function(textura){ CONSTRUCTOR.marmolBlanco = textura;});
     cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",
                   function(textura){ CONSTRUCTOR.marmolNegro = textura;});
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
+                  function(textura){ CONSTRUCTOR.torreBlanca = textura;});
     cargador.load("textura-madera-roja.jpg",
                   function(textura){ CONSTRUCTOR.madera = textura;});
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
+                  function(textura){ CONSTRUCTOR.marmolBlanco = textura;});
+    
+    
     
 }
     
