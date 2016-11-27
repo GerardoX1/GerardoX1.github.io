@@ -2,6 +2,7 @@ var CONSTRUCTOR = new Object();
 
 
 CONSTRUCTOR.Torre=function(textura){    
+/*
     var puntos=[];
     
     puntos.push(new THREE.Vector2(0,0));
@@ -32,7 +33,8 @@ CONSTRUCTOR.Torre=function(textura){
     var picoMalla =new THREE.Mesh(picoForma); 
       torreForma.merge(picoMalla.geometry, picoMalla.matrix);
     }
-    
+    */
+    var torreForma = TorreFB.clone();
     THREE.Mesh.call(this, torreForma, new THREE.MeshLambertMaterial({map:textura}));
     this.castShadow=true;
     this.receiveShadow=true;
