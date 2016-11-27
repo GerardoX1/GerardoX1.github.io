@@ -41,6 +41,7 @@ CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
 
 
 //------------PEON----------
+/*
 CONSTRUCTOR.Peon=function(textura){    
     var puntospeon=[];
     
@@ -122,7 +123,7 @@ CONSTRUCTOR.Rey=function(textura){
 
 CONSTRUCTOR.Rey.prototype=new THREE.Mesh();
 
-
+*/
 
 //------------ TABLERO------
 CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
@@ -205,7 +206,7 @@ CONSTRUCTOR.setup = function(){
     torre4.scale.x=0.2;
     torre4.scale.y=0.2;
     torre4.scale.z=0.2;
-    
+/*    
     var peones=[];
     for(var i=0; i<=2;i++){
         peones[i]={};
@@ -239,6 +240,7 @@ CONSTRUCTOR.setup = function(){
     rey2.scale.y=0.2;
     rey2.scale.z=0.2;
 
+*/
     //--------------- CAMARA ---------------
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     CONSTRUCTOR.camara.position.y = 100;
@@ -255,6 +257,7 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.Tablero(CONSTRUCTOR.marmolBlanco,CONSTRUCTOR.marmolNegro,CONSTRUCTOR.madera);
     CONSTRUCTOR.escena.add(torre1);
     CONSTRUCTOR.escena.add(torre2);
+    
     CONSTRUCTOR.escena.add(torre3);
     CONSTRUCTOR.escena.add(torre4);
     for(var i=0;i<=1;i++){
