@@ -1,6 +1,11 @@
+//creamos nuestro constructor
 var CONSTRUCTOR = new Object();
 
 
+
+//metemos las piezas a un metodo del constructor
+
+//-___________________________________________________TORRE
 CONSTRUCTOR.Torre=function(textura){    
 
     var torreForma = TorreFB.clone();
@@ -9,7 +14,7 @@ CONSTRUCTOR.Torre=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
-
+/*
 //------------ TABLERO------
 CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
     var color=0;
@@ -40,6 +45,7 @@ CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
     bordeMalla.receiveShadow=true;
     CONSTRUCTOR.escena.add(bordeMalla);
 }
+*/
 
 //------------ FUNCION CAMBIO VENTANA-----
 CONSTRUCTOR.listener = function(){
@@ -68,9 +74,9 @@ CONSTRUCTOR.setup = function(){
 
     //--------------- CAMARA ---------------
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
-    CONSTRUCTOR.camara.position.y = 100;
-    CONSTRUCTOR.camara.position.x = 100;
-    CONSTRUCTOR.camara.position.z = 100;
+    CONSTRUCTOR.camara.position.y = 50;
+    CONSTRUCTOR.camara.position.x = 50;
+    CONSTRUCTOR.camara.position.z = 50;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(0,0,0));
     
     var lienzo = document.getElementById("tablero");
@@ -80,7 +86,7 @@ CONSTRUCTOR.setup = function(){
     //------------ ESCENA
     CONSTRUCTOR.escena = new THREE.Scene();
     
-    CONSTRUCTOR.Tablero(CONSTRUCTOR.marmolBlanco,CONSTRUCTOR.marmolNegro,CONSTRUCTOR.madera);
+    //CONSTRUCTOR.Tablero(CONSTRUCTOR.marmolBlanco,CONSTRUCTOR.marmolNegro,CONSTRUCTOR.madera);
     
     //agregamos los elementos
     CONSTRUCTOR.escena.add(torre1);
