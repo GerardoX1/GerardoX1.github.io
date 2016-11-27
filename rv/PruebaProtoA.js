@@ -65,7 +65,6 @@ CONSTRUCTOR.setup = function(){
     torre1.position.y=2.5;
     torre1.position.z=-35;
     torre1.scale.set(0.05,0.05,0.05)
-    torre1.rotateX(Math.PI/2);
 
     //--------------- CAMARA ---------------
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
