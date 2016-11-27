@@ -159,7 +159,7 @@ CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
 CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
   CONSTRUCTOR.camara.updateProjectionMatrix();
-  CONSTRUCTOR.renderizador.setSize( window.innerWidth*.95, window.innerHeight*.95 );
+  CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight );
 }
 
 //---------- SET UP--------
