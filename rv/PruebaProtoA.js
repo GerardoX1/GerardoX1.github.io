@@ -1,8 +1,6 @@
 //creamos nuestro constructor
 var CONSTRUCTOR = new Object();
 
-
-
 //metemos las piezas a un metodo del constructor
 
 //-___________________________________________________TORRE
@@ -39,7 +37,7 @@ CONSTRUCTOR.setup = function(){
     
     //En esta parte se generan las piezas   
     
-    var torre1 = new CONSTRUCTOR.Torre(CONSTRUCTOR.torreBlanca);
+    var torre1 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
     torre1.position.x=-35;
     torre1.position.y=2.5;
     torre1.position.z=-35;
@@ -83,7 +81,7 @@ var setupDone=false;
 
 CONSTRUCTOR.loop = function(){
   requestAnimationFrame( CONSTRUCTOR.loop);
-  if(CONSTRUCTOR.madera!==undefined && CONSTRUCTOR.torreBlanca!==undefined && CONSTRUCTOR.marmolBlanco!==undefined && CONSTRUCTOR.marmolNegro!==undefined && !setupDone){
+  if(CONSTRUCTOR.madera!==undefined && CONSTRUCTOR.PiezaBlanca!==undefined && CONSTRUCTOR.marmolBlanco!==undefined && CONSTRUCTOR.marmolNegro!==undefined && !setupDone){
       CONSTRUCTOR.setup();
   }
    CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
@@ -98,7 +96,7 @@ CONSTRUCTOR.TexturaSetup= function(){
     cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",
                   function(textura){ CONSTRUCTOR.marmolNegro = textura;});
     cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
-                  function(textura){ CONSTRUCTOR.torreBlanca = textura;});
+                  function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
     cargador.load("textura-madera-roja.jpg",
                   function(textura){ CONSTRUCTOR.madera = textura;});
     cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",
