@@ -248,7 +248,7 @@ CONSTRUCTOR.setup = function(){
     
     var lienzo = document.getElementById("tablero");
     CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-    CONSTRUCTOR.renderizador.setSize(window.innerWidth,window.innerHeight);
+    CONSTRUCTOR.renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95)
 
     //------------ ESCENA
     CONSTRUCTOR.escena = new THREE.Scene();
