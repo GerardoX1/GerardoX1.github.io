@@ -58,12 +58,12 @@ tallo.push(new THREE.Vector2(0,328));
 
 //Campanana
 
-var cubo1 = new THREE.BoxGeometry( 5, 5, 5 );
-var cubo2 = new THREE.BoxGeometry( 5, 5, 5 );
-var cubo3 = new THREE.BoxGeometry( 5, 5, 5 );
-var cubo4 = new THREE.BoxGeometry( 5, 5, 5 );
-var cubo5 = new THREE.BoxGeometry( 5, 5, 5 );
-var cubo6 = new THREE.BoxGeometry( 5, 5, 5 );
+var cubo1 = new THREE.BoxGeometry( 15, 15, 15 );
+var cubo2 = new THREE.BoxGeometry( 15, 15, 15 );
+var cubo3 = new THREE.BoxGeometry( 15, 15, 15 );
+var cubo4 = new THREE.BoxGeometry( 15, 15, 15 );
+var cubo5 = new THREE.BoxGeometry( 15, 15, 15 );
+var cubo6 = new THREE.BoxGeometry( 15, 15, 15 );
 
 //generamos las formas el tallo
 
@@ -71,13 +71,13 @@ var forma = new THREE.LatheGeometry(tallo);
 
 //Generacion de mallas y movimientos
 
-cubo1.translate(0,330,0);
-cubo2.translate(0,335,0);
-cubo3.translate(0,340,0);
-cubo4.translate(0,345,0);
+cubo1.translate(0,336,0);
+cubo2.translate(0,351,0);
+cubo3.translate(0,366,0);
+cubo4.translate(0,381,0);
 
-cubo5.translate(-5,340,0);
-cubo6.translate(5,340,0);
+cubo5.translate(-15,366,0);
+cubo6.translate(15,366,0);
 
 var talloMalla = new THREE.Mesh(forma);
 
