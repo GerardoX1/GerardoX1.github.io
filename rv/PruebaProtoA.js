@@ -93,7 +93,9 @@ CONSTRUCTOR.TexturaSetup= function(){
     
     var cargador = new THREE.TextureLoader();
     
-    cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
+    //cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
+    
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
     cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
    
     cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.marmolNegro = textura;});
