@@ -23,26 +23,36 @@ for ( i = 41; i < 112; i ++ ) {
 			Math.sin((i+40)*0.025 )*15 +40 ,
 				(i - 5)*2) );
 }
+/////////
+for ( i = 112; i < 119; i ++ ) {
+	tallo.push(new THREE.Vector2(
+			55 ,
+				(i - 5)*2) );
+}
 
-for ( i = 112; i < 120; i ++ ) {
+for ( i = 119; i < 127; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			50 ,
 				(i - 5)*2) );
 }
 
-
-for ( i = 120; i < 160; i ++ ) {
+for ( i = 127; i < 143; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			Math.sin((i+40)*0.025 )*15 +40 ,
 				(i - 5)*2) );
 }
 
-for ( i = 160; i < 169; i ++ ) {
+for ( i = 143; i < 148; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			60 ,
+			50 ,
 				(i - 5)*2) );
 }
-
+////// ultimo anillo 
+for ( i = 148; i < 169; i ++ ) {
+	tallo.push(new THREE.Vector2(
+			i+100 ,
+				(i - 5)*2) );
+}
 
 tallo.push(new THREE.Vector2(0,328));
 
