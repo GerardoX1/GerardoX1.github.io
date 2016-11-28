@@ -44,7 +44,7 @@ for ( i = 160; i < 169; i ++ ) {
 }
 
 
-tallo.push(new THREE.Vector2(0,171));
+tallo.push(new THREE.Vector2(0,328));
 
 //Campanana
 
