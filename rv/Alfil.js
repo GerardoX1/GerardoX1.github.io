@@ -79,7 +79,3 @@ var Alfil = new THREE.Geometry();
 Alfil.merge(talloMalla.geometry,talloMalla.matrix);
 Alfil.merge(BolitaMalla.geometry,BolitaMalla.matrix);
 
-
-
-
-
