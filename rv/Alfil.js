@@ -25,7 +25,7 @@ for ( i = 41; i < 160; i ++ ) {
 }
 for ( i = 161; i < 170; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			50 ,
+			60 ,
 				(i - 5)*2) );
 }
 
