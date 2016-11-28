@@ -18,16 +18,18 @@ for ( i = 31; i < 40; i ++ ) {
 			60 ,
 				(i - 5)*2) );
 }
-for ( i = 41; i < 160; i ++ ) {
+for ( i = 41; i < 170; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			Math.sin((i+40)*0.025 )*15 +40 ,
 				(i - 5)*2) );
 }
+/*
 for ( i = 161; i < 170; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			60 ,
 				(i - 5)*2) );
 }
+*/
 
 tallo.push(new THREE.Vector2(0,171));
 
@@ -40,7 +42,7 @@ var Bolita = new THREE.SphereGeometry( 25, 32, 32 );
 var forma = new THREE.LatheGeometry(tallo);
 
 //Generacion de mallas y movimientos
-Bolita.translate(0,355,0);
+Bolita.translate(0,350,0);
 
 var talloMalla = new THREE.Mesh(forma);
 var BolitaMalla = new THREE.Mesh(Bolita);
