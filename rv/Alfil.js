@@ -24,19 +24,19 @@ for ( i = 41; i < 112; i ++ ) {
 				(i - 5)*2) );
 }
 /////////
-for ( i = 112; i < 119; i ++ ) {
+for ( i = 112; i < 117; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			55 ,
 				(i - 5)*2) );
 }
 
-for ( i = 119; i < 127; i ++ ) {
+for ( i = 117; i < 123; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			50 ,
 				(i - 5)*2) );
 }
 
-for ( i = 127; i < 143; i ++ ) {
+for ( i = 123; i < 143; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			Math.sin((i+40)*0.025 )*15 +40 ,
 				(i - 5)*2) );
@@ -50,7 +50,7 @@ for ( i = 143; i < 148; i ++ ) {
 ////// ultimo anillo 
 for ( i = 148; i < 169; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			i/3 ,
+			i*0.27 ,
 				(i - 5)*2) );
 }
 
