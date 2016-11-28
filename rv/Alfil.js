@@ -1,4 +1,4 @@
-//Creacion del el alfil
+//Creacion del Rey
 
 
 //definicion de las figuras que generan nuestra pieza
