@@ -47,7 +47,7 @@ CONSTRUCTOR.setup = function(){
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     
-    CONSTRUCTOR.camara.position.z=120;
+    CONSTRUCTOR.camara.position.z=40;
     CONSTRUCTOR.camara.position.x=45;
     CONSTRUCTOR.camara.position.y=45;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(0,0,0));
