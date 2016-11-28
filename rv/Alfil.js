@@ -58,17 +58,35 @@ tallo.push(new THREE.Vector2(0,328));
 
 //Campanana
 
-var Bolita = new THREE.SphereGeometry( 25, 32, 32 );
+var cubo1 = new THREE.BoxGeometry( 5, 5, 5 );
+var cubo2 = new THREE.BoxGeometry( 5, 5, 5 );
+var cubo3 = new THREE.BoxGeometry( 5, 5, 5 );
+var cubo4 = new THREE.BoxGeometry( 5, 5, 5 );
+var cubo5 = new THREE.BoxGeometry( 5, 5, 5 );
+var cubo6 = new THREE.BoxGeometry( 5, 5, 5 );
 
 //generamos las formas el tallo
 
 var forma = new THREE.LatheGeometry(tallo);
 
 //Generacion de mallas y movimientos
-Bolita.translate(0,352,0);
+
+cubo1.translate(0,330,0);
+cubo2.translate(0,335,0);
+cubo3.translate(0,340,0);
+cubo4.translate(0,345,0);
+
+cubo5.translate(-5,340,0);
+cubo6.translate(5,340,0);
 
 var talloMalla = new THREE.Mesh(forma);
-var BolitaMalla = new THREE.Mesh(Bolita);
+
+var cubo1Malla = new THREE.Mesh(cubo1);
+var cubo2Malla = new THREE.Mesh(cubo2);
+var cubo3Malla = new THREE.Mesh(cubo3);
+var cubo4Malla = new THREE.Mesh(cubo4);
+var cubo5Malla = new THREE.Mesh(cubo5);
+var cubo6Malla = new THREE.Mesh(cubo6);
 
 //Creamos la Geometria Final
 
@@ -77,5 +95,10 @@ var Alfil = new THREE.Geometry();
 //Unimos las mallas
 
 Alfil.merge(talloMalla.geometry,talloMalla.matrix);
-Alfil.merge(BolitaMalla.geometry,BolitaMalla.matrix);
 
+Alfil.merge(cubo1Malla.geometry,cubo1Malla.matrix);
+Alfil.merge(cubo2Malla.geometry,cubo2Malla.matrix);
+Alfil.merge(cubo3Malla.geometry,cubo3Malla.matrix);
+Alfil.merge(cubo4Malla.geometry,cubo4Malla.matrix);
+Alfil.merge(cubo5Malla.geometry,cubo5Malla.matrix);
+Alfil.merge(cubo6Malla.geometry,cubo6Malla.matrix);
