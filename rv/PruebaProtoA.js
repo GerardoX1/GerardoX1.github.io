@@ -6,7 +6,7 @@ var CONSTRUCTOR = new Object();
 //-___________________________________________________TORRE
 CONSTRUCTOR.Torre=function(textura){    
 
-    var AlfilForma = TorreFB.clone();
+    var torreForma = Alfil.clone();
     THREE.Mesh.call(this, torreForma, new THREE.MeshLambertMaterial({map:textura}));
     this.castShadow=true;
     this.receiveShadow=true;
