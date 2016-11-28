@@ -20,7 +20,7 @@ for ( i = 31; i < 40; i ++ ) {
 }
 for ( i = 41; i < 160; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			Math.sin(i*0.06 )*15 +40 ,
+			Math.sin(i*0.03 )*15 +40 ,
 				(i - 5)*2) );
 }
 
@@ -28,7 +28,7 @@ tallo.push(new THREE.Vector2(0,161));
 
 //Campanana
 
-var Bolita = new THREE.SphereGeometry( 5, 32, 32 );
+var Bolita = new THREE.SphereGeometry( 20, 32, 32 );
 
 //generamos las formas el tallo
 
