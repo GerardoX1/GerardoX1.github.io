@@ -50,7 +50,7 @@ for ( i = 143; i < 148; i ++ ) {
 ////// ultimo anillo 
 for ( i = 148; i < 169; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			i+100 ,
+			i/3 ,
 				(i - 5)*2) );
 }
 
