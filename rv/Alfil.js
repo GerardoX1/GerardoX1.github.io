@@ -22,7 +22,8 @@ tallo.push(new THREE.Vector2(0,90));
 var PCaballo = new THREE.Shape();
 
 
-PCaballo.moveTo( -55,70 );
+PCaballo.moveTo( -45,50 );
+PCaballo.lineTo(-45,50);
 PCaballo.lineTo(-55,70);
 PCaballo.lineTo(-78,188);
 PCaballo.lineTo(-49,289);
@@ -42,7 +43,8 @@ PCaballo.lineTo(41,240);
 PCaballo.lineTo(41,210);
 PCaballo.lineTo(104,126);
 PCaballo.lineTo(148,70);
-PCaballo.lineTo( -55,70);
+PCaballo.lineTo(138,50);
+PCaballo.lineTo(-45,50);
 
 //generamos la forma de la base
 
