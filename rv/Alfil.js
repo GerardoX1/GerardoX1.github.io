@@ -22,35 +22,26 @@ tallo.push(new THREE.Vector2(0,70));
 var PCaballo = new THREE.Shape();
 
 PCaballo.moveTo( -55,70 );
-PCaballo.lineTo(-92,115);
-PCaballo.lineTo(-49,265);
-PCaballo.lineTo(50,320);
-PCaballo.lineTo(121,320);
-PCaballo.lineTo(142,336);
-PCaballo.lineTo(155,325);
-PCaballo.lineTo(152,305);
-PCaballo.lineTo(175,283);
-PCaballo.lineTo(253,204);
-PCaballo.lineTo(259,197);
-PCaballo.lineTo(265,182);
-PCaballo.lineTo(230,139);
-PCaballo.lineTo(181,159);
-PCaballo.lineTo(118,153);
-PCaballo.lineTo(87,194);
-PCaballo.lineTo(87,146);
-PCaballo.lineTo(184,-20);
-PCaballo.lineTo(174,-67);
-PCaballo.lineTo(-55,-70);
-PCaballo.lineTo( -55,-70);
-
-var extrudeSettings = {
-	steps: 2,
-	amount: 16,
-	bevelEnabled: true,
-	bevelThickness: 1,
-	bevelSize: 1,
-	bevelSegments: 1
-};
+PCaballo.lineTo(-55,70);
+PCaballo.lineTo(-78,188);
+PCaballo.lineTo(-49,289);
+PCaballo.lineTo(17,326);
+PCaballo.lineTo(63,325);
+PCaballo.lineTo(77,336);
+PCaballo.lineTo(86,329);
+PCaballo.lineTo(84,314);
+PCaballo.lineTo(101,300);
+PCaballo.lineTo(151,249);
+PCaballo.lineTo(155,242);
+PCaballo.lineTo(157,234);
+PCaballo.lineTo(136,206);
+PCaballo.lineTo(102,220);
+PCaballo.lineTo(63,216);
+PCaballo.lineTo(41,240);
+PCaballo.lineTo(41,210);
+PCaballo.lineTo(104,126);
+PCaballo.lineTo(148,70);
+PCaballo.lineTo( -55,70);
 
 //generamos la forma de la base
 
