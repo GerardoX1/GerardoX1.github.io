@@ -1,11 +1,7 @@
 //Creacion del Peon
 
-
 //definicion de las figuras que generan nuestra pieza
-
 //tallo
-
-
 var tallo = [];
 
 for ( var i = 0; i < 30; i ++ ) {
