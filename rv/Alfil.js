@@ -17,29 +17,19 @@ for ( i = 31; i < 40; i ++ ) {
 }
 for ( i = 41; i < 121; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			Math.sin((i+60)*0.025 )*15 +40 ,
+			Math.sin((i+40)*0.025 )*15 +40 ,
 				(i - 5)*2) );
 }
 ////
 for ( i = 121; i < 126; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			45 ,
+			40 ,
 				(i - 5)*2) );
 }
 
-for ( i = 126; i < 131; i ++ ) {
-	tallo.push(new THREE.Vector2(
-			30 ,
-				(i - 5)*2) );
-}
 
-for ( i = 131; i < 136; i ++ ) {
-	tallo.push(new THREE.Vector2(
-			35 ,
-				(i - 5)*2) );
-}
 
-tallo.push(new THREE.Vector2(0,262));
+tallo.push(new THREE.Vector2(0,242));
 
 
 //gorrito
