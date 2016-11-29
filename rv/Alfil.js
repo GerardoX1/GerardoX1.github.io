@@ -26,7 +26,7 @@ for ( i = 41; i < 121; i ++ ) {
 ////
 for ( i = 121; i < 126; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			35 ,
+			45 ,
 				(i - 5)*2) );
 }
 
@@ -38,7 +38,7 @@ for ( i = 126; i < 131; i ++ ) {
 
 for ( i = 131; i < 136; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			25 ,
+			35 ,
 				(i - 5)*2) );
 }
 
