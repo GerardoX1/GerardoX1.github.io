@@ -18,37 +18,37 @@ for ( i = 31; i < 40; i ++ ) {
 			55 ,
 				(i - 5)*2) );
 }
-for ( i = 41; i < 139; i ++ ) {
+for ( i = 41; i < 121; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			Math.sin((i+40)*0.025 )*15 +40 ,
 				(i - 5)*2) );
 }
 ////
-for ( i = 140; i < 146; i ++ ) {
+for ( i = 121; i < 126; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			55 ,
+			35 ,
 				(i - 5)*2) );
 }
 
-for ( i = 146; i < 151; i ++ ) {
+for ( i = 126; i < 131; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			50 ,
+			30 ,
 				(i - 5)*2) );
 }
 
-for ( i = 151; i < 156; i ++ ) {
+for ( i = 131; i < 136; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			45 ,
+			25 ,
 				(i - 5)*2) );
 }
 
-tallo.push(new THREE.Vector2(0,302));
+tallo.push(new THREE.Vector2(0,262));
 
 
 //gorrito
 
-var Cono = new THREE.ConeGeometry( 20, 25, 32 );
-var bolita=new THREE.SphereGeometry( 9, 32, 32 );
+var Cono = new THREE.ConeGeometry( 25, 41, 32 );
+var bolita=new THREE.SphereGeometry( 11, 32, 32 );
 
 //generamos las formas el tallo
 
@@ -56,8 +56,8 @@ var forma = new THREE.LatheGeometry(tallo);
 
 //Generacion de mallas y movimientos
 
-Cono.translate(0,315,0);
-bolita.translate(0,327,0);
+Cono.translate(0,283,0);
+bolita.translate(0,308,0);
 
 var talloMalla = new THREE.Mesh(forma);
 
