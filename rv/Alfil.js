@@ -6,16 +6,16 @@ var tallo = [];
 
 for ( var i = 0; i < 30; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			Math.sin(i*0.2 )*15 +80 ,
+			Math.sin(i*0.2 )*15 +90 ,
 				(i - 5)*2) );
 }
 for ( i = 31; i < 50; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			55 ,
+			60 ,
 				(i - 5)*2) );
 }
 
-tallo.push(new THREE.Vector2(0,70));
+tallo.push(new THREE.Vector2(0,90));
 
 //Busto de caballo
 
@@ -50,7 +50,7 @@ var BCaballo = new THREE.ExtrudeGeometry(PCaballo,{amount:40});
 
 //Generacion de mallas y movimientos
 
-BCaballo.translate(0,80,0);
+BCaballo.translate(0,50,0);
 var talloMalla = new THREE.Mesh(forma);
 var CaballoMalla = new THREE.Mesh( BCaballo);
 
