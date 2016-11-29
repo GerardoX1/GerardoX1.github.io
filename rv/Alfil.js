@@ -1,11 +1,7 @@
-//Creacion del alfil
-
+//Creacion del caballo
 
 //definicion de las figuras que generan nuestra pieza
-
-//tallo
-
-
+//Base
 var tallo = [];
 
 for ( var i = 0; i < 30; i ++ ) {
@@ -18,34 +14,10 @@ for ( i = 31; i < 40; i ++ ) {
 			55 ,
 				(i - 5)*2) );
 }
-for ( i = 41; i < 121; i ++ ) {
-	tallo.push(new THREE.Vector2(
-			Math.sin((i+60)*0.025 )*15 +40 ,
-				(i - 5)*2) );
-}
-////
-for ( i = 121; i < 126; i ++ ) {
-	tallo.push(new THREE.Vector2(
-			40 ,
-				(i - 5)*2) );
-}
 
-for ( i = 126; i < 131; i ++ ) {
-	tallo.push(new THREE.Vector2(
-			30 ,
-				(i - 5)*2) );
-}
+tallo.push(new THREE.Vector2(0,70));
 
-for ( i = 131; i < 136; i ++ ) {
-	tallo.push(new THREE.Vector2(
-			35 ,
-				(i - 5)*2) );
-}
-
-tallo.push(new THREE.Vector2(0,262));
-
-
-//gorrito
+//Busto de caballo
 
 var Cono = new THREE.ConeGeometry( 25, 65, 32 );
 var bolita=new THREE.SphereGeometry( 11, 32, 32 );
