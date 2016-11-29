@@ -10,7 +10,7 @@ var tallo = [];
 
 for ( var i = 0; i < 30; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			Math.sin(i*0.2 )*15 +80 ,
+			Math.sin((i+20)*0.2 )*15 +80 ,
 				(i - 5)*2) );
 }
 for ( i = 31; i < 40; i ++ ) {
@@ -47,7 +47,7 @@ tallo.push(new THREE.Vector2(0,262));
 
 //gorrito
 
-var Cono = new THREE.ConeGeometry( 25, 61, 32 );
+var Cono = new THREE.ConeGeometry( 25, 65, 32 );
 var bolita=new THREE.SphereGeometry( 11, 32, 32 );
 
 //generamos las formas el tallo
@@ -56,8 +56,8 @@ var forma = new THREE.LatheGeometry(tallo);
 
 //Generacion de mallas y movimientos
 
-Cono.translate(0,293,0);
-bolita.translate(0,353,0);
+Cono.translate(0,295,0);
+bolita.translate(0,332,0);
 
 var talloMalla = new THREE.Mesh(forma);
 
