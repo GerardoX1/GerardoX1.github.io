@@ -55,7 +55,7 @@ var extrudeSettings = {
 //generamos la forma de la base
 
 var forma = new THREE.LatheGeometry(tallo);
-var BCaballo = new THREE.ExtrudeGeometry( PCaballo, data );
+var BCaballo = new THREE.ExtrudeGeometry(PCaballo,{amount:40});
 
 //Generacion de mallas y movimientos
 
