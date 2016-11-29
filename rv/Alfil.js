@@ -46,7 +46,7 @@ PCaballo.lineTo( -55,-70);
 //generamos la forma de la base
 
 var forma = new THREE.LatheGeometry(tallo);
-var BCaballo = new THREE.ShapeGeometry( PCaballo,{amount:40} );
+var BCaballo = new THREE.ShapeGeometry(PCaballo,{amount:80});
 
 //Generacion de mallas y movimientos
 
