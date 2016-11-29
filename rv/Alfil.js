@@ -50,7 +50,7 @@ var BCaballo = new THREE.ExtrudeGeometry(PCaballo,{amount:40});
 
 //Generacion de mallas y movimientos
 
-BCaballo.translate(0,273,0);
+BCaballo.translate(0,100,0);
 var talloMalla = new THREE.Mesh(forma);
 var CaballoMalla = new THREE.Mesh( BCaballo);
 
