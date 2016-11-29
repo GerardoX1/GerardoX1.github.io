@@ -17,7 +17,7 @@ for ( i = 31; i < 40; i ++ ) {
 }
 for ( i = 41; i < 121; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			Math.sin((i+50)*0.025 )*15 +40 ,
+			Math.sin((i+65)*0.025 )*15 +40 ,
 				(i - 5)*2) );
 }
 ////
