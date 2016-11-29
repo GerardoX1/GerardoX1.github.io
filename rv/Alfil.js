@@ -22,26 +22,26 @@ tallo.push(new THREE.Vector2(0,70));
 var PCaballo = new THREE.Shape();
 
 PCaballo.moveTo( -55,70 );
-PCaballo.lineTo(-92,-115);
-PCaballo.lineTo(-49,-265);
-PCaballo.lineTo(50,-320);
-PCaballo.lineTo(121,-320);
-PCaballo.lineTo(142,-336);
-PCaballo.lineTo(155,-325);
-PCaballo.lineTo(152,-305);
-PCaballo.lineTo(175,-283);
-PCaballo.lineTo(253,-204);
-PCaballo.lineTo(259,-197);
-PCaballo.lineTo(265,-182);
-PCaballo.lineTo(230,-139);
-PCaballo.lineTo(181,-159);
-PCaballo.lineTo(118,-153);
-PCaballo.lineTo(87,-194);
-PCaballo.lineTo(87,-146);
+PCaballo.lineTo(-92,115);
+PCaballo.lineTo(-49,265);
+PCaballo.lineTo(50,320);
+PCaballo.lineTo(121,320);
+PCaballo.lineTo(142,336);
+PCaballo.lineTo(155,325);
+PCaballo.lineTo(152,305);
+PCaballo.lineTo(175,283);
+PCaballo.lineTo(253,204);
+PCaballo.lineTo(259,197);
+PCaballo.lineTo(265,182);
+PCaballo.lineTo(230,139);
+PCaballo.lineTo(181,159);
+PCaballo.lineTo(118,153);
+PCaballo.lineTo(87,194);
+PCaballo.lineTo(87,146);
 PCaballo.lineTo(184,-20);
-PCaballo.lineTo(174,67);
-PCaballo.lineTo(-55,70);
-PCaballo.lineTo( -55,70);
+PCaballo.lineTo(174,-67);
+PCaballo.lineTo(-55,-70);
+PCaballo.lineTo( -55,-70);
 
 //generamos la forma de la base
 
