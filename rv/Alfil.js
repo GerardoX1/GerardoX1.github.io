@@ -9,7 +9,7 @@ for ( var i = 0; i < 30; i ++ ) {
 			Math.sin(i*0.2 )*15 +80 ,
 				(i - 5)*2) );
 }
-for ( i = 31; i < 40; i ++ ) {
+for ( i = 31; i < 50; i ++ ) {
 	tallo.push(new THREE.Vector2(
 			55 ,
 				(i - 5)*2) );
@@ -50,7 +50,7 @@ var BCaballo = new THREE.ExtrudeGeometry(PCaballo,{amount:40});
 
 //Generacion de mallas y movimientos
 
-BCaballo.translate(0,100,0);
+BCaballo.translate(0,80,0);
 var talloMalla = new THREE.Mesh(forma);
 var CaballoMalla = new THREE.Mesh( BCaballo);
 
