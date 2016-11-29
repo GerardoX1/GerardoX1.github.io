@@ -21,6 +21,7 @@ tallo.push(new THREE.Vector2(0,90));
 
 var PCaballo = new THREE.Shape();
 
+
 PCaballo.moveTo( -55,70 );
 PCaballo.lineTo(-55,70);
 PCaballo.lineTo(-78,188);
