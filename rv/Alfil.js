@@ -48,7 +48,7 @@ tallo.push(new THREE.Vector2(0,302));
 //gorrito
 
 var Cono = new THREE.ConeGeometry( 20, 25, 32 );
-var bolita=THREE.SphereBufferGeometry( 9, 32, 32 );
+var bolita=new THREE.SphereGeometry( 9, 32, 32 );
 
 //generamos las formas el tallo
 
