@@ -84,7 +84,7 @@ CONSTRUCTOR.setup = function(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
     
     //En esta parte se generan las piezas   
-    
+    //Blancas
     var torre11 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
     var torre12 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
     
@@ -186,17 +186,125 @@ CONSTRUCTOR.setup = function(){
     peon16.scale.set(0.05,0.05,0.05);
     peon17.scale.set(0.05,0.05,0.05);
     peon18.scale.set(0.05,0.05,0.05);
+
+    ////Negras
     
     
+    
+    ////
+    
+    
+    ///
+    var torre21 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
+    var torre22 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
+    
+    torre21.position.x=10;
+    torre21.position.y=3;
+    torre21.position.z=70;
+    torre21.scale.set(0.05,0.05,0.05)
+    
+    torre22.position.x=80;
+    torre22.position.y=3;
+    torre22.position.z=70;
+    torre22.scale.set(0.05,0.05,0.05)
+    
+    var caballo21 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
+    var caballo22 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
+    
+    caballo21.position.x=20;
+    caballo21.position.y=3;
+    caballo21.position.z=70;
+    caballo21.scale.set(0.05,0.05,0.05)
+    
+    caballo22.position.x=70;
+    caballo22.position.y=3;
+    caballo22.position.z=70;
+    caballo22.scale.set(0.05,0.05,0.05)
+    
+    var alfil21 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
+    var alfil22 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
+    
+    alfil21.position.x=30;
+    alfil21.position.y=3;
+    alfil21.position.z=70;
+    alfil21.scale.set(0.05,0.05,0.05)
    
+    alfil22.position.x=60;
+    alfil22.position.y=3;
+    alfil22.position.z=70;
+    alfil22.scale.set(0.05,0.05,0.05)
+    
+    var rey2 = new CONSTRUCTOR.ReyC(CONSTRUCTOR.PiezaBlanca);
+    var reina2 = new CONSTRUCTOR.ReinaC(CONSTRUCTOR.PiezaBlanca);
+    
+    rey2.position.x=40;
+    rey2.position.y=3;
+    rey2.position.z=70;
+    rey2.scale.set(0.05,0.05,0.05)
+    
+    reina2.position.x=50;
+    reina2.position.y=3;
+    reina2.position.z=70;
+    reina2.scale.set(0.05,0.05,0.05)
+    
+    var peon21 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon22 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon23 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon24 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon25 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon26 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon27 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon28 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    
+    peon21.position.x=10;
+    peon21.position.y=3;
+    peon21.position.z=60;
+    
+    peon22.position.x=20;
+    peon22.position.y=3;
+    peon22.position.z=60;
+    
+    peon23.position.x=30;
+    peon23.position.y=3;
+    peon23.position.z=60;
+    
+    peon24.position.x=40;
+    peon24.position.y=3;
+    peon24.position.z=60;
+    
+    peon25.position.x=50;
+    peon25.position.y=3;
+    peon25.position.z=60;
+    
+    peon26.position.x=60;
+    peon26.position.y=3;
+    peon26.position.z=60;
+    
+    peon27.position.x=70;
+    peon27.position.y=3;
+    peon27.position.z=60;
+    
+    peon28.position.x=80;
+    peon28.position.y=3;
+    peon28.position.z=60;
+    
+    peon21.scale.set(0.05,0.05,0.05);
+    peon22.scale.set(0.05,0.05,0.05);
+    peon23.scale.set(0.05,0.05,0.05);
+    peon24.scale.set(0.05,0.05,0.05);
+    peon25.scale.set(0.05,0.05,0.05);
+    peon26.scale.set(0.05,0.05,0.05);
+    peon27.scale.set(0.05,0.05,0.05);
+    peon28.scale.set(0.05,0.05,0.05);
+    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     
-    CONSTRUCTOR.camara.position.z=100;
-    CONSTRUCTOR.camara.position.x=100;
+    CONSTRUCTOR.camara.position.z=45;
+    CONSTRUCTOR.camara.position.x=45;
     CONSTRUCTOR.camara.position.y=100;
-    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,45,0));
+    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,0,45));
     
     
   //Creación del lienzo y renderizador
@@ -228,6 +336,22 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.escena.add(peon17);
     CONSTRUCTOR.escena.add(peon18);
     
+    CONSTRUCTOR.escena.add(torre21);
+    CONSTRUCTOR.escena.add(torre22);
+    CONSTRUCTOR.escena.add(caballo21);
+    CONSTRUCTOR.escena.add(caballo22);
+    CONSTRUCTOR.escena.add(alfil21);
+    CONSTRUCTOR.escena.add(alfil22);
+    CONSTRUCTOR.escena.add(rey2);
+    CONSTRUCTOR.escena.add(reina2);
+    CONSTRUCTOR.escena.add(peon21);
+    CONSTRUCTOR.escena.add(peon22);
+    CONSTRUCTOR.escena.add(peon23);
+    CONSTRUCTOR.escena.add(peon24);
+    CONSTRUCTOR.escena.add(peon25);
+    CONSTRUCTOR.escena.add(peon26);
+    CONSTRUCTOR.escena.add(peon27);
+    CONSTRUCTOR.escena.add(peon28);
 
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
