@@ -13,6 +13,15 @@ CONSTRUCTOR.Torre=function(textura){
 }
 CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
 
+CONSTRUCTOR.CaballoC=function(textura){    
+
+    var CaballoCForma = Caballo.clone();
+    THREE.Mesh.call(this, CaballoCForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.CaballoC.prototype=new THREE.Mesh();
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-__________________________________________________Ventana
