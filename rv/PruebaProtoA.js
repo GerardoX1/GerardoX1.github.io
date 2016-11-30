@@ -303,7 +303,7 @@ CONSTRUCTOR.setup = function(){
     
     CONSTRUCTOR.camara.position.z=65;
     CONSTRUCTOR.camara.position.x=65;
-    CONSTRUCTOR.camara.position.y=170;
+    CONSTRUCTOR.camara.position.y=100;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,0,45));
     
     
