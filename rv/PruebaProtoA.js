@@ -33,7 +33,7 @@ CONSTRUCTOR.AlfilC.prototype=new THREE.Mesh();
 //-___________________________________________________PEON
 CONSTRUCTOR.PeonC=function(textura){    
 
-    var PeonCForma = PeonC.clone();
+    var PeonCForma = Peon.clone();
     THREE.Mesh.call(this, PeonCForma, new THREE.MeshLambertMaterial({map:textura}));
     this.castShadow=true;
     this.receiveShadow=true;
