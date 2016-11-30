@@ -137,6 +137,16 @@ CONSTRUCTOR.setup = function(){
     reina1.position.z=3;
     reina1.scale.set(0.05,0.05,0.05)
     
+for (var i=0;i<8;i++){
+    var peon1 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    peon1.position.x=(i+1)*10;
+    peon1.position.y=20;
+    peon1.position.z=3;
+    
+    CONSTRUCTOR.escena.add(peon1);
+  }
+    
+    
     
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,7 +156,7 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.camara.position.z=100;
     CONSTRUCTOR.camara.position.x=100;
     CONSTRUCTOR.camara.position.y=100;
-    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(5,45,0));
+    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,45,0));
     
     
   //Creación del lienzo y renderizador
