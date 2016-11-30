@@ -22,6 +22,51 @@ CONSTRUCTOR.CaballoC=function(textura){
 }
 CONSTRUCTOR.CaballoC.prototype=new THREE.Mesh();
 
+CONSTRUCTOR.AlfilC=function(textura){    
+
+    var AlfilCForma = Alfil.clone();
+    THREE.Mesh.call(this, AlfilCForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.AlfilC.prototype=new THREE.Mesh();
+
+CONSTRUCTOR.PeonC=function(textura){    
+
+    var PeonCForma = PeonC.clone();
+    THREE.Mesh.call(this, PeonCForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.PeonC.prototype=new THREE.Mesh();
+
+CONSTRUCTOR.ReinaC=function(textura){    
+
+    var ReinaCForma = Reina.clone();
+    THREE.Mesh.call(this, ReinaCForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.ReinaC.prototype=new THREE.Mesh();
+
+CONSTRUCTOR.ReyC=function(textura){    
+
+    var ReyCForma = Rey.clone();
+    THREE.Mesh.call(this, ReyCForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.ReyC.prototype=new THREE.Mesh();
+
+CONSTRUCTOR.TorreC=function(textura){    
+
+    var TorreCForma = TorreFB.clone();
+    THREE.Mesh.call(this, TorreCForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.TorreC.prototype=new THREE.Mesh();
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //-__________________________________________________Ventana
@@ -33,6 +78,7 @@ CONSTRUCTOR.listener = function(){
 
 //-_________________________________________________SETUP
 CONSTRUCTOR.setup = function(){
+    
     var tipo_evento = 'resize';
     var cambioVentana = false;
     window.addEventListener( tipo_evento, CONSTRUCTOR.listener, cambioVentana);
