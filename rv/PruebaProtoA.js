@@ -144,8 +144,8 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     
     CONSTRUCTOR.camara.position.z=100;
-    CONSTRUCTOR.camara.position.x=45;
-    CONSTRUCTOR.camara.position.y=45;
+    CONSTRUCTOR.camara.position.x=100;
+    CONSTRUCTOR.camara.position.y=100;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(5,45,0));
     
     
@@ -165,6 +165,10 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.escena.add(torre12);
     CONSTRUCTOR.escena.add(caballo11);
     CONSTRUCTOR.escena.add(caballo12);
+    CONSTRUCTOR.escena.add(alfil11);
+    CONSTRUCTOR.escena.add(alfil12);
+    CONSTRUCTOR.escena.add(rey1);
+    CONSTRUCTOR.escena.add(reina1);
 
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
