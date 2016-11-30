@@ -137,18 +137,48 @@ CONSTRUCTOR.setup = function(){
     reina1.position.z=3;
     reina1.scale.set(0.05,0.05,0.05)
     
-for (var i=0;i<8;i++){
-    var peon1 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    peon1.position.x=(i+1)*10;
-    peon1.position.y=20;
-    peon1.position.z=3;
+    var peon11 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon12 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon13 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon14 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon15 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon16 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon17 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
+    var peon18 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
     
-    CONSTRUCTOR.escena.add(peon1);
-  }
+    peon11.position.x=10;
+    peon11.position.y=20;
+    peon11.position.z=3;
     
+    peon12.position.x=20;
+    peon12.position.y=20;
+    peon12.position.z=3;
     
+    peon13.position.x=30;
+    peon13.position.y=20;
+    peon13.position.z=3;
     
+    peon14.position.x=40;
+    peon14.position.y=20;
+    peon14.position.z=3;
     
+    peon15.position.x=50;
+    peon15.position.y=20;
+    peon15.position.z=3;
+    
+    peon16.position.x=60;
+    peon16.position.y=20;
+    peon16.position.z=3;
+    
+    peon17.position.x=70;
+    peon17.position.y=20;
+    peon17.position.z=3;
+    
+    peon18.position.x=80;
+    peon18.position.y=20;
+    peon18.position.z=3;
+    
+   
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
@@ -179,6 +209,15 @@ for (var i=0;i<8;i++){
     CONSTRUCTOR.escena.add(alfil12);
     CONSTRUCTOR.escena.add(rey1);
     CONSTRUCTOR.escena.add(reina1);
+    CONSTRUCTOR.escena.add(peon11);
+    CONSTRUCTOR.escena.add(peon12);
+    CONSTRUCTOR.escena.add(peon13);
+    CONSTRUCTOR.escena.add(peon14);
+    CONSTRUCTOR.escena.add(peon15);
+    CONSTRUCTOR.escena.add(peon16);
+    CONSTRUCTOR.escena.add(peon17);
+    CONSTRUCTOR.escena.add(peon18);
+    
 
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
