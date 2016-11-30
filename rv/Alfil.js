@@ -1,61 +1,68 @@
-//Creacion del caballo
+//Creacion del alfil
+
 
 //definicion de las figuras que generan nuestra pieza
-//Base
+
+//tallo
+
+
 var tallo = [];
 
 for ( var i = 0; i < 30; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			Math.sin(i*0.2 )*15 +90 ,
+			Math.sin(i*0.2 )*15 +80 ,
 				(i - 5)*2) );
 }
-for ( i = 31; i < 50; i ++ ) {
+for ( i = 31; i < 40; i ++ ) {
 	tallo.push(new THREE.Vector2(
-			60 ,
+			55 ,
+				(i - 5)*2) );
+}
+for ( i = 41; i < 121; i ++ ) {
+	tallo.push(new THREE.Vector2(
+			Math.sin((i+60)*0.025 )*15 +40 ,
+				(i - 5)*2) );
+}
+////
+for ( i = 121; i < 126; i ++ ) {
+	tallo.push(new THREE.Vector2(
+			40 ,
 				(i - 5)*2) );
 }
 
-tallo.push(new THREE.Vector2(0,90));
+for ( i = 126; i < 131; i ++ ) {
+	tallo.push(new THREE.Vector2(
+			30 ,
+				(i - 5)*2) );
+}
 
-//Busto de caballo
+for ( i = 131; i < 136; i ++ ) {
+	tallo.push(new THREE.Vector2(
+			35 ,
+				(i - 5)*2) );
+}
 
-var PCaballo = new THREE.Shape();
+tallo.push(new THREE.Vector2(0,262));
 
 
-PCaballo.moveTo( -45,50 );
-PCaballo.lineTo(-45,50);
-PCaballo.lineTo(-55,70);
-PCaballo.lineTo(-78,188);
-PCaballo.lineTo(-49,289);
-PCaballo.lineTo(17,326);
-PCaballo.lineTo(63,325);
-PCaballo.lineTo(77,336);
-PCaballo.lineTo(86,329);
-PCaballo.lineTo(84,314);
-PCaballo.lineTo(101,300);
-PCaballo.lineTo(151,249);
-PCaballo.lineTo(155,242);
-PCaballo.lineTo(157,234);
-PCaballo.lineTo(136,206);
-PCaballo.lineTo(102,220);
-PCaballo.lineTo(63,216);
-PCaballo.lineTo(41,240);
-PCaballo.lineTo(41,210);
-PCaballo.lineTo(104,126);
-PCaballo.lineTo(148,70);
-PCaballo.lineTo(138,50);
-PCaballo.lineTo(-45,50);
+//gorrito
 
-//generamos la forma de la base
+var Cono = new THREE.ConeGeometry( 25, 65, 32 );
+var bolita=new THREE.SphereGeometry( 11, 32, 32 );
+
+//generamos las formas el tallo
 
 var forma = new THREE.LatheGeometry(tallo);
-var BCaballo = new THREE.ExtrudeGeometry(PCaballo,{amount:40});
 
 //Generacion de mallas y movimientos
 
-BCaballo.translate(0,50,0);
+Cono.translate(0,295,0);
+bolita.translate(0,332,0);
+
 var talloMalla = new THREE.Mesh(forma);
-var CaballoMalla = new THREE.Mesh( BCaballo);
+
+var ConoMalla = new THREE.Mesh(Cono);
+var bolitaMalla = new THREE.Mesh(bolita);
 
 //Creamos la Geometria Final
 
@@ -64,5 +71,6 @@ var Alfil = new THREE.Geometry();
 //Unimos las mallas
 
 Alfil.merge(talloMalla.geometry,talloMalla.matrix);
-Alfil.merge(CaballoMalla.geometry,CaballoMalla.matrix);
 
+Alfil.merge(ConoMalla.geometry,ConoMalla.matrix);
+Alfil.merge(bolitaMalla.geometry,bolitaMalla.matrix);
