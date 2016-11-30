@@ -6,7 +6,7 @@ var CONSTRUCTOR = new Object();
 //-___________________________________________________TORRE
 CONSTRUCTOR.Torre=function(textura){    
 
-    var torreForma = Alfil.clone();
+    var torreForma = TorreFB.clone();
     THREE.Mesh.call(this, torreForma, new THREE.MeshLambertMaterial({map:textura}));
     this.castShadow=true;
     this.receiveShadow=true;
@@ -111,15 +111,42 @@ CONSTRUCTOR.setup = function(){
     caballo12.position.z=3;
     caballo12.scale.set(0.05,0.05,0.05)
     
-       
+    var alfil11 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
+    var alfil12 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
+    
+    alfil11.position.x=30;
+    alfil11.position.y=10;
+    alfil11.position.z=3;
+    alfil11.scale.set(0.05,0.05,0.05)
+    
+    alfil12.position.x=60;
+    alfil12.position.y=10;
+    alfil12.position.z=3;
+    alfil12.scale.set(0.05,0.05,0.05)
+    
+    var rey1 = new CONSTRUCTOR.ReyC(CONSTRUCTOR.PiezaBlanca);
+    var reina1 = new CONSTRUCTOR.ReinaC(CONSTRUCTOR.PiezaBlanca);
+    
+    rey1.position.x=40;
+    rey1.position.y=10;
+    rey1.position.z=3;
+    rey1.scale.set(0.05,0.05,0.05)
+    
+    reina1.position.x=50;
+    reina1.position.y=10;
+    reina1.position.z=3;
+    reina1.scale.set(0.05,0.05,0.05)
+    
+    
+    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     
-    CONSTRUCTOR.camara.position.z=80;
+    CONSTRUCTOR.camara.position.z=100;
     CONSTRUCTOR.camara.position.x=45;
     CONSTRUCTOR.camara.position.y=45;
-    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(0,0,0));
+    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(5,45,0));
     
     
   //Creación del lienzo y renderizador
