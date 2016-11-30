@@ -12,7 +12,7 @@ CONSTRUCTOR.Torre=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
-
+//-___________________________________________________CABALLO
 CONSTRUCTOR.CaballoC=function(textura){    
 
     var CaballoCForma = Caballo.clone();
@@ -21,7 +21,7 @@ CONSTRUCTOR.CaballoC=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.CaballoC.prototype=new THREE.Mesh();
-
+//-___________________________________________________ALFIL
 CONSTRUCTOR.AlfilC=function(textura){    
 
     var AlfilCForma = Alfil.clone();
@@ -30,7 +30,7 @@ CONSTRUCTOR.AlfilC=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.AlfilC.prototype=new THREE.Mesh();
-
+//-___________________________________________________PEON
 CONSTRUCTOR.PeonC=function(textura){    
 
     var PeonCForma = PeonC.clone();
@@ -39,7 +39,7 @@ CONSTRUCTOR.PeonC=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.PeonC.prototype=new THREE.Mesh();
-
+//-___________________________________________________REINA
 CONSTRUCTOR.ReinaC=function(textura){    
 
     var ReinaCForma = Reina.clone();
@@ -48,7 +48,7 @@ CONSTRUCTOR.ReinaC=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.ReinaC.prototype=new THREE.Mesh();
-
+//-___________________________________________________REY
 CONSTRUCTOR.ReyC=function(textura){    
 
     var ReyCForma = Rey.clone();
@@ -57,15 +57,6 @@ CONSTRUCTOR.ReyC=function(textura){
     this.receiveShadow=true;
 }
 CONSTRUCTOR.ReyC.prototype=new THREE.Mesh();
-
-CONSTRUCTOR.TorreC=function(textura){    
-
-    var TorreCForma = TorreFB.clone();
-    THREE.Mesh.call(this, TorreCForma, new THREE.MeshLambertMaterial({map:textura}));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-CONSTRUCTOR.TorreC.prototype=new THREE.Mesh();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -94,17 +85,38 @@ CONSTRUCTOR.setup = function(){
     
     //En esta parte se generan las piezas   
     
-    var torre1 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
-    torre1.position.x=0;
-    torre1.position.y=0;
-    torre1.position.z=0;
-    torre1.scale.set(0.05,0.05,0.05)
+    var torre11 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
+    var torre12 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
     
+    torre11.position.x=10;
+    torre11.position.y=10;
+    torre11.position.z=3;
+    torre11.scale.set(0.05,0.05,0.05)
+    
+    torre12.position.x=80;
+    torre12.position.y=10;
+    torre12.position.z=3;
+    torre12.scale.set(0.05,0.05,0.05)
+    
+    var caballo11 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
+    var caballo12 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
+    
+    caballo11.position.x=20;
+    caballo11.position.y=10;
+    caballo11.position.z=3;
+    caballo11.scale.set(0.05,0.05,0.05)
+    
+    caballo12.position.x=70;
+    caballo12.position.y=10;
+    caballo12.position.z=3;
+    caballo12.scale.set(0.05,0.05,0.05)
+    
+       
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     
-    CONSTRUCTOR.camara.position.z=40;
+    CONSTRUCTOR.camara.position.z=80;
     CONSTRUCTOR.camara.position.x=45;
     CONSTRUCTOR.camara.position.y=45;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(0,0,0));
@@ -122,7 +134,10 @@ CONSTRUCTOR.setup = function(){
     //agregamos los elementos
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
-    CONSTRUCTOR.escena.add(torre1);
+    CONSTRUCTOR.escena.add(torre11);
+    CONSTRUCTOR.escena.add(torre12);
+    CONSTRUCTOR.escena.add(caballo11);
+    CONSTRUCTOR.escena.add(caballo12);
 
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
