@@ -89,52 +89,52 @@ CONSTRUCTOR.setup = function(){
     var torre12 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
     
     torre11.position.x=10;
-    torre11.position.y=10;
-    torre11.position.z=3;
+    torre11.position.y=3;
+    torre11.position.z=0;
     torre11.scale.set(0.05,0.05,0.05)
     
     torre12.position.x=80;
-    torre12.position.y=10;
-    torre12.position.z=3;
+    torre12.position.y=3;
+    torre12.position.z=0;
     torre12.scale.set(0.05,0.05,0.05)
     
     var caballo11 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
     var caballo12 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
     
     caballo11.position.x=20;
-    caballo11.position.y=10;
-    caballo11.position.z=3;
+    caballo11.position.y=3;
+    caballo11.position.z=0;
     caballo11.scale.set(0.05,0.05,0.05)
     
     caballo12.position.x=70;
-    caballo12.position.y=10;
-    caballo12.position.z=3;
+    caballo12.position.y=3;
+    caballo12.position.z=0;
     caballo12.scale.set(0.05,0.05,0.05)
     
     var alfil11 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
     var alfil12 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
     
     alfil11.position.x=30;
-    alfil11.position.y=10;
-    alfil11.position.z=3;
+    alfil11.position.y=3;
+    alfil11.position.z=0;
     alfil11.scale.set(0.05,0.05,0.05)
     
     alfil12.position.x=60;
-    alfil12.position.y=10;
-    alfil12.position.z=3;
+    alfil12.position.y=3;
+    alfil12.position.z=0;
     alfil12.scale.set(0.05,0.05,0.05)
     
     var rey1 = new CONSTRUCTOR.ReyC(CONSTRUCTOR.PiezaBlanca);
     var reina1 = new CONSTRUCTOR.ReinaC(CONSTRUCTOR.PiezaBlanca);
     
     rey1.position.x=40;
-    rey1.position.y=10;
-    rey1.position.z=3;
+    rey1.position.y=3;
+    rey1.position.z=0;
     rey1.scale.set(0.05,0.05,0.05)
     
     reina1.position.x=50;
-    reina1.position.y=10;
-    reina1.position.z=3;
+    reina1.position.y=3;
+    reina1.position.z=0;
     reina1.scale.set(0.05,0.05,0.05)
     
     var peon11 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
@@ -147,36 +147,36 @@ CONSTRUCTOR.setup = function(){
     var peon18 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
     
     peon11.position.x=10;
-    peon11.position.y=20;
-    peon11.position.z=3;
+    peon11.position.y=3;
+    peon11.position.z=10;
     
     peon12.position.x=20;
-    peon12.position.y=20;
-    peon12.position.z=3;
+    peon12.position.y=3;
+    peon12.position.z=10;
     
     peon13.position.x=30;
-    peon13.position.y=20;
-    peon13.position.z=3;
+    peon13.position.y=3;
+    peon13.position.z=10;
     
     peon14.position.x=40;
-    peon14.position.y=20;
-    peon14.position.z=3;
+    peon14.position.y=3;
+    peon14.position.z=10;
     
     peon15.position.x=50;
-    peon15.position.y=20;
-    peon15.position.z=3;
+    peon15.position.y=3;
+    peon15.position.z=10;
     
     peon16.position.x=60;
-    peon16.position.y=20;
-    peon16.position.z=3;
+    peon16.position.y=3;
+    peon16.position.z=10;
     
     peon17.position.x=70;
-    peon17.position.y=20;
-    peon17.position.z=3;
+    peon17.position.y=3;
+    peon17.position.z=10;
     
     peon18.position.x=80;
-    peon18.position.y=20;
-    peon18.position.z=3;
+    peon18.position.y=3;
+    peon18.position.z=10;
     
     peon11.scale.set(0.05,0.05,0.05);
     peon12.scale.set(0.05,0.05,0.05);
