@@ -124,12 +124,12 @@ CONSTRUCTOR.setup = function(){
     caballo11.position.x=20;
     caballo11.position.y=3;
     caballo11.position.z=0;
-    caballo11.scale.set(0.035,0.035,0.035)
+    caballo11.scale.set(0.038,0.038,0.038)
     
     caballo12.position.x=70;
     caballo12.position.y=3;
     caballo12.position.z=0;
-    caballo12.scale.set(0.04,0.04,0.04)
+    caballo12.scale.set(0.038,0.038,0.038)
     
     var alfil11 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
     var alfil12 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
@@ -229,12 +229,12 @@ CONSTRUCTOR.setup = function(){
     caballo21.position.x=20;
     caballo21.position.y=3;
     caballo21.position.z=70;
-    caballo21.scale.set(0.05,0.05,0.05)
+    caballo21.scale.set(0.038,0.038,0.038)
     
     caballo22.position.x=70;
     caballo22.position.y=3;
     caballo22.position.z=70;
-    caballo22.scale.set(0.05,0.05,0.05)
+    caballo22.scale.set(0.038,0.038,0.038)
     
     var alfil21 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaNegra);
     var alfil22 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaNegra);
