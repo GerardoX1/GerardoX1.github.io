@@ -303,7 +303,7 @@ CONSTRUCTOR.setup = function(){
     peon28.scale.set(0.05,0.05,0.05);
     
     //Tablero 
-    var tablero1=new THREE.Group();
+    /*var tablero1=new THREE.Group();
     
     for ( var i = 0; i <= 7; i ++ ) {
         for ( var j = 0; j <= 7; j ++ ) {
@@ -323,6 +323,8 @@ CONSTRUCTOR.setup = function(){
       CONSTRUCTOR.tablero1.add(cubo2);
       }
       //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
+      
+      */
 }
 }
     
@@ -382,7 +384,7 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.escena.add(peon27);
     CONSTRUCTOR.escena.add(peon28);
     
-    CONSTRUCTOR.escena.add(tablero1);
+   // CONSTRUCTOR.escena.add(tablero1);
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
     
