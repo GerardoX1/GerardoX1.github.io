@@ -1,4 +1,4 @@
-var iMax = 8;
+      var iMax = 8;
       var jMax = 8;
 
       var geometry =new Array();
