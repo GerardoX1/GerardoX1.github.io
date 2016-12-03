@@ -2,7 +2,7 @@
 var CONSTRUCTOR = new Object();
 
 //metemos las piezas a un metodo del constructor
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //-___________________________________________________TORRE
 CONSTRUCTOR.Torre=function(textura){    
 
@@ -321,14 +321,14 @@ CONSTRUCTOR.setup = function(){
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=(i+1)*10;
       cubo[i][j].receiveShadow=true;
-      CONSTRUCTOR.tablero1.add(cubo[i][j]);
+      tablero1.add(cubo[i][j]);
       }    
       else{
       cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=(i+1)*10;
       cubo[i][j].receiveShadow=true;
-      CONSTRUCTOR.tablero1.add(cubo[i][j]);
+      tablero1.add(cubo[i][j]);
       }
       //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
       }
