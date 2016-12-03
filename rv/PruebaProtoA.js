@@ -355,18 +355,18 @@ CONSTRUCTOR.setup = function(){
     
     borde2.position.x=90;
     borde2.position.y=0;
-    borde2.position.z=35;
+    borde2.position.z=30;
     
     borde3.rotateY(Math.PI/2);
     borde4.rotateY(Math.PI/2);
     
-    borde3.position.x=35;
+    borde3.position.x=40;
     borde3.position.y=0;
     borde3.position.z=-10;
     
-    borde4.position.x=35;
+    borde4.position.x=50;
     borde4.position.y=0;
-    borde4.position.z=70;
+    borde4.position.z=80;
     
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
