@@ -68,6 +68,16 @@ CONSTRUCTOR.Cubo=function(textura){
 }
 CONSTRUCTOR.Cubo.prototype=new THREE.Mesh();
 
+//-___________________________________________________borde
+CONSTRUCTOR.Borde=function(textura){    
+
+    var BordeForma = new THREE.BoxGeometry( 10, 10, 90 );
+    THREE.Mesh.call(this, BordeForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.Borde.prototype=new THREE.Mesh();
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 //-__________________________________________________Ventana
@@ -332,11 +342,29 @@ CONSTRUCTOR.setup = function(){
       cubo[i][j].receiveShadow=true;
       tablero1.add(cubo[i][j]);
       }
-      //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
       }
 }
-      
-
+    var borde1 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
+    var borde2 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
+    var borde3 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
+    var borde4 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
+    
+    borde1.position.x=5;
+    borde1.position.y=0;
+    borde1.position.z=45;
+    
+    borde2.position.x=85;
+    borde2.position.y=0;
+    borde2.position.z=45;
+    
+    borde3.position.x=5;
+    borde3.position.y=0;
+    borde3.position.z=45;
+    
+    borde4.position.x=5;
+    borde4.position.y=0;
+    borde4.position.z=45;
+    
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
@@ -395,6 +423,10 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.escena.add(peon28);
     
     CONSTRUCTOR.escena.add(tablero1);
+    CONSTRUCTOR.escena.add(borde1);
+    CONSTRUCTOR.escena.add(borde2);
+    CONSTRUCTOR.escena.add(borde3);
+    CONSTRUCTOR.escena.add(borde4);
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
     
