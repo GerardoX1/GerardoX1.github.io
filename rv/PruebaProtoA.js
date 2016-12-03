@@ -111,7 +111,7 @@ CONSTRUCTOR.setup = function(){
     torre11.position.x=10;
     torre11.position.y=3;
     torre11.position.z=0;
-    torre11.scale.set(0.05,0.05,0.05)
+    torre11.scale.set(0.045,0.045,0.045)
     
     torre12.position.x=80;
     torre12.position.y=3;
@@ -137,7 +137,7 @@ CONSTRUCTOR.setup = function(){
     alfil11.position.x=30;
     alfil11.position.y=3;
     alfil11.position.z=0;
-    alfil11.scale.set(0.05,0.05,0.05)
+    alfil11.scale.set(0.055,0.055,0.055)
     
     alfil12.position.x=60;
     alfil12.position.y=3;
