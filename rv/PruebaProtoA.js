@@ -124,12 +124,12 @@ CONSTRUCTOR.setup = function(){
     caballo11.position.x=20;
     caballo11.position.y=3;
     caballo11.position.z=0;
-    caballo11.scale.set(0.05,0.05,0.05)
+    caballo11.scale.set(0.045,0.045,0.045)
     
     caballo12.position.x=70;
     caballo12.position.y=3;
     caballo12.position.z=0;
-    caballo12.scale.set(0.05,0.05,0.05)
+    caballo12.scale.set(0.04,0.04,0.04)
     
     var alfil11 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
     var alfil12 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
