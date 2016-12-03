@@ -311,7 +311,8 @@ CONSTRUCTOR.setup = function(){
       var cubo = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
       else{
       var cubo = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
- 
+      }
+      }
       
       cubo.position.x=(j+1)*10;
       cubo.position.y=(i+1)*10;
