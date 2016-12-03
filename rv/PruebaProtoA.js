@@ -69,14 +69,14 @@ CONSTRUCTOR.Cubo=function(textura){
 CONSTRUCTOR.Cubo.prototype=new THREE.Mesh();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+/*
 //-__________________________________________________Ventana
 CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
   CONSTRUCTOR.camara.updateProjectionMatrix();
   CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight);
 }
-
+*/
 //-_________________________________________________SETUP
 CONSTRUCTOR.setup = function(){
     
@@ -321,14 +321,14 @@ CONSTRUCTOR.setup = function(){
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=(i+1)*10;
       cubo[i][j].receiveShadow=true;
-      CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo[i][j]);
+      CONSTRUCTOR.tablero1.add(cubo[i][j]);
       }    
       else{
       cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=(i+1)*10;
       cubo[i][j].receiveShadow=true;
-      CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo[i][j]);
+      CONSTRUCTOR.tablero1.add(cubo[i][j]);
       }
       //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
       }
