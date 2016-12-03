@@ -79,14 +79,14 @@ CONSTRUCTOR.Borde=function(textura){
 CONSTRUCTOR.Borde.prototype=new THREE.Mesh();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
+
 //-__________________________________________________Ventana
 CONSTRUCTOR.listener = function(){
   CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
   CONSTRUCTOR.camara.updateProjectionMatrix();
   CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight);
 }
-*/
+
 //-_________________________________________________SETUP
 CONSTRUCTOR.setup = function(){
     
@@ -372,13 +372,15 @@ CONSTRUCTOR.setup = function(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
-    
-    CONSTRUCTOR.camara.position.x=45;
-    CONSTRUCTOR.camara.position.y=60;
-    CONSTRUCTOR.camara.position.z=90;
-    
-    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,10,0));
-    
+    //mirada asia todos los blancos
+    //CONSTRUCTOR.camara.position.x=45;
+    //CONSTRUCTOR.camara.position.y=60;
+    //CONSTRUCTOR.camara.position.z=90;
+    //CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,10,0));
+    CONSTRUCTOR.camara.position.x=180;
+    CONSTRUCTOR.camara.position.y=120;
+    CONSTRUCTOR.camara.position.z=180;
+    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,10,45));
     
   //Creación del lienzo y renderizador
     
