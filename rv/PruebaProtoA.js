@@ -116,7 +116,7 @@ CONSTRUCTOR.setup = function(){
     torre12.position.x=80;
     torre12.position.y=3;
     torre12.position.z=0;
-    torre12.scale.set(0.05,0.05,0.05)
+    torre12.scale.set(0.045,0.045,0.045)
     
     var caballo11 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
     var caballo12 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
@@ -137,7 +137,7 @@ CONSTRUCTOR.setup = function(){
     alfil11.position.x=30;
     alfil11.position.y=3;
     alfil11.position.z=0;
-    alfil11.scale.set(0.055,0.055,0.055)
+    alfil11.scale.set(0.05,0.05,0.05)
     
     alfil12.position.x=60;
     alfil12.position.y=3;
@@ -198,10 +198,10 @@ CONSTRUCTOR.setup = function(){
     peon18.position.y=3;
     peon18.position.z=10;
     
-    peon11.scale.set(0.05,0.05,0.05);
-    peon12.scale.set(0.05,0.05,0.05);
-    peon13.scale.set(0.05,0.05,0.05);
-    peon14.scale.set(0.05,0.05,0.05);
+    peon11.scale.set(0.05,0.04,0.05);
+    peon12.scale.set(0.05,0.045,0.05);
+    peon13.scale.set(0.045,0.045,0.045);
+    peon14.scale.set(0.04,0.04,0.04);
     peon15.scale.set(0.05,0.05,0.05);
     peon16.scale.set(0.05,0.05,0.05);
     peon17.scale.set(0.05,0.05,0.05);
@@ -216,12 +216,12 @@ CONSTRUCTOR.setup = function(){
     torre21.position.x=10;
     torre21.position.y=3;
     torre21.position.z=70;
-    torre21.scale.set(0.05,0.05,0.05)
+    torre21.scale.set(0.045,0.045,0.045)
     
     torre22.position.x=80;
     torre22.position.y=3;
     torre22.position.z=70;
-    torre22.scale.set(0.05,0.05,0.05)
+    torre22.scale.set(0.045,0.045,0.045)
     
     var caballo21 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaNegra);
     var caballo22 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaNegra);
