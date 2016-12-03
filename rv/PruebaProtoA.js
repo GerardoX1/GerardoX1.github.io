@@ -309,18 +309,18 @@ CONSTRUCTOR.setup = function(){
         for ( var j = 0; j <= 7; j ++ ) {
       
       if((i+j)%2==0){
-      var cubo1 = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
-      cubo1.position.x=(j+1)*10;
-      cubo1.position.y=(i+1)*10;
-      cubo1.receiveShadow=true;
-      CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo1);
+      var cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
+      cubo[i][j].position.x=(j+1)*10;
+      cubo[i][j].position.y=(i+1)*10;
+      cubo[i][j].receiveShadow=true;
+      CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo[i][j]);
       }    
       else{
-      var cubo2 = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
-      cubo2.position.x=(j+1)*10;
-      cubo2.position.y=(i+1)*10;
-      cubo2.receiveShadow=true;
-      CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo2);
+      var cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
+      cubo[i][j].position.x=(j+1)*10;
+      cubo[i][j].position.y=(i+1)*10;
+      cubo[i][j].receiveShadow=true;
+      CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo[i][j]);
       }
       //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
       }
@@ -384,7 +384,7 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.escena.add(peon27);
     CONSTRUCTOR.escena.add(peon28);
     
-   // CONSTRUCTOR.escena.add(tablero1);
+    CONSTRUCTOR.escena.add(tablero1);
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
     
