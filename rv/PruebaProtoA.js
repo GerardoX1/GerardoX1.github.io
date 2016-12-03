@@ -124,7 +124,7 @@ CONSTRUCTOR.setup = function(){
     caballo11.position.x=20;
     caballo11.position.y=3;
     caballo11.position.z=0;
-    caballo11.scale.set(0.045,0.045,0.045)
+    caballo11.scale.set(0.035,0.035,0.035)
     
     caballo12.position.x=70;
     caballo12.position.y=3;
