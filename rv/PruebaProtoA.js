@@ -318,15 +318,17 @@ CONSTRUCTOR.setup = function(){
       
       if((i+j)%2==0){
       cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
-      cubo[i][j].position.x=(j+1)*10;
-      cubo[i][j].position.y=(i+1)*10;
+      cubo[i][j].position.x=(j)*10;
+      cubo[i][j].position.y=3;
+      cubo[i][j].position.z=(i+1)*10;    
       cubo[i][j].receiveShadow=true;
       tablero1.add(cubo[i][j]);
       }    
       else{
       cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
-      cubo[i][j].position.x=(j+1)*10;
-      cubo[i][j].position.y=(i+1)*10;
+      cubo[i][j].position.x=(j)*10;
+      cubo[i][j].position.y=3;
+      cubo[i][j].position.z=(i+1)*10;
       cubo[i][j].receiveShadow=true;
       tablero1.add(cubo[i][j]);
       }
