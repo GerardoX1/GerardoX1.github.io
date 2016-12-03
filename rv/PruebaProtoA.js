@@ -198,14 +198,14 @@ CONSTRUCTOR.setup = function(){
     peon18.position.y=3;
     peon18.position.z=10;
     
-    peon11.scale.set(0.05,0.04,0.05);
-    peon12.scale.set(0.05,0.045,0.05);
+    peon11.scale.set(0.045,0.045,0.045);
+    peon12.scale.set(0.045,0.045,0.045);
     peon13.scale.set(0.045,0.045,0.045);
-    peon14.scale.set(0.04,0.04,0.04);
-    peon15.scale.set(0.05,0.05,0.05);
-    peon16.scale.set(0.05,0.05,0.05);
-    peon17.scale.set(0.05,0.05,0.05);
-    peon18.scale.set(0.05,0.05,0.05);
+    peon14.scale.set(0.045,0.045,0.045);
+    peon15.scale.set(0.045,0.045,0.045);
+    peon16.scale.set(0.045,0.045,0.045);
+    peon17.scale.set(0.045,0.045,0.045);
+    peon18.scale.set(0.045,0.045,0.045);
 
     ////Negras
     
@@ -303,14 +303,14 @@ CONSTRUCTOR.setup = function(){
     peon28.position.y=3;
     peon28.position.z=60;
     
-    peon21.scale.set(0.05,0.05,0.05);
-    peon22.scale.set(0.05,0.05,0.05);
-    peon23.scale.set(0.05,0.05,0.05);
-    peon24.scale.set(0.05,0.05,0.05);
-    peon25.scale.set(0.05,0.05,0.05);
-    peon26.scale.set(0.05,0.05,0.05);
-    peon27.scale.set(0.05,0.05,0.05);
-    peon28.scale.set(0.05,0.05,0.05);
+    peon21.scale.set(0.045,0.045,0.045);
+    peon22.scale.set(0.045,0.045,0.045);
+    peon23.scale.set(0.045,0.045,0.045);
+    peon24.scale.set(0.045,0.045,0.045);
+    peon25.scale.set(0.045,0.045,0.045);
+    peon26.scale.set(0.045,0.045,0.045);
+    peon27.scale.set(0.045,0.045,0.045);
+    peon28.scale.set(0.045,0.045,0.045);
     
     //Tablero 
     var iMax = 8;
