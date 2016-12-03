@@ -355,7 +355,7 @@ CONSTRUCTOR.setup = function(){
     
     borde2.position.x=90;
     borde2.position.y=0;
-    borde2.position.z=30;
+    borde2.position.z=50;
     
     borde3.rotateY(Math.PI/2);
     borde4.rotateY(Math.PI/2);
