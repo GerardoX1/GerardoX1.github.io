@@ -308,17 +308,20 @@ CONSTRUCTOR.setup = function(){
         for ( var j = 0; j <= 7; j ++ ) {
       
       if((i+j)%2==0){
-      var cubo = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
+      var cubo1 = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
+      cubo1.position.x=(j+1)*10;
+      cubo1.position.y=(i+1)*10;
+      cubo1.receiveShadow=true;
+      CONSTRUCTOR.escena.add(cubo1);
+      }    
       else{
-      var cubo = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
+      var cubo2 = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
+      cubo2.position.x=(j+1)*10;
+      cubo2.position.y=(i+1)*10;
+      cubo2.receiveShadow=true;
+      CONSTRUCTOR.escena.add(cubo2);
       }
-      }
-      
-      cubo.position.x=(j+1)*10;
-      cubo.position.y=(i+1)*10;
-      cubo.receiveShadow=true;
-      CONSTRUCTOR.escena.add(cubo);//si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
-}
+      //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
 }
 }
     
