@@ -61,7 +61,7 @@ CONSTRUCTOR.ReyC.prototype=new THREE.Mesh();
 //-___________________________________________________cubo
 CONSTRUCTOR.Cubo=function(textura){    
 
-    var CuboForma = new THREE.BoxGeometry( 10, 10, 3 );
+    var CuboForma = new THREE.BoxGeometry( 10, 10, 10 );
     THREE.Mesh.call(this, CuboForma, new THREE.MeshLambertMaterial({map:textura}));
     this.castShadow=true;
     this.receiveShadow=true;
