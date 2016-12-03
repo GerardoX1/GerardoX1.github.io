@@ -5,16 +5,17 @@ var CONSTRUCTOR = new Object();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //__________________________________________TABLERO
 
-CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
+CONSTRUCTOR.Tablero = function (textura1,textura2,textura3){
+    
     var color=0;
     for(var i=0;i<8;i++){
       for(var j=0;j<8;j++){
-        var cuboForma=  new THREE.BoxGeometry(10,10,5);
+        var cuboForma=  new THREE.BoxGeometry(10,10,3);
         cuboForma.translate(-35+i*10,35-j*10,0);
         if(color%2===0){
-          var material = new THREE.MeshLambertMaterial({map:texturaNegro});
+          var material = new THREE.MeshLambertMaterial({map:textura1});
         }else{
-          var material = new THREE.MeshLambertMaterial({map: texturaBlanco});
+          var material = new THREE.MeshLambertMaterial({map: textura2});
         }
         var cuboMalla = new THREE.Mesh(cuboForma,material);
         color=color+1;
@@ -28,7 +29,7 @@ CONSTRUCTOR.Tablero = function (texturaBlanco, texturaNegro,texturaMadera){
 
     var bordeForma = new THREE.BoxGeometry(100,100,5);
     bordeForma.translate(0,0,-5);
-    var bordeMaterial = new THREE.MeshLambertMaterial({map:texturaMadera});
+    var bordeMaterial = new THREE.MeshLambertMaterial({map:textura3});
     var bordeMalla = new THREE.Mesh(bordeForma,bordeMaterial);
     bordeMalla.rotateX(-Math.PI/2);
     bordeMalla.receiveShadow=true;
@@ -418,10 +419,10 @@ CONSTRUCTOR.TexturaSetup= function(){
     //cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
     cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
 
-    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.marmolNegro = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ CONSTRUCTOR.marmolBlanco = textura;});
+    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura1){ CONSTRUCTOR.marmolNegro = textura;});
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura2){ CONSTRUCTOR.marmolBlanco = textura;});
 
-    cargador.load("textura-madera-roja.jpg",function(textura){ CONSTRUCTOR.Madera = textura;});
+    cargador.load("textura-madera-roja.jpg",function(textura3){ CONSTRUCTOR.Madera = textura;});
      
 }
     
