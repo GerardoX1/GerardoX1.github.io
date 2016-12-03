@@ -59,7 +59,15 @@ CONSTRUCTOR.ReyC=function(textura){
 }
 CONSTRUCTOR.ReyC.prototype=new THREE.Mesh();
 
+//-___________________________________________________cubo
+CONSTRUCTOR.Cubo=function(textura){    
 
+    var CuboForma = new THREE.BoxGeometry( 10, 10, 3 );
+    THREE.Mesh.call(this, CuboForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+}
+CONSTRUCTOR.Cubo.prototype=new THREE.Mesh();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -192,12 +200,7 @@ CONSTRUCTOR.setup = function(){
 
     ////Negras
     
-    
-    
-    ////
-    
-    
-    ///
+
     var torre21 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaNegra);
     var torre22 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaNegra);
     
@@ -299,6 +302,24 @@ CONSTRUCTOR.setup = function(){
     peon26.scale.set(0.05,0.05,0.05);
     peon27.scale.set(0.05,0.05,0.05);
     peon28.scale.set(0.05,0.05,0.05);
+    
+    //Tablero 
+    
+    for ( var i = 0; i <= 7; i ++ ) {
+        for ( var j = 0; j <= 7; j ++ ) {
+      
+      if((i+j)%2==0){
+      var cubo = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
+      else{
+      var cubo = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
+ 
+      
+      cubo.position.x=(j+1)*10;
+      cubo.position.y=(i+1)*10;
+      cubo.receiveShadow=true;
+      CONSTRUCTOR.escena.add(cubo);//si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
+}
+}
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
