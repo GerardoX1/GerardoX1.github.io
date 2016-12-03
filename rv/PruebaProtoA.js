@@ -303,6 +303,7 @@ CONSTRUCTOR.setup = function(){
     peon28.scale.set(0.05,0.05,0.05);
     
     //Tablero 
+    var tablero1=new THREE.Group();
     
     for ( var i = 0; i <= 7; i ++ ) {
         for ( var j = 0; j <= 7; j ++ ) {
@@ -312,14 +313,14 @@ CONSTRUCTOR.setup = function(){
       cubo1.position.x=(j+1)*10;
       cubo1.position.y=(i+1)*10;
       cubo1.receiveShadow=true;
-      CONSTRUCTOR.escena.add(cubo1);
+      CONSTRUCTOR.tablero1.add(cubo1);
       }    
       else{
       var cubo2 = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
       cubo2.position.x=(j+1)*10;
       cubo2.position.y=(i+1)*10;
       cubo2.receiveShadow=true;
-      CONSTRUCTOR.escena.add(cubo2);
+      CONSTRUCTOR.tablero1.add(cubo2);
       }
       //si no queda generamos un grupo y agregamos la figura al grupo para mostrarla despues
 }
@@ -380,7 +381,8 @@ CONSTRUCTOR.setup = function(){
     CONSTRUCTOR.escena.add(peon26);
     CONSTRUCTOR.escena.add(peon27);
     CONSTRUCTOR.escena.add(peon28);
-
+    
+    CONSTRUCTOR.escena.add(tablero1);
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
     
