@@ -303,20 +303,28 @@ CONSTRUCTOR.setup = function(){
     peon28.scale.set(0.05,0.05,0.05);
     
     //Tablero 
+    var iMax = 8;
+    var jMax = 8;
+    var cubo= new Array();
+
+      for (i=0;i<iMax;i++) { cubo[i]=new Array();
+          for (j=0;j<jMax;j++) { cubo[i][j]=0;}
+      }
+
     var tablero1=new THREE.Group();
     
     for ( var i = 0; i <= 7; i ++ ) {
         for ( var j = 0; j <= 7; j ++ ) {
       
       if((i+j)%2==0){
-      var cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
+      cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=(i+1)*10;
       cubo[i][j].receiveShadow=true;
       CONSTRUCTOR.tablero1.add(CONSTRUCTOR.cubo[i][j]);
       }    
       else{
-      var cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
+      cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=(i+1)*10;
       cubo[i][j].receiveShadow=true;
