@@ -319,7 +319,7 @@ CONSTRUCTOR.setup = function(){
       if((i+j)%2==0){
       cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
       cubo[i][j].position.x=(j+1)*10;
-      cubo[i][j].position.y=-8;
+      cubo[i][j].position.y=0;
       cubo[i][j].position.z=(i+1)*10;    
       cubo[i][j].receiveShadow=true;
       tablero1.add(cubo[i][j]);
@@ -327,7 +327,7 @@ CONSTRUCTOR.setup = function(){
       else{
       cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
       cubo[i][j].position.x=(j+1)*10;
-      cubo[i][j].position.y=-8;
+      cubo[i][j].position.y=0;
       cubo[i][j].position.z=(i+1)*10;
       cubo[i][j].receiveShadow=true;
       tablero1.add(cubo[i][j]);
@@ -342,9 +342,9 @@ CONSTRUCTOR.setup = function(){
     //creacion de la camara
     CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
     
-    CONSTRUCTOR.camara.position.z=150;
+    CONSTRUCTOR.camara.position.z=45;
     CONSTRUCTOR.camara.position.x=45;
-    CONSTRUCTOR.camara.position.y=0;
+    CONSTRUCTOR.camara.position.y=180;
     CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,0,45));
     
     
