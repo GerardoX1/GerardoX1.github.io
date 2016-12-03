@@ -349,21 +349,24 @@ CONSTRUCTOR.setup = function(){
     var borde3 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
     var borde4 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
     
-    borde1.position.x=5;
+    borde1.position.x=0;
     borde1.position.y=0;
     borde1.position.z=45;
     
-    borde2.position.x=85;
+    borde2.position.x=90;
     borde2.position.y=0;
-    borde2.position.z=45;
+    borde2.position.z=35;
     
-    borde3.position.x=5;
+    borde3.rotateY(Math.PI/2);
+    borde4.rotateY(Math.PI/2);
+    
+    borde3.position.x=55;
     borde3.position.y=0;
-    borde3.position.z=45;
+    borde3.position.z=-10;
     
-    borde4.position.x=5;
+    borde4.position.x=35;
     borde4.position.y=0;
-    borde4.position.z=45;
+    borde4.position.z=70;
     
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
