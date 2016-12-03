@@ -453,16 +453,16 @@ CONSTRUCTOR.loop = function(){
           switch (tecla)
           {
               case 37 : //Izquierda
-                  peon25.translateX(-10);
+                  CONSTRUCTOR.peon25.translateX(-10);
                   break;
               case 38 :  //Arriba
-                  peon25.translateZ(-10);
+                  CONSTRUCTOR.peon25.translateZ(-10);
                   break;
               case 39 :  //Derecha 
-                  peon25.translateX(10);
+                  CONSTRUCTOR.peon25.translateX(10);
                   break;
               case 40 :  //Abajo
-                  peon25.translateZ(10);
+                  CONSTRUCTOR.peon25.translateZ(10);
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
