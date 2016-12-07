@@ -1,4 +1,5 @@
 //-___________________________________________________TORRE
+
 var Torre = function(textura){    
 
     Agent.call(this);
@@ -16,6 +17,7 @@ var Torre = function(textura){
 Torre.prototype=new Agent();
 
 //-___________________________________________________cubo
+
 var Cubo=function(textura){    
 
     Agent.call(this);
@@ -27,6 +29,7 @@ var Cubo=function(textura){
 Cubo.prototype=new Agent();
 
 //-___________________________________________________borde
+
 var Borde=function(textura){    
 
     Agent.call(this);
