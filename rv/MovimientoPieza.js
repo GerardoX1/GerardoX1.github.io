@@ -1,5 +1,5 @@
 //-___________________________________________________TORRE
-function Torre = function(textura){    
+var Torre = function(textura){    
 
     Agent.call(this);
     var torreForma = TorreFB.clone();
@@ -16,7 +16,7 @@ function Torre = function(textura){
 Torre.prototype=new Agent();
 
 //-___________________________________________________cubo
-function Cubo=function(textura){    
+var Cubo=function(textura){    
 
     Agent.call(this);
     var CuboForma = new THREE.BoxGeometry( 10, 15, 10 );
@@ -27,7 +27,7 @@ function Cubo=function(textura){
 Cubo.prototype=new Agent();
 
 //-___________________________________________________borde
-function Borde=function(textura){    
+var Borde=function(textura){    
 
     Agent.call(this);
     var BordeForma = new THREE.BoxGeometry( 10, 15, 90 );
