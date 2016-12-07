@@ -1,238 +1,266 @@
-//-___________________________________________________TORRE
-
-var Torre = function(textura){    
-
+function Torre(textura){ 
     Agent.call(this);
-    var torreForma = TorreFB.clone();
+    var puntos=[];
+    
+    puntos.push(new THREE.Vector2(0,0));
+    puntos.push(new THREE.Vector2(20,0));
+    puntos.push(new THREE.Vector2(20,10));
+    puntos.push(new THREE.Vector2(15,10));
+    puntos.push(new THREE.Vector2(15,15));
+    puntos.push(new THREE.Vector2(10,15));
+    puntos.push(new THREE.Vector2(10,40));
+    puntos.push(new THREE.Vector2(20,40));
+    puntos.push(new THREE.Vector2(20,45));
+    puntos.push(new THREE.Vector2(10,45));
+    puntos.push(new THREE.Vector2(10,50));
+    puntos.push(new THREE.Vector2(15,50));
+    puntos.push(new THREE.Vector2(15,60));
+    puntos.push(new THREE.Vector2(0,60));
+    
+    var baseForma= new THREE.LatheGeometry(puntos);
+    var baseMalla = new THREE.Mesh(baseForma);
+
+    var torreForma= new THREE.Geometry();
+
+    torreForma.merge(baseMalla.geometry, baseMalla.matrix);
+
+    for(var i=0; i<=6; i++){
+    var picoForma = new THREE.CylinderGeometry( 4, 2, 15, 32 );
+      picoForma.translate(13*(Math.sin(Math.PI*2/6*i)),60,13*(Math.cos(Math.PI*2/6*i)));
+    var picoMalla =new THREE.Mesh(picoForma); 
+      torreForma.merge(picoMalla.geometry, picoMalla.matrix);
+    }
+    
+    //THREE.Mesh.call(this, torreForma, new THREE.MeshLambertMaterial({map:textura}));
     this.add(new THREE.Mesh(torreForma, new THREE.MeshLambertMaterial({map:textura})));
     this.castShadow=true;
     this.receiveShadow=true;
     
-    this.step =0.1;
+    this.step = 0.1;
     this.colision = 0;
     this.radius = 4;
-    this.sensor = new THREE.Raycaster(this.position, new THREE.Vector3(1,0,0));
-
+    this.sensor = new THREE.Raycaster(this.position, new THREE.Vector3(1,0,0)); //vector para detectar colisiones
 }
 Torre.prototype=new Agent();
 
-//-___________________________________________________cubo
-
-var Cubo=function(textura){    
-
-    Agent.call(this);
-    var CuboForma = new THREE.BoxGeometry( 10, 15, 10 );
-    this.add(new THREE.Mesh(CuboForma, new THREE.MeshLambertMaterial({map:textura})));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-Cubo.prototype=new Agent();
-
-//-___________________________________________________borde
-
-var Borde=function(textura){    
-
-    Agent.call(this);
-    var BordeForma = new THREE.BoxGeometry( 10, 15, 90 );
-    this.add(new THREE.Mesh(BordeForma, new THREE.MeshLambertMaterial({map:textura})));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-Borde.prototype=new Agent();
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//-__________________________________________________Redimencionamiento de Ventana
-    listener = function(){
-    camara.aspect = window.innerWidth / window.innerHeight;
-    camara.updateProjectionMatrix();
-    renderizador.setSize( window.innerWidth, window.innerHeight);
-}
 
 
-//-_________________________________________________SETUP
-function setup(){
+//------------PEON----------
+var Peon=function(textura){    
+    var puntospeon=[];
     
+    puntospeon.push( new THREE.Vector2(0,0));
+    puntospeon.push( new THREE.Vector2(20,0));
+    puntospeon.push( new THREE.Vector2(20,10));
+    puntospeon.push( new THREE.Vector2(15,10));
+    puntospeon.push( new THREE.Vector2(15,15));
+    puntospeon.push( new THREE.Vector2(10,15));
+    puntospeon.push( new THREE.Vector2(5,25));
+    puntospeon.push( new THREE.Vector2(5,35));
+    puntospeon.push( new THREE.Vector2(15,35));
+    puntospeon.push( new THREE.Vector2(0,40));
+
+    var basePeonForma= new THREE.LatheGeometry(puntospeon);
+    var basePeonMalla = new THREE.Mesh(basePeonForma);
+
+    var peonForma= new THREE.Geometry();
+
+    peonForma.merge(basePeonMalla.geometry, basePeonMalla.matrix);
+
+    var puntaPeonForma = new THREE.SphereGeometry(10);
+    puntaPeonForma.translate(0,45,0);
+    var puntaPeonMalla =new THREE.Mesh(puntaPeonForma); 
+    peonForma.merge(puntaPeonMalla.geometry, puntaPeonMalla.matrix);
+        
+    THREE.Mesh.call(this, peonForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+    
+}
+Peon.prototype=new Agent();
+
+
+//------------REY-----------
+var Rey=function(textura){    
+    var puntosrey=[];
+    
+    puntosrey.push( new THREE.Vector2(0,0));
+    puntosrey.push( new THREE.Vector2(20,0));
+    puntosrey.push( new THREE.Vector2(20,10));
+    puntosrey.push( new THREE.Vector2(15,10));
+    puntosrey.push( new THREE.Vector2(15,15));
+    puntosrey.push( new THREE.Vector2(10,15));
+    puntosrey.push( new THREE.Vector2(5,60));
+    puntosrey.push( new THREE.Vector2(20,60));
+    puntosrey.push( new THREE.Vector2(20,65));
+    puntosrey.push( new THREE.Vector2(10,65));
+    puntosrey.push( new THREE.Vector2(10,70));
+    puntosrey.push( new THREE.Vector2(15,70));
+    puntosrey.push( new THREE.Vector2(15,80));
+    puntosrey.push( new THREE.Vector2(10,80));
+    puntosrey.push( new THREE.Vector2(20,100));
+    puntosrey.push( new THREE.Vector2(0,100));
+    
+    var baseRey= new THREE.LatheGeometry(puntosrey);
+    var baseReyMalla= new THREE.Mesh( baseRey);
+    
+    var reyForma= new THREE.Geometry();
+
+    reyForma.merge(baseReyMalla.geometry, baseReyMalla.matrix);
+    
+    var vertical= new THREE.BoxGeometry(10,20,10);
+    vertical.translate(0,110,0);
+    var verticalMalla= new THREE.Mesh(vertical);
+    reyForma.merge(verticalMalla.geometry, verticalMalla.matrix);
+    
+    var horizontal= new THREE.BoxGeometry(20,10,10);
+    horizontal.translate(0,110,0);
+    var horizontalMalla= new THREE.Mesh(horizontal);
+    reyForma.merge(horizontalMalla.geometry, horizontalMalla.matrix);
+    
+    THREE.Mesh.call(this, reyForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.castShadow=true;
+    this.receiveShadow=true;
+    
+}
+
+Rey.prototype=new Agent();
+
+
+
+//------------ TABLERO------
+function Tablero (texturaBlanco, texturaNegro,texturaMadera){
+    var color=0;
+    for(var i=0;i<8;i++){
+      for(var j=0;j<8;j++){
+        var cuboForma=  new THREE.BoxGeometry(10,5,10);
+        cuboForma.translate(-35+i*10,0,35-j*10);
+        if(color%2!==0){
+          var material = new THREE.MeshLambertMaterial({map:texturaNegro});
+        }else{
+          var material = new THREE.MeshLambertMaterial({map: texturaBlanco});
+        }
+        var cuboMalla = new THREE.Mesh(cuboForma,material);
+        color=color+1;
+          cuboMalla.receiveShadow=true;
+        escena.add(cuboMalla);
+      }
+      color=color+1;
+    }
+
+    var bordeForma = new THREE.BoxGeometry(100,100,5);
+    bordeForma.translate(0,0,-5);
+    var bordeMaterial = new THREE.MeshLambertMaterial({map:texturaMadera});
+    var bordeMalla = new THREE.Mesh(bordeForma,bordeMaterial);
+    bordeMalla.rotateX(-Math.PI/2);
+    bordeMalla.receiveShadow=true;
+    escena.add(bordeMalla);
+}
+
+//------------ FUNCION CAMBIO VENTANA-----
+function listener(){
+  camara.aspect = window.innerWidth / window.innerHeight;
+  camara.updateProjectionMatrix();
+  renderizador.setSize( window.innerWidth, window.innerHeight );
+}
+var torreN1;
+//---------- SET UP--------
+function setup(){
     var tipo_evento = 'resize';
     var cambioVentana = false;
     window.addEventListener( tipo_evento, listener, cambioVentana);
     
+    camara.position.x = 100;    
+    camara.position.y = 100;
+    camara.position.z = 100;
+    camara.lookAt(new THREE.Vector3(0,0,0));
+    
     setupDone=true;
     
-    var luz = new THREE.PointLight(0xCCCCCC);
-    luz.position.z=80;
-    luz.position.y=80;
-    luz.position.x=80;
-    
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7 
-    
-    //En esta parte se generan las piezas   
-    //Blancas
-    var torre11 = new Torre(TEXTURAS.PiezaBlanca);
-    var torre12 = new Torre(TEXTURAS.PiezaBlanca);
-    
-    torre11.position.x=10;
-    torre11.position.y=3;
-    torre11.position.z=0;
-    torre11.scale.set(0.045,0.045,0.045)
-    
-    torre12.position.x=80;
-    torre12.position.y=3;
-    torre12.position.z=0;
-    torre12.scale.set(0.045,0.045,0.045)
+    var luz=new THREE.PointLight(0xCCCCCC);
+    luz.position.y=50;
+    luz.position.z=100;
     
     
-    ////Negras
-    var torre21 = new Torre(TEXTURAS.PiezaNegra);
-    var torre22 = new Torre(TEXTURAS.PiezaNegra);
+    torreN1 =new Torre(TEXTURAS.torreNegra);
+    torreN1.scale.x=0.2;
+    torreN1.scale.y=0.2;
+    torreN1.scale.z=0.2;
+    torreN1.position.y=5;
+    torreN1.position.x=37.5;
+    torreN1.position.z=37.5;
     
-    torre21.position.x=10;
-    torre21.position.y=3;
-    torre21.position.z=70;
-    torre21.scale.set(0.045,0.045,0.045)
+    var torreN2 = new Torre(TEXTURAS.torreNegra);
+    torreN2.scale.x=0.2;
+    torreN2.scale.y=0.2;
+    torreN2.scale.z=0.2;
+    torreN2.position.y=5;
+    torreN2.position.x=-32.5;
+    torreN2.position.z=37.5;
     
-    torre22.position.x=80;
-    torre22.position.y=3;
-    torre22.position.z=70;
-    torre22.scale.set(0.045,0.045,0.045)
+    var torreB1 = new Torre(TEXTURAS.torreBlanca);
+    torreB1.scale.x=0.2;
+    torreB1.scale.y=0.2;
+    torreB1.scale.z=0.2;
+    torreB1.position.y=5;
+    torreB1.position.x=-32.5;
+    torreB1.position.z=-32.5;
     
-    //Tablero 
-    var iMax = 8;
-    var jMax = 8;
-    var cubo= new Array();
-
-      for (i=0;i<iMax;i++) { cubo[i]=new Array();
-          for (j=0;j<jMax;j++) { cubo[i][j]=0;}
-      }
-
-    var tablero1=new THREE.Group();
+    var torreB2 = new Torre(TEXTURAS.torreBlanca);
+    torreB2.scale.x=0.2;
+    torreB2.scale.y=0.2;
+    torreB2.scale.z=0.2;
+    torreB2.position.y=5;
+    torreB2.position.x=37.5;
+    torreB2.position.z=-32.5;
     
-    for ( var i = 0; i <= 7; i ++ ) {
-        for ( var j = 0; j <= 7; j ++ ) {
-      
-      if((i+j)%2==0){
-      cubo[i][j] = new Cubo(TEXTURAS.marmolBlanco);
-      cubo[i][j].position.x=(j+1)*10;
-      cubo[i][j].position.y=0;
-      cubo[i][j].position.z=(i)*10;    
-      cubo[i][j].receiveShadow=true;
-      tablero1.add(cubo[i][j]);
-      }    
-      else{
-      cubo[i][j] = new Cubo(TEXTURAS.marmolNegro);
-      cubo[i][j].position.x=(j+1)*10;
-      cubo[i][j].position.y=0;
-      cubo[i][j].position.z=(i)*10;
-      cubo[i][j].receiveShadow=true;
-      tablero1.add(cubo[i][j]);
-      }
-      }
-}
-    var borde1 = new Borde(TEXTURAS.Madera);
-    var borde2 = new Borde(TEXTURAS.Madera);
-    var borde3 = new Borde(TEXTURAS.Madera);
-    var borde4 = new Borde(TEXTURAS.Madera);
-    
-    borde1.position.x=0;
-    borde1.position.y=0;
-    borde1.position.z=40;
-    
-    borde2.position.x=90;
-    borde2.position.y=0;
-    borde2.position.z=30;
-    
-    borde3.rotateY(Math.PI/2);
-    borde4.rotateY(Math.PI/2);
-    
-    borde3.position.x=40;
-    borde3.position.y=0;
-    borde3.position.z=-10;
-    
-    borde4.position.x=50;
-    borde4.position.y=0;
-    borde4.position.z=80;
-    
-    
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //creacion de la camara
-    camara = new THREE.PerspectiveCamera();
-    //mirada asia todos los blancos
-    //CONSTRUCTOR.camara.position.x=45;
-    //CONSTRUCTOR.camara.position.y=60;
-    //CONSTRUCTOR.camara.position.z=90;
-    //CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,10,0));
-    camara.position.x=180;
-    camara.position.y=120;
-    camara.position.z=180;
-    camara.lookAt(new THREE.Vector3(45,10,45));
-    
-  //Creación del lienzo y renderizador
-    
-    var lienzo = document.getElementById("tablero");
-    renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-    renderizador.setSize(window.innerHeight,window.innerHeight)
-
-    //------------ ESCENA
-    escena = new THREE.Scene();
-   
-    //agregamos los elementos
-    
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
-    escena.add(torre11);
-    escena.add(torre12);
-    
-    escena.add(torre21);
-    escena.add(torre22);
-    
-    escena.add(tablero1);
-    escena.add(borde1);
-    escena.add(borde2);
-    escena.add(borde3);
-    escena.add(borde4);
-    
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
-    xGoal=torre11.position.x;
-    zGoal=torre11.position.z;
-    
+    escena.add(torreN1);
+    escena.add(torreN2);
+    escena.add(torreB1);
+    escena.add(torreB2);
     escena.add(luz);
-    renderizador.shadowMapEnabled = true;
-    luz.castShadow =true;
-  
+    Tablero(TEXTURAS.marmolNegro, TEXTURAS.marmolBlanco, TEXTURAS.madera);
+    
+    renderizador.setSize( window.innerHeight*.95 , window.innerHeight*0.95 );
+    document.body.appendChild( renderizador.domElement );
+    xGoal=torreN1.position.x;
+    zGoal=torreN1.position.z;
 }
 
-//-______________________________________________________Verificacion
 var setupDone=false;
 
 function loop(){
-     requestAnimationFrame(loop);
-  if(TEXTURAS.Madera!==undefined && TEXTURAS.PiezaBlanca!==undefined && TEXTURAS.PiezaNegra!==undefined && TEXTURAS.marmolBlanco!==undefined && TEXTURAS.marmolNegro!==undefined && !setupDone){
-     setup();
+  requestAnimationFrame(loop);
+  if(TEXTURAS.madera!==undefined && TEXTURAS.torreBlanca!==undefined && TEXTURAS.marmolBlanco!==undefined && TEXTURAS.marmolNegro!==undefined && !setupDone){
+      setup();
   }
-    movement(torre11);
+    
+    movement(torreN1);
     escena.sense();
     escena.plan();
     escena.act();
     renderizador.render(escena, camara);
-  }
-
-//-_____________________________________________________Texturas
-function TexturaSetup(){
-    
-    var cargador = new THREE.TextureLoader();
-    
-    cargador.load("marmol blanco 2.jpg",function(textura){ TEXTURAS.PiezaBlanca = textura;});
-    cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ TEXTURAS.PiezaNegra = textura;});
-    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ TEXTURAS.marmolNegro = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ TEXTURAS.marmolBlanco = textura;});
-    cargador.load("textura-madera-roja.jpg",function(textura){ TEXTURAS.Madera = textura;});
-     
 }
+
+function TexturaSetup(){
+    var cargador = new THREE.TextureLoader();
+    cargador.load("texturaMarmolNegro.jpg",
+                  function(textura){ TEXTURAS.torreNegra = textura;});
+    cargador.load("texturaMarmolBlanco.jpg",
+                  function(textura){ TEXTURAS.torreBlanca = textura;});
+    cargador.load("texturaMarmolBlanco.jpg",
+                  function(textura){ TEXTURAS.marmolBlanco = textura;});
+    cargador.load("texturaMarmolNegro.jpg",
+                  function(textura){ TEXTURAS.marmolNegro = textura;});
+    cargador.load("texturaMadera.JPG",
+                  function(textura){ TEXTURAS.madera = textura;});
     
+}
+
 var xGoal=0;
 var zGoal=0;
 var m;
 var banderaEvento=0;
-
 //------------- EVENTOS TECLADO-----------
 var keyDown = function(event){
     /*switch(event.keyCode){
@@ -336,11 +364,14 @@ function movement(pieza){
     var b=zGoal-m*xGoal;
     if((pieza.position.x!==xGoal || pieza.position.z!==zGoal) && banderaEvento==0){
         if(pieza.position.x!==xGoal){
-            if(pieza.position.x<xGoal)
+            if(pieza.position.x<xGoal){
                 pieza.position.x+=0.1;
-            else
+                pieza.position.z=m*pieza.position.x+b;}
+            else if(pieza.position.x!==xGoal){
                 pieza.position.x-=0.1;
-            pieza.position.z=m*pieza.position.x+b;
+                pieza.position.z=m*pieza.position.x+b;}
+            else if(pieza.position.x===xGoal)
+                pieza.position.z+=0.1;
         }
         else if(pieza.position.z!==zGoal){
             if(pieza.position.z<zGoal)
