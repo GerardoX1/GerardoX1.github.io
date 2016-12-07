@@ -1,102 +1,62 @@
-//creamos nuestro constructor
-var CONSTRUCTOR = new Object();
-
-//metemos las piezas a un metodo del constructor
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //-___________________________________________________TORRE
-CONSTRUCTOR.Torre=function(textura){    
+function Torre = function(textura){    
 
+    Agent.call(this);
     var torreForma = TorreFB.clone();
-    THREE.Mesh.call(this, torreForma, new THREE.MeshLambertMaterial({map:textura}));
+    this.add(new THREE.Mesh(torreForma, new THREE.MeshLambertMaterial({map:textura})));
     this.castShadow=true;
     this.receiveShadow=true;
-}
-CONSTRUCTOR.Torre.prototype=new THREE.Mesh();
-//-___________________________________________________CABALLO
-CONSTRUCTOR.CaballoC=function(textura){    
+    
+    this.step =0.1;
+    this.colision = 0;
+    this.radius = 4;
+    this.sensor = new THREE.Raycaster(this.position, new THREE.Vector3(1,0,0));
 
-    var CaballoCForma = Caballo.clone();
-    THREE.Mesh.call(this, CaballoCForma, new THREE.MeshLambertMaterial({map:textura}));
-    this.castShadow=true;
-    this.receiveShadow=true;
 }
-CONSTRUCTOR.CaballoC.prototype=new THREE.Mesh();
-//-___________________________________________________ALFIL
-CONSTRUCTOR.AlfilC=function(textura){    
-
-    var AlfilCForma = Alfil.clone();
-    THREE.Mesh.call(this, AlfilCForma, new THREE.MeshLambertMaterial({map:textura}));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-CONSTRUCTOR.AlfilC.prototype=new THREE.Mesh();
-//-___________________________________________________PEON
-CONSTRUCTOR.PeonC=function(textura){    
-
-    var PeonCForma = Peon.clone();
-    THREE.Mesh.call(this, PeonCForma, new THREE.MeshLambertMaterial({map:textura}));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-CONSTRUCTOR.PeonC.prototype=new THREE.Mesh();
-//-___________________________________________________REINA
-CONSTRUCTOR.ReinaC=function(textura){    
-
-    var ReinaCForma = Reina.clone();
-    THREE.Mesh.call(this, ReinaCForma, new THREE.MeshLambertMaterial({map:textura}));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-CONSTRUCTOR.ReinaC.prototype=new THREE.Mesh();
-//-___________________________________________________REY
-CONSTRUCTOR.ReyC=function(textura){    
-
-    var ReyCForma = Rey.clone();
-    THREE.Mesh.call(this, ReyCForma, new THREE.MeshLambertMaterial({map:textura}));
-    this.castShadow=true;
-    this.receiveShadow=true;
-}
-CONSTRUCTOR.ReyC.prototype=new THREE.Mesh();
+Torre.prototype=new Agent();
 
 //-___________________________________________________cubo
-CONSTRUCTOR.Cubo=function(textura){    
+function Cubo=function(textura){    
 
-    var CuboForma = new THREE.BoxGeometry( 10, 10, 10 );
-    THREE.Mesh.call(this, CuboForma, new THREE.MeshLambertMaterial({map:textura}));
+    Agent.call(this);
+    var CuboForma = new THREE.BoxGeometry( 10, 15, 10 );
+    this.add(new THREE.Mesh(CuboForma, new THREE.MeshLambertMaterial({map:textura})));
     this.castShadow=true;
     this.receiveShadow=true;
 }
-CONSTRUCTOR.Cubo.prototype=new THREE.Mesh();
+Cubo.prototype=new Agent();
 
 //-___________________________________________________borde
-CONSTRUCTOR.Borde=function(textura){    
+function Borde=function(textura){    
 
-    var BordeForma = new THREE.BoxGeometry( 10, 10, 90 );
-    THREE.Mesh.call(this, BordeForma, new THREE.MeshLambertMaterial({map:textura}));
+    Agent.call(this);
+    var BordeForma = new THREE.BoxGeometry( 10, 15, 90 );
+    this.add(new THREE.Mesh(BordeForma, new THREE.MeshLambertMaterial({map:textura})));
     this.castShadow=true;
     this.receiveShadow=true;
 }
-CONSTRUCTOR.Borde.prototype=new THREE.Mesh();
+Borde.prototype=new Agent();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//-__________________________________________________Ventana
-CONSTRUCTOR.listener = function(){
-  CONSTRUCTOR.camara.aspect = window.innerWidth / window.innerHeight;
-  CONSTRUCTOR.camara.updateProjectionMatrix();
-  CONSTRUCTOR.renderizador.setSize( window.innerWidth, window.innerHeight);
+//-__________________________________________________Redimencionamiento de Ventana
+    listener = function(){
+    camara.aspect = window.innerWidth / window.innerHeight;
+    camara.updateProjectionMatrix();
+    renderizador.setSize( window.innerWidth, window.innerHeight);
 }
 
+
 //-_________________________________________________SETUP
-CONSTRUCTOR.setup = function(){
+function setup(){
     
     var tipo_evento = 'resize';
     var cambioVentana = false;
-    window.addEventListener( tipo_evento, CONSTRUCTOR.listener, cambioVentana);
+    window.addEventListener( tipo_evento, listener, cambioVentana);
     
     setupDone=true;
     
-    var luz=new THREE.PointLight(0xCCCCCC);
+    var luz = new THREE.PointLight(0xCCCCCC);
     luz.position.z=80;
     luz.position.y=80;
     luz.position.x=80;
@@ -105,8 +65,8 @@ CONSTRUCTOR.setup = function(){
     
     //En esta parte se generan las piezas   
     //Blancas
-    var torre11 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
-    var torre12 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaBlanca);
+    var torre11 = new Torre(TEXTURAS.PiezaBlanca);
+    var torre12 = new Torre(TEXTURAS.PiezaBlanca);
     
     torre11.position.x=10;
     torre11.position.y=3;
@@ -118,100 +78,10 @@ CONSTRUCTOR.setup = function(){
     torre12.position.z=0;
     torre12.scale.set(0.045,0.045,0.045)
     
-    var caballo11 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
-    var caballo12 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaBlanca);
     
-    caballo11.position.x=20;
-    caballo11.position.y=3;
-    caballo11.position.z=0;
-    caballo11.scale.set(0.038,0.038,0.038)
-    
-    caballo12.position.x=70;
-    caballo12.position.y=3;
-    caballo12.position.z=0;
-    caballo12.scale.set(0.038,0.038,0.038)
-    
-    var alfil11 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
-    var alfil12 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaBlanca);
-    
-    alfil11.position.x=30;
-    alfil11.position.y=3;
-    alfil11.position.z=0;
-    alfil11.scale.set(0.05,0.05,0.05)
-    
-    alfil12.position.x=60;
-    alfil12.position.y=3;
-    alfil12.position.z=0;
-    alfil12.scale.set(0.05,0.05,0.05)
-    
-    var rey1 = new CONSTRUCTOR.ReyC(CONSTRUCTOR.PiezaBlanca);
-    var reina1 = new CONSTRUCTOR.ReinaC(CONSTRUCTOR.PiezaBlanca);
-    
-    rey1.position.x=40;
-    rey1.position.y=3;
-    rey1.position.z=0;
-    rey1.scale.set(0.05,0.05,0.05)
-    
-    reina1.position.x=50;
-    reina1.position.y=3;
-    reina1.position.z=0;
-    reina1.scale.set(0.05,0.05,0.05)
-    
-    var peon11 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon12 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon13 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon14 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon15 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon16 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon17 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    var peon18 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaBlanca);
-    
-    peon11.position.x=10;
-    peon11.position.y=3;
-    peon11.position.z=10;
-    
-    peon12.position.x=20;
-    peon12.position.y=3;
-    peon12.position.z=10;
-    
-    peon13.position.x=30;
-    peon13.position.y=3;
-    peon13.position.z=10;
-    
-    peon14.position.x=40;
-    peon14.position.y=3;
-    peon14.position.z=10;
-    
-    peon15.position.x=50;
-    peon15.position.y=3;
-    peon15.position.z=10;
-    
-    peon16.position.x=60;
-    peon16.position.y=3;
-    peon16.position.z=10;
-    
-    peon17.position.x=70;
-    peon17.position.y=3;
-    peon17.position.z=10;
-    
-    peon18.position.x=80;
-    peon18.position.y=3;
-    peon18.position.z=10;
-    
-    peon11.scale.set(0.045,0.045,0.045);
-    peon12.scale.set(0.045,0.045,0.045);
-    peon13.scale.set(0.045,0.045,0.045);
-    peon14.scale.set(0.045,0.045,0.045);
-    peon15.scale.set(0.045,0.045,0.045);
-    peon16.scale.set(0.045,0.045,0.045);
-    peon17.scale.set(0.045,0.045,0.045);
-    peon18.scale.set(0.045,0.045,0.045);
-
     ////Negras
-    
-
-    var torre21 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaNegra);
-    var torre22 = new CONSTRUCTOR.Torre(CONSTRUCTOR.PiezaNegra);
+    var torre21 = new Torre(TEXTURAS.PiezaNegra);
+    var torre22 = new Torre(TEXTURAS.PiezaNegra);
     
     torre21.position.x=10;
     torre21.position.y=3;
@@ -222,95 +92,6 @@ CONSTRUCTOR.setup = function(){
     torre22.position.y=3;
     torre22.position.z=70;
     torre22.scale.set(0.045,0.045,0.045)
-    
-    var caballo21 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaNegra);
-    var caballo22 = new CONSTRUCTOR.CaballoC(CONSTRUCTOR.PiezaNegra);
-    
-    caballo21.position.x=20;
-    caballo21.position.y=3;
-    caballo21.position.z=70;
-    caballo21.scale.set(0.038,0.038,0.038)
-    
-    caballo22.position.x=70;
-    caballo22.position.y=3;
-    caballo22.position.z=70;
-    caballo22.scale.set(0.038,0.038,0.038)
-    
-    var alfil21 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaNegra);
-    var alfil22 = new CONSTRUCTOR.AlfilC(CONSTRUCTOR.PiezaNegra);
-    
-    alfil21.position.x=30;
-    alfil21.position.y=3;
-    alfil21.position.z=70;
-    alfil21.scale.set(0.05,0.05,0.05)
-   
-    alfil22.position.x=60;
-    alfil22.position.y=3;
-    alfil22.position.z=70;
-    alfil22.scale.set(0.05,0.05,0.05)
-    
-    var rey2 = new CONSTRUCTOR.ReyC(CONSTRUCTOR.PiezaNegra);
-    var reina2 = new CONSTRUCTOR.ReinaC(CONSTRUCTOR.PiezaNegra);
-    
-    rey2.position.x=40;
-    rey2.position.y=3;
-    rey2.position.z=70;
-    rey2.scale.set(0.05,0.05,0.05)
-    
-    reina2.position.x=50;
-    reina2.position.y=3;
-    reina2.position.z=70;
-    reina2.scale.set(0.05,0.05,0.05)
-    
-    var peon21 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon22 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon23 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon24 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon25 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon26 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon27 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    var peon28 = new CONSTRUCTOR.PeonC(CONSTRUCTOR.PiezaNegra);
-    
-    peon21.position.x=10;
-    peon21.position.y=3;
-    peon21.position.z=60;
-    
-    peon22.position.x=20;
-    peon22.position.y=3;
-    peon22.position.z=60;
-    
-    peon23.position.x=30;
-    peon23.position.y=3;
-    peon23.position.z=60;
-    
-    peon24.position.x=40;
-    peon24.position.y=3;
-    peon24.position.z=60;
-    
-    peon25.position.x=50;
-    peon25.position.y=3;
-    peon25.position.z=60;
-    
-    peon26.position.x=60;
-    peon26.position.y=3;
-    peon26.position.z=60;
-    
-    peon27.position.x=70;
-    peon27.position.y=3;
-    peon27.position.z=60;
-    
-    peon28.position.x=80;
-    peon28.position.y=3;
-    peon28.position.z=60;
-    
-    peon21.scale.set(0.045,0.045,0.045);
-    peon22.scale.set(0.045,0.045,0.045);
-    peon23.scale.set(0.045,0.045,0.045);
-    peon24.scale.set(0.045,0.045,0.045);
-    peon25.scale.set(0.045,0.045,0.045);
-    peon26.scale.set(0.045,0.045,0.045);
-    peon27.scale.set(0.045,0.045,0.045);
-    peon28.scale.set(0.045,0.045,0.045);
     
     //Tablero 
     var iMax = 8;
@@ -327,7 +108,7 @@ CONSTRUCTOR.setup = function(){
         for ( var j = 0; j <= 7; j ++ ) {
       
       if((i+j)%2==0){
-      cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolBlanco);
+      cubo[i][j] = new Cubo(TEXTURAS.marmolBlanco);
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=0;
       cubo[i][j].position.z=(i)*10;    
@@ -335,7 +116,7 @@ CONSTRUCTOR.setup = function(){
       tablero1.add(cubo[i][j]);
       }    
       else{
-      cubo[i][j] = new CONSTRUCTOR.Cubo(CONSTRUCTOR.marmolNegro);
+      cubo[i][j] = new Cubo(TEXTURAS.marmolNegro);
       cubo[i][j].position.x=(j+1)*10;
       cubo[i][j].position.y=0;
       cubo[i][j].position.z=(i)*10;
@@ -344,10 +125,10 @@ CONSTRUCTOR.setup = function(){
       }
       }
 }
-    var borde1 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
-    var borde2 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
-    var borde3 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
-    var borde4 = new CONSTRUCTOR.Borde(CONSTRUCTOR.Madera);
+    var borde1 = new Borde(TEXTURAS.Madera);
+    var borde2 = new Borde(TEXTURAS.Madera);
+    var borde3 = new Borde(TEXTURAS.Madera);
+    var borde4 = new Borde(TEXTURAS.Madera);
     
     borde1.position.x=0;
     borde1.position.y=0;
@@ -371,73 +152,47 @@ CONSTRUCTOR.setup = function(){
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //creacion de la camara
-    CONSTRUCTOR.camara = new THREE.PerspectiveCamera();
+    camara = new THREE.PerspectiveCamera();
     //mirada asia todos los blancos
     //CONSTRUCTOR.camara.position.x=45;
     //CONSTRUCTOR.camara.position.y=60;
     //CONSTRUCTOR.camara.position.z=90;
     //CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,10,0));
-    CONSTRUCTOR.camara.position.x=180;
-    CONSTRUCTOR.camara.position.y=120;
-    CONSTRUCTOR.camara.position.z=180;
-    CONSTRUCTOR.camara.lookAt(new THREE.Vector3(45,10,45));
+    camara.position.x=180;
+    camara.position.y=120;
+    camara.position.z=180;
+    camara.lookAt(new THREE.Vector3(45,10,45));
     
   //Creación del lienzo y renderizador
     
     var lienzo = document.getElementById("tablero");
-    CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
-    CONSTRUCTOR.renderizador.setSize(window.innerHeight,window.innerHeight)
+    renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
+    renderizador.setSize(window.innerHeight,window.innerHeight)
 
     //------------ ESCENA
-    CONSTRUCTOR.escena = new THREE.Scene();
+    escena = new THREE.Scene();
    
     //agregamos los elementos
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
-    CONSTRUCTOR.escena.add(torre11);
-    CONSTRUCTOR.escena.add(torre12);
-    CONSTRUCTOR.escena.add(caballo11);
-    CONSTRUCTOR.escena.add(caballo12);
-    CONSTRUCTOR.escena.add(alfil11);
-    CONSTRUCTOR.escena.add(alfil12);
-    CONSTRUCTOR.escena.add(rey1);
-    CONSTRUCTOR.escena.add(reina1);
-    CONSTRUCTOR.escena.add(peon11);
-    CONSTRUCTOR.escena.add(peon12);
-    CONSTRUCTOR.escena.add(peon13);
-    CONSTRUCTOR.escena.add(peon14);
-    CONSTRUCTOR.escena.add(peon15);
-    CONSTRUCTOR.escena.add(peon16);
-    CONSTRUCTOR.escena.add(peon17);
-    CONSTRUCTOR.escena.add(peon18);
+    escena.add(torre11);
+    escena.add(torre12);
     
-    CONSTRUCTOR.escena.add(torre21);
-    CONSTRUCTOR.escena.add(torre22);
-    CONSTRUCTOR.escena.add(caballo21);
-    CONSTRUCTOR.escena.add(caballo22);
-    CONSTRUCTOR.escena.add(alfil21);
-    CONSTRUCTOR.escena.add(alfil22);
-    CONSTRUCTOR.escena.add(rey2);
-    CONSTRUCTOR.escena.add(reina2);
-    CONSTRUCTOR.escena.add(peon21);
-    CONSTRUCTOR.escena.add(peon22);
-    CONSTRUCTOR.escena.add(peon23);
-    CONSTRUCTOR.escena.add(peon24);
-    CONSTRUCTOR.escena.add(peon25);
-    CONSTRUCTOR.escena.add(peon26);
-    CONSTRUCTOR.escena.add(peon27);
-    CONSTRUCTOR.escena.add(peon28);
+    escena.add(torre21);
+    escena.add(torre22);
     
-    CONSTRUCTOR.escena.add(tablero1);
-    CONSTRUCTOR.escena.add(borde1);
-    CONSTRUCTOR.escena.add(borde2);
-    CONSTRUCTOR.escena.add(borde3);
-    CONSTRUCTOR.escena.add(borde4);
+    escena.add(tablero1);
+    escena.add(borde1);
+    escena.add(borde2);
+    escena.add(borde3);
+    escena.add(borde4);
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77
+    xGoal=torre11.position.x;
+    zGoal=torre11.position.z;
     
-    CONSTRUCTOR.escena.add(luz);
-    CONSTRUCTOR.renderizador.shadowMapEnabled = true;
+    escena.add(luz);
+    renderizador.shadowMapEnabled = true;
     luz.castShadow =true;
   
 }
@@ -445,53 +200,162 @@ CONSTRUCTOR.setup = function(){
 //-______________________________________________________Verificacion
 var setupDone=false;
 
-CONSTRUCTOR.loop = function(){
-  window.onload=function(){document.onkeydown=desplazar};
-    function desplazar(pieza)
-    {
-      var tecla = pieza.which;
-          switch (tecla)
-          {
-              case 37 : //Izquierda
-                  CONSTRUCTOR.peon25.translateX(-10);
-                  break;
-              case 38 :  //Arriba
-                  CONSTRUCTOR.peon25.translateZ(-10);
-                  break;
-              case 39 :  //Derecha 
-                  CONSTRUCTOR.peon25.translateX(10);
-                  break;
-              case 40 :  //Abajo
-                  CONSTRUCTOR.peon25.translateZ(10);
-                  break;
-          default :alert("Pulsar las flechas del teclado");
-          }
-    }
-  requestAnimationFrame( CONSTRUCTOR.loop);
-  if(CONSTRUCTOR.Madera!==undefined && CONSTRUCTOR.PiezaBlanca!==undefined && CONSTRUCTOR.PiezaNegra!==undefined && CONSTRUCTOR.marmolBlanco!==undefined && CONSTRUCTOR.marmolNegro!==undefined && !setupDone){
-      CONSTRUCTOR.setup();
+function loop(){
+     requestAnimationFrame(loop);
+  if(TEXTURAS.Madera!==undefined && TEXTURAS.PiezaBlanca!==undefined && TEXTURAS.PiezaNegra!==undefined && TEXTURAS.marmolBlanco!==undefined && TEXTURAS.marmolNegro!==undefined && !setupDone){
+     setup();
   }
-   CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
-}
-
+    movement(torre11);
+    escena.sense();
+    escena.plan();
+    escena.act();
+    renderizador.render(escena, camara);
+  }
 
 //-_____________________________________________________Texturas
-CONSTRUCTOR.TexturaSetup= function(){
+function TexturaSetup(){
     
     var cargador = new THREE.TextureLoader();
     
-    //cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
-    
-    cargador.load("marmol blanco 2.jpg",function(textura){ CONSTRUCTOR.PiezaBlanca = textura;});
-    //cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
-    cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ CONSTRUCTOR.PiezaNegra = textura;});
-
-    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ CONSTRUCTOR.marmolNegro = textura;});
-    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ CONSTRUCTOR.marmolBlanco = textura;});
-
-    cargador.load("textura-madera-roja.jpg",function(textura){ CONSTRUCTOR.Madera = textura;});
+    cargador.load("marmol blanco 2.jpg",function(textura){ TEXTURAS.PiezaBlanca = textura;});
+    cargador.load("sp-152a-vidrio-spectrum.jpg",function(textura){ TEXTURAS.PiezaNegra = textura;});
+    cargador.load("bea17cc676ac235c0cbd140b58dbb9c0.jpg",function(textura){ TEXTURAS.marmolNegro = textura;});
+    cargador.load("12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg",function(textura){ TEXTURAS.marmolBlanco = textura;});
+    cargador.load("textura-madera-roja.jpg",function(textura){ TEXTURAS.Madera = textura;});
      
 }
     
-CONSTRUCTOR.TexturaSetup();
-CONSTRUCTOR.loop();
+var xGoal=0;
+var zGoal=0;
+var m;
+var banderaEvento=0;
+
+//------------- EVENTOS TECLADO-----------
+var keyDown = function(event){
+    /*switch(event.keyCode){
+        case 97: //a
+        case 65: //A
+            xGoal=-0.1;
+            break;
+        case 83: //s
+            zGoal=0.1;
+            break;
+        case 68:
+            xGoal=0.1;
+            break;
+        case 87:
+            zGoal=-0.1;
+            break;
+                        }*/
+    if(banderaEvento==0){
+        switch(event.keyCode){
+            case 97: //a
+            case 65: //A
+                xGoal=-35;
+                break;
+            case 98: //b
+            case 66: //B
+                xGoal=-25;
+                break;
+            case 99:
+            case 67:
+                xGoal=-15;
+                break;
+            case 100:
+            case 68:
+                xGoal=-5;
+                break;
+            case 101:
+            case 69:
+                xGoal=5;
+                break;
+            case 102: //f
+            case 70: //F
+                xGoal=15;
+                break;
+            case 103:
+            case 71:
+                xGoal=25;
+                break;
+            case 104: //h
+            case 72: //H
+                xGoal=35;
+                break;
+        }
+        banderaEvento=2;
+    }else if(banderaEvento==1){
+        switch(event.keyCode){
+            case 49: //1
+                zGoal=-35
+                break;
+            case 50: //2
+                zGoal=-25
+                break;
+            case 51: //3
+                zGoal=-15
+                break;
+            case 52: //4
+                zGoal=-5
+                break;
+            case 53: //5
+                zGoal=5
+                break;
+            case 54: //6
+                zGoal=15
+                break;
+            case 55: //7
+                zGoal=25
+                break;
+            case 56: //8
+                zGoal=35
+                break;
+        }
+        banderaEvento=3;
+    }
+}
+    
+var keyUp = function(event){
+    /*xGoal=0;
+    zGoal=0;*/
+    if(banderaEvento==2){
+        banderaEvento=1;
+    }else if(banderaEvento==3){
+        banderaEvento=0;
+    }
+}
+document.addEventListener( 'keydown', keyDown, false );
+document.addEventListener( 'keyup', keyUp, false );
+
+function movement(pieza){
+    /*pieza.position.x+=xGoal;
+    pieza.position.z+=zGoal;*/
+    var m=((zGoal-pieza.position.z)/(xGoal-pieza.position.x));
+    var b=zGoal-m*xGoal;
+    if((pieza.position.x!==xGoal || pieza.position.z!==zGoal) && banderaEvento==0){
+        if(pieza.position.x!==xGoal){
+            if(pieza.position.x<xGoal)
+                pieza.position.x+=0.1;
+            else
+                pieza.position.x-=0.1;
+            pieza.position.z=m*pieza.position.x+b;
+        }
+        else if(pieza.position.z!==zGoal){
+            if(pieza.position.z<zGoal)
+                pieza.position.z+=0.1;
+            else
+                pieza.position.z-=0.1;
+            pieza.position.x=(pieza.position.z-b)/m;
+        }
+        console.log(pieza.position.x,",",pieza.position.z);
+    }
+    else if(pieza.position.x===xGoal && pieza.position.z===zGoal)
+        banderaEvent=0;
+    
+}
+
+var TEXTURAS= new THREE.Object3D();
+var escena = new Environment();
+var camara = new THREE.PerspectiveCamera();
+var renderizador = new THREE.WebGLRenderer();
+TexturaSetup();
+loop();
