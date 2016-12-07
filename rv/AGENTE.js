@@ -1,3 +1,4 @@
+
 function Agent(x=0,y=0){
   THREE.Object3D.call(this);
   this.position.x = x;
@@ -9,8 +10,6 @@ Agent.prototype = new THREE.Object3D();
 Agent.prototype.sense = function(envirnoment){};
 Agent.prototype.plan = function(environment) {};
 Agent.prototype.act = function(environment) {};
-
-//-----El agente opera sobre un entorno, el cual está definido por el constructor Environment()
 
 function Environment(){
   THREE.Scene.call(this);
