@@ -1,8 +1,5 @@
 var camara,escena,renderizador;
-var torre1,torre2,torre3,torre4;
-var rey1,rey2,rey3;
-var peonn1,peonn2,peonn3,peonn4,peonn5,peonn6,peonn7,peonn8;
-var peonb1,peonb2,peonb3,peonb4,peonb5,peonb6,peonb7,peonb8;
+var torre1;
 var malla1,malla2,malla3,grupo1,grupo2,grupo3;
 
 init();
@@ -17,11 +14,11 @@ function init(){
   escena.rotateX(Math.PI*0.7);
 
   //Textura
-    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-    var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
-    var textura3 = new THREE.TextureLoader().load('ceramicablanca.jpg');
-    var textura4 = new THREE.TextureLoader().load('ceramicanegra.jpg');
-    var textura5 = new THREE.TextureLoader().load('madera.jpg');
+    var textura1 = new THREE.TextureLoader().load('marmol blanco 2.jpg');
+    var textura2 = new THREE.TextureLoader().load('sp-152a-vidrio-spectrum.jpg');
+    var textura3 = new THREE.TextureLoader().load('12910526-tela-brillante-textura-de-fondo-Foto-de-archivo.jpg');
+    var textura4 = new THREE.TextureLoader().load('bea17cc676ac235c0cbd140b58dbb9c0.jpg');
+    var textura5 = new THREE.TextureLoader().load('textura-madera-roja.jpg');
     
     var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
     var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
@@ -29,7 +26,9 @@ function init(){
     var ceramicanegra = new THREE.MeshBasicMaterial({map:textura4});  
     var madera = new THREE.MeshBasicMaterial({map:textura5});
     
-torre1=new THREE.Mesh(torreForma,marmolblanco);
+    var torreForma = TorreFB.clone();
+    
+    torre1=new THREE.Mesh(torreForma,marmolblanco);
     torre1.position.y=10;
     torre1.position.z=-7;
     torre1.position.x=10;
